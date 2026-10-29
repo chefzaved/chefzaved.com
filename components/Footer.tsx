@@ -106,14 +106,14 @@ export default function Footer({
               </a>
 
               {/* Subtle Gold Divider Line */}
-              <div className="h-12 sm:h-16 w-px bg-gradient-to-b from-transparent via-[#d4af37]/40 to-transparent shrink-0" />
+              <div className="h-14 sm:h-18 w-px bg-gradient-to-b from-transparent via-[#d4af37]/45 to-transparent shrink-0" />
 
-              {/* Signature Logo Beside it */}
+              {/* Signature Logo Beside it - matching height with main logo */}
               <div className="flex items-center">
                 <img
                   src="/images/signature.png"
                   alt="Chef Zaved Signature Logo"
-                  className="h-14 sm:h-18 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(212,175,55,0.55)] transition-transform duration-300 hover:scale-105"
+                  className="h-[2.4cm] sm:h-[3cm] w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.55)] transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
