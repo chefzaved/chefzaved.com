@@ -42,8 +42,8 @@ export default function Navbar({
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#061a14]/92 backdrop-blur-md border-b border-[#d4af37]/25 shadow-2xl py-3"
-            : "bg-gradient-to-b from-[#061a14]/95 via-[#061a14]/75 to-transparent py-5"
+            ? "bg-[#061a14]/94 backdrop-blur-md border-b border-[#d4af37]/25 shadow-2xl py-2.5 sm:py-3"
+            : "bg-gradient-to-b from-[#061a14]/95 via-[#061a14]/80 to-transparent py-3.5 sm:py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,24 +51,14 @@ export default function Navbar({
             {/* Logo */}
             <a
               href="#hero"
-              className="group flex items-center gap-3 focus:outline-none"
-              aria-label="Chef Zaved Homepage"
+              className="group flex items-center focus:outline-none"
+              aria-label="Chef Zaved"
             >
-              <div className="relative flex items-center justify-center w-12 h-12 rounded-full border border-[#d4af37]/50 bg-[#0a231b] p-1.5 shadow-inner group-hover:border-[#d4af37] transition-all duration-300 group-hover:scale-105">
-                <img
-                  src="/images/logo.png"
-                  alt="Chef Zaved Signature Logo"
-                  className="w-full h-full object-contain filter drop-shadow-[0_1px_6px_rgba(212,175,55,0.4)]"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-2xl font-bold tracking-wider text-white group-hover:text-[#d4af37] transition-colors">
-                  Chef Zaved
-                </span>
-                <span className="text-[10px] tracking-[0.25em] uppercase text-[#d4af37]/80 font-sans -mt-1 font-medium">
-                  Haute Gastronomie
-                </span>
-              </div>
+              <img
+                src="/images/logo.png"
+                alt="Chef Zaved"
+                className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
+              />
             </a>
 
             {/* Desktop Navigation Links */}
