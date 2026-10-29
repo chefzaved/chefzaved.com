@@ -61,13 +61,13 @@ export default function Navbar({
               />
             </a>
 
-            {/* Desktop Navigation Links - Light Button Style */}
+            {/* Desktop Navigation Links - Premium Light Glass Button Style */}
             <nav className="hidden lg:flex items-center gap-2 xl:gap-3">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="px-4 xl:px-5 py-2.5 rounded-full text-[15px] xl:text-base font-medium tracking-wide text-neutral-100 bg-[#09261e]/85 hover:bg-[#d4af37]/15 border border-[#d4af37]/35 hover:border-[#d4af37] hover:text-[#fae8b4] transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_0_18px_rgba(212,175,55,0.45)] hover:-translate-y-0.5 backdrop-blur-md"
+                  className="px-4 xl:px-5 py-2.5 rounded-full text-[15px] xl:text-base font-medium tracking-wide text-[#FFFDF5] bg-[#D4AF37]/12 backdrop-blur-md border-[1.5px] border-[#D4AF37] shadow-[0_2px_10px_rgba(0,0,0,0.25)] hover:bg-[#D4AF37] hover:text-[#061a14] hover:shadow-[0_0_22px_rgba(212,175,55,0.6)] hover:-translate-y-0.5 transition-all duration-300 ease-out font-sans"
                 >
                   {link.label}
                 </a>
@@ -134,13 +134,13 @@ export default function Navbar({
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-[#061a14]/98 backdrop-blur-xl flex flex-col pt-24 px-6 pb-8 sm:hidden">
-          <nav className="flex flex-col gap-5 text-center mt-4">
+          <nav className="flex flex-col gap-3.5 text-center mt-4">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="font-serif text-xl text-neutral-200 hover:text-[#d4af37] py-2 border-b border-[#0d2f25] transition-colors"
+                className="py-3 px-5 rounded-full text-base font-medium tracking-wide text-[#FFFDF5] bg-[#D4AF37]/12 border-[1.5px] border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#061a14] transition-all duration-300"
               >
                 {link.label}
               </a>
