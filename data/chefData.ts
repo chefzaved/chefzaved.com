@@ -44,32 +44,32 @@ export const CHEF_INFO = {
   photoUrl: "/images/chef-1.jpeg",
   logoUrl: "/images/logo.png",
   signatureUrl: "/images/signature.png",
-  experienceYears: 16,
+  experienceYears: 18,
   privateDinnersCount: "650+",
   satisfactionRate: "99.8%",
   countriesServed: 18,
   bioParagraph1:
-    "With over sixteen years at the forefront of haute cuisine, Chef Zaved transforms private residences and luxury venues into world-class gastronomic stages. Having perfected his technique under legendary three-star Michelin mentors in Paris, London, and Tokyo, he brings an uncompromising reverence for culinary artistry to every engagement.",
+    "Chef Zaved is an accomplished culinary professional with over 18 years of experience across luxury hospitality, fine dining, and international cruise operations. His professional journey includes prestigious hospitality brands such as Taj Group of Hotels, Araiya Hotels & Resorts, Polo Towers, Uniworld Boutique River Cruise Collection, Edelweiss, Avalon Waterways, Barak, Al Barandah, Vedic Village Spa Resort, Fortune Hospitality, and Peerless Inn.",
   bioParagraph2:
-    "His culinary ethos marries classical French precision with the bold, aromatic palettes of modern global fusion. Every course tells an evocative sensory story, crafted exclusively with rare heirloom produce, line-caught day-boat seafood, and ethically sourced prime cuts curated from artisanal farmers worldwide.",
+    "His culinary vision centres on exclusive supper club experiences, bringing Indian and international cuisines together through chef-curated seasonal menus, modern gastronomy, and creative flavour pairings. Specialising in intimate sit-down dinners, bespoke dining experiences, and contemporary grazing concepts, Chef Zaved transforms seasonal ingredients and culinary traditions into distinctive gastronomic journeys, where every menu tells a story and every dining experience feels personal, innovative, and memorable.",
   philosophyQuote:
-    "True luxury in dining is not just flavor—it is emotion, intimacy, and the unforgettable magic of sharing extraordinary artistry around a private table.",
+    "Where every menu tells a story and every dining experience feels personal, innovative, and memorable.",
   credentials: [
     {
-      title: "Michelin Pedigree",
-      desc: "Trained and mentored in 3-star Michelin kitchens across Paris, London & Lyon.",
+      title: "Luxury Hospitality & Taj Alum",
+      desc: "Prestigious pedigree across Taj Group of Hotels, Araiya Hotels & Resorts, and luxury boutique properties.",
     },
     {
-      title: "VIP & Private Dining",
-      desc: "Personal chef to royalty, international diplomats, and distinguished connoisseurs.",
+      title: "Global Cruise Operations",
+      desc: "International fine dining with Uniworld Boutique River Cruise Collection, Edelweiss & Avalon Waterways.",
     },
     {
-      title: "Sommelier-Certified",
-      desc: "Comprehensive wine pairing curation from world-renowned vintage cellars.",
+      title: "Exclusive Supper Clubs",
+      desc: "Specialising in intimate sit-down dinners, bespoke gastronomy, and contemporary grazing concepts.",
     },
     {
-      title: "Farm-to-Table Ethics",
-      desc: "Zero-compromise direct sourcing from micro-farms and organic producers.",
+      title: "Indian & Global Modern Fusion",
+      desc: "Harmonizing Indian culinary traditions with modern international techniques and seasonal flavour pairings.",
     },
   ],
   contact: {

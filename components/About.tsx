@@ -24,7 +24,7 @@ export default function About() {
           </h2>
           <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4" />
           <p className="mt-4 text-base sm:text-lg text-neutral-300 font-sans">
-            Bridging 3-Star Michelin discipline with the intimate art of private dining.
+            Bridging 18+ years across luxury hospitality, global cruise operations, and modern gastronomy.
           </p>
         </div>
 
@@ -42,17 +42,17 @@ export default function About() {
                 />
               </div>
 
-              {/* Grand Diplôme Alum Credential Badge below image */}
+              {/* Professional Credential Badge below image */}
               <div className="mt-4 p-4 rounded-xl bg-[#0b2b22]/90 border border-[#d4af37]/40 flex items-center gap-3.5 shadow-xl">
                 <div className="w-10 h-10 rounded-full bg-[#d4af37]/15 border border-[#d4af37]/50 flex items-center justify-center shrink-0">
                   <Award className="w-5 h-5 text-[#d4af37]" />
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider text-[#d4af37] font-semibold">
-                    Grand Diplôme Alum
+                    18+ Years Luxury Hospitality
                   </div>
                   <div className="text-xs text-neutral-300 font-sans mt-0.5">
-                    European Haute Cuisine & Oenology
+                    Taj Group • Uniworld Luxury Cruise • Global Fine Dining
                   </div>
                 </div>
               </div>
@@ -62,7 +62,7 @@ export default function About() {
           {/* Narrative & Credentials (7 Cols) */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-white leading-snug">
-              Every dish is an intimate dialogue between heritage, precision, and the pure joy of taste.
+              Every menu tells a story, and every dining experience feels personal, innovative, and memorable.
             </h3>
 
             <div className="mt-6 space-y-4 text-neutral-200 text-sm sm:text-base leading-relaxed">
