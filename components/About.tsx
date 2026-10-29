@@ -30,50 +30,31 @@ export default function About() {
 
         {/* Main Content Grid: Imagery on Left, Narrative on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Visual Gallery / Behind-The-Scenes Collage (5 Cols) */}
+          {/* Visual Showcase (5 Cols) */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Main Primary Image: Chef Zaved original photo */}
-              <div className="relative rounded-2xl overflow-hidden border border-[#d4af37]/40 shadow-2xl bg-[#0b2b22] group">
+              {/* Main Primary Image: Chef Zaved original photo fitted in frame */}
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/50 shadow-2xl bg-[#072018] group">
                 <img
                   src="/images/chef-1.jpeg"
                   alt="Chef Zaved - Master of Modern Gastronomy & Private Dining"
-                  className="w-full h-[500px] object-cover object-top filter brightness-100 group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-auto block filter brightness-100 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#061a14] via-transparent to-transparent opacity-80" />
+              </div>
 
-                {/* Floating Credential Card over image */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#072018]/92 backdrop-blur-md border border-[#d4af37]/40 flex items-center gap-3 shadow-xl">
-                  <div className="w-10 h-10 rounded-full bg-[#d4af37]/15 border border-[#d4af37]/50 flex items-center justify-center shrink-0">
-                    <Award className="w-5 h-5 text-[#d4af37]" />
+              {/* Grand Diplôme Alum Credential Badge below image */}
+              <div className="mt-4 p-4 rounded-xl bg-[#0b2b22]/90 border border-[#d4af37]/40 flex items-center gap-3.5 shadow-xl">
+                <div className="w-10 h-10 rounded-full bg-[#d4af37]/15 border border-[#d4af37]/50 flex items-center justify-center shrink-0">
+                  <Award className="w-5 h-5 text-[#d4af37]" />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-wider text-[#d4af37] font-semibold">
+                    Grand Diplôme Alum
                   </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-[#d4af37] font-semibold">
-                      Grand Diplôme Alum
-                    </div>
-                    <div className="text-xs text-neutral-200 font-sans">
-                      European Haute Cuisine & Oenology
-                    </div>
+                  <div className="text-xs text-neutral-300 font-sans mt-0.5">
+                    European Haute Cuisine & Oenology
                   </div>
                 </div>
-              </div>
-
-              {/* Secondary Overlapping Thumbnail: Fresh Farm Ingredients */}
-              <div className="hidden sm:block absolute -top-6 -right-6 w-36 h-36 rounded-xl overflow-hidden border-2 border-[#d4af37]/40 shadow-2xl bg-[#0b2b22] transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80"
-                  alt="Fresh heirloom ingredients and organic truffles"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Tertiary Overlapping Thumbnail: Flambé Sear Action */}
-              <div className="hidden sm:block absolute -bottom-6 -left-6 w-32 h-32 rounded-xl overflow-hidden border-2 border-[#d4af37]/40 shadow-2xl bg-[#0b2b22] transform -rotate-3 hover:rotate-0 transition-transform duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80"
-                  alt="Chef cooking flame sear technique"
-                  className="w-full h-full object-cover"
-                />
               </div>
             </div>
           </div>
