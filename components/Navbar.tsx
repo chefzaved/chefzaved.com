@@ -46,12 +46,12 @@ export default function Navbar({
             : "bg-gradient-to-b from-[#061a14]/95 via-[#061a14]/80 to-transparent py-2 sm:py-3"
         }`}
       >
-        <div className="w-full max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a
               href="#hero"
-              className="group flex items-center focus:outline-none -ml-2 sm:-ml-3 lg:-ml-4"
+              className="group flex items-center focus:outline-none"
               aria-label="Chef Zaved"
             >
               <img

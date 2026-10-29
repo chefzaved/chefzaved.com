@@ -92,17 +92,31 @@ export default function Footer({
       {/* Decorative top gold hairline */}
       <div className="h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Col 1: Brand & Bio (4 Cols) */}
           <div className="lg:col-span-4 space-y-5">
-            <a href="#hero" className="inline-block group focus:outline-none" aria-label="Chef Zaved">
-              <img
-                src="/images/logo.png"
-                alt="Chef Zaved"
-                className="h-[2.5cm] sm:h-[3cm] w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
-              />
-            </a>
+            <div className="flex items-center gap-3.5 sm:gap-5">
+              <a href="#hero" className="inline-block group focus:outline-none" aria-label="Chef Zaved">
+                <img
+                  src="/images/logo.png"
+                  alt="Chef Zaved"
+                  className="h-[2.4cm] sm:h-[3cm] w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
+                />
+              </a>
+
+              {/* Subtle Gold Divider Line */}
+              <div className="h-12 sm:h-16 w-px bg-gradient-to-b from-transparent via-[#d4af37]/40 to-transparent shrink-0" />
+
+              {/* Signature Logo Beside it */}
+              <div className="flex items-center">
+                <img
+                  src="/images/signature.png"
+                  alt="Chef Zaved Signature Logo"
+                  className="h-14 sm:h-18 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(212,175,55,0.55)] transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+            </div>
 
             <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-sm">
               Dedicated to crafting culinary masterpieces, bespoke private dinners, and fine dining spectacles in prestigious residences across the globe.
