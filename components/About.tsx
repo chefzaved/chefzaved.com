@@ -89,7 +89,7 @@ export default function About() {
                   <img
                     src="/images/signature.png"
                     alt="Chef Zaved Signature"
-                    className="h-12 w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(212,175,55,0.4)]"
+                    className="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_2px_10px_rgba(212,175,55,0.45)]"
                   />
                 </div>
               </div>
