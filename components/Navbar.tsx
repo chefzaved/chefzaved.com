@@ -54,9 +54,12 @@ export default function Navbar({
               className="group flex items-center gap-3 focus:outline-none"
               aria-label="Chef Zaved Homepage"
             >
-              <div className="relative flex items-center justify-center w-11 h-11 rounded-full border border-[#d4af37]/40 bg-[#0a231b] shadow-inner group-hover:border-[#d4af37] transition-colors duration-300">
-                <UtensilsCrossed className="w-5 h-5 text-[#d4af37] transition-transform duration-300 group-hover:rotate-12" />
-                <span className="absolute -bottom-0.5 w-1.5 h-1.5 rounded-full bg-[#d4af37] shadow-[0_0_8px_#d4af37]" />
+              <div className="relative flex items-center justify-center w-12 h-12 rounded-full border border-[#d4af37]/50 bg-[#0a231b] p-1.5 shadow-inner group-hover:border-[#d4af37] transition-all duration-300 group-hover:scale-105">
+                <img
+                  src="/images/logo.png"
+                  alt="Chef Zaved Signature Logo"
+                  className="w-full h-full object-contain filter drop-shadow-[0_1px_6px_rgba(212,175,55,0.4)]"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-2xl font-bold tracking-wider text-white group-hover:text-[#d4af37] transition-colors">

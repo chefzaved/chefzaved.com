@@ -41,6 +41,9 @@ export const CHEF_INFO = {
   tagline: "Crafting Culinary Masterpieces, One Plate at a Time",
   subtext:
     "Experience fine dining in the comfort of your home with exclusive private chef services, bespoke menus, and masterclasses.",
+  photoUrl: "/images/chef-1.jpeg",
+  logoUrl: "/images/logo.png",
+  signatureUrl: "/images/signature.png",
   experienceYears: 16,
   privateDinnersCount: "650+",
   satisfactionRate: "99.8%",

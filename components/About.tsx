@@ -33,12 +33,12 @@ export default function About() {
           {/* Visual Gallery / Behind-The-Scenes Collage (5 Cols) */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Main Primary Image: Chef at work */}
+              {/* Main Primary Image: Chef Zaved original photo */}
               <div className="relative rounded-2xl overflow-hidden border border-[#d4af37]/40 shadow-2xl bg-[#0b2b22] group">
                 <img
-                  src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1000&q=85"
-                  alt="Chef Zaved plating haute cuisine with micro-greens and precision tweezers"
-                  className="w-full h-[460px] object-cover object-top filter brightness-95 group-hover:scale-105 transition-transform duration-700 ease-out"
+                  src="/images/chef-1.jpeg"
+                  alt="Chef Zaved - Master of Modern Gastronomy & Private Dining"
+                  className="w-full h-[500px] object-cover object-top filter brightness-100 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#061a14] via-transparent to-transparent opacity-80" />
 
@@ -104,8 +104,12 @@ export default function About() {
                     Master of Modern Gastronomy
                   </span>
                 </div>
-                <div className="font-serif text-lg tracking-widest text-[#d4af37]/80 italic border-b border-[#d4af37]/40 pb-0.5">
-                  Chef Zaved
+                <div className="flex items-center">
+                  <img
+                    src="/images/signature.png"
+                    alt="Chef Zaved Signature"
+                    className="h-12 w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(212,175,55,0.4)]"
+                  />
                 </div>
               </div>
             </div>

@@ -96,9 +96,13 @@ export default function Footer({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Col 1: Brand & Bio (4 Cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <a href="#hero" className="inline-flex items-center gap-3 group">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-[#d4af37]/50 bg-[#08241c]">
-                <UtensilsCrossed className="w-5 h-5 text-[#d4af37]" />
+            <a href="#hero" className="inline-flex items-center gap-3.5 group">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full border border-[#d4af37]/50 bg-[#08241c] p-1.5 shadow-inner group-hover:border-[#d4af37] transition-all duration-300 group-hover:scale-105">
+                <img
+                  src="/images/logo.png"
+                  alt="Chef Zaved Signature Logo"
+                  className="w-full h-full object-contain filter drop-shadow-[0_1px_6px_rgba(212,175,55,0.4)]"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-2xl font-bold tracking-wider text-white group-hover:text-[#d4af37] transition-colors">
