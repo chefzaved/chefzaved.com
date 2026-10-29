@@ -12,7 +12,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-[#061a14]"
+      className="relative min-h-screen flex items-center justify-center pt-32 sm:pt-36 pb-16 overflow-hidden bg-[#061a14]"
     >
       {/* Background Image with Dark Cinematic Overlays */}
       <div className="absolute inset-0 z-0">

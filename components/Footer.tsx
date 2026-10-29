@@ -100,7 +100,7 @@ export default function Footer({
               <img
                 src="/images/logo.png"
                 alt="Chef Zaved"
-                className="h-20 sm:h-24 md:h-28 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
+                className="h-[2.5cm] sm:h-[3cm] w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
               />
             </a>
 

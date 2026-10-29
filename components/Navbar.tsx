@@ -42,22 +42,22 @@ export default function Navbar({
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#061a14]/94 backdrop-blur-md border-b border-[#d4af37]/25 shadow-2xl py-2.5 sm:py-3"
-            : "bg-gradient-to-b from-[#061a14]/95 via-[#061a14]/80 to-transparent py-3.5 sm:py-4"
+            ? "bg-[#061a14]/94 backdrop-blur-md border-b border-[#d4af37]/25 shadow-2xl py-1.5 sm:py-2"
+            : "bg-gradient-to-b from-[#061a14]/95 via-[#061a14]/80 to-transparent py-2 sm:py-3"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a
               href="#hero"
-              className="group flex items-center focus:outline-none"
+              className="group flex items-center focus:outline-none -ml-2 sm:-ml-3 lg:-ml-4"
               aria-label="Chef Zaved"
             >
               <img
                 src="/images/logo.png"
                 alt="Chef Zaved"
-                className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
+                className="h-[2.4cm] sm:h-[3cm] w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
               />
             </a>
 
