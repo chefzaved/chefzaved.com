@@ -61,16 +61,15 @@ export default function Navbar({
               />
             </a>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-8">
+            {/* Desktop Navigation Links - Light Button Style */}
+            <nav className="hidden lg:flex items-center gap-2 xl:gap-3">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium tracking-wide text-neutral-300 hover:text-[#d4af37] transition-colors relative py-1 group"
+                  className="px-4 xl:px-5 py-2.5 rounded-full text-[15px] xl:text-base font-medium tracking-wide text-neutral-100 bg-[#09261e]/85 hover:bg-[#d4af37]/15 border border-[#d4af37]/35 hover:border-[#d4af37] hover:text-[#fae8b4] transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_0_18px_rgba(212,175,55,0.45)] hover:-translate-y-0.5 backdrop-blur-md"
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#d4af37] to-amber-200 transition-all duration-300 group-hover:w-full" />
                 </a>
               ))}
             </nav>
