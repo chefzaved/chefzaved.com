@@ -62,12 +62,12 @@ export default function Navbar({
             </a>
 
             {/* Desktop Navigation Links - Premium Light Glass Button Style */}
-            <nav className="hidden lg:flex items-center gap-2 xl:gap-3">
+            <nav className="hidden lg:flex items-center gap-2 xl:gap-2.5">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="px-4 xl:px-5 py-2.5 rounded-full text-[15px] xl:text-base font-medium tracking-wide text-[#FFFDF5] bg-[#D4AF37]/12 backdrop-blur-md border-[1.5px] border-[#D4AF37] shadow-[0_2px_10px_rgba(0,0,0,0.25)] hover:bg-[#D4AF37] hover:text-[#061a14] hover:shadow-[0_0_22px_rgba(212,175,55,0.6)] hover:-translate-y-0.5 transition-all duration-300 ease-out font-sans"
+                  className="px-4 xl:px-4.5 py-1.5 xl:py-2 rounded-full text-sm xl:text-[15px] font-medium tracking-wide text-[#FFFDF5] bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/70 shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#D4AF37] hover:text-[#061a14] hover:border-[#D4AF37] hover:shadow-[0_0_18px_rgba(212,175,55,0.55)] hover:-translate-y-0.5 transition-all duration-300 ease-out font-sans"
                 >
                   {link.label}
                 </a>
