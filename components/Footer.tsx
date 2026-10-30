@@ -62,7 +62,7 @@ export default function Footer({
       {/* Decorative top gold hairline */}
       <div className="h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent" />
 
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 py-16 sm:py-20">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Col 1: Brand & Bio (5 Cols) */}
           <div className="lg:col-span-5 space-y-5">
@@ -71,7 +71,7 @@ export default function Footer({
                 <img
                   src="/images/logo.png"
                   alt="Chef Zaved"
-                  className="h-[2.4cm] sm:h-[3cm] w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
+                  className="h-[2.8cm] sm:h-[3.5cm] w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
                 />
               </a>
 
@@ -83,7 +83,7 @@ export default function Footer({
                 <img
                   src="/images/signature.png"
                   alt="Chef Zaved Signature Logo"
-                  className="h-[2.4cm] sm:h-[3cm] w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.55)] transition-transform duration-300 hover:scale-105"
+                  className="h-[2.8cm] sm:h-[3.5cm] w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.55)] transition-all duration-300 hover:scale-105"
                 />
               </div>
             </div>

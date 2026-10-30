@@ -47,28 +47,28 @@ export default function Navbar({
             : "bg-gradient-to-b from-[#061a14]/95 via-[#061a14]/80 to-transparent py-2 sm:py-3"
         }`}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <a
               href="#hero"
-              className="group flex items-center focus:outline-none"
+              className="group flex items-center focus:outline-none shrink-0"
               aria-label="Chef Zaved"
             >
               <img
                 src="/images/logo.png"
                 alt="Chef Zaved"
-                className="h-[2.4cm] sm:h-[3cm] w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
+                className="h-[2.8cm] sm:h-[3.5cm] w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
               />
             </a>
 
             {/* Desktop Navigation Links - Premium Light Glass Button Style */}
-            <nav className="hidden lg:flex items-center gap-2 xl:gap-2.5">
+            <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="px-4 xl:px-4.5 py-1.5 xl:py-2 rounded-full text-sm xl:text-[15px] font-medium tracking-wide text-[#FFFDF5] bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/70 shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#D4AF37] hover:text-[#061a14] hover:border-[#D4AF37] hover:shadow-[0_0_18px_rgba(212,175,55,0.55)] hover:-translate-y-0.5 transition-all duration-300 ease-out font-sans"
+                  className="px-3 xl:px-4 py-1.5 xl:py-2 rounded-full text-xs xl:text-sm font-medium tracking-wide text-[#FFFDF5] bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/70 shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#D4AF37] hover:text-[#061a14] hover:border-[#D4AF37] hover:shadow-[0_0_18px_rgba(212,175,55,0.55)] hover:-translate-y-0.5 transition-all duration-300 ease-out font-sans whitespace-nowrap"
                 >
                   {link.label}
                 </a>
