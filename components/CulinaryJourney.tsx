@@ -1,36 +1,11 @@
 "use client";
 
 import React from "react";
-import { Sparkles, Compass, Award, Anchor, Utensils, Quote, CheckCircle2 } from "lucide-react";
-import { CHEF_INFO } from "@/data/chefData";
+import { Sparkles, Quote } from "lucide-react";
 
 interface CulinaryJourneyProps {
   onOpenBooking?: () => void;
 }
-
-const CAREER_MILESTONES = [
-  {
-    era: "The Classical Foundation",
-    title: "Luxury Hospitality & Five-Star Pedigree",
-    brands: "Taj Group of Hotels • Peerless Inn • Fortune Hospitality • Vedic Village Spa Resort",
-    desc: "Forged in India's most prestigious luxury kitchens, mastering classical fundamentals, high-volume fine dining discipline, and the profound depth of authentic Indian culinary heritage.",
-    icon: Award,
-  },
-  {
-    era: "The International Horizon",
-    title: "Global River Cruises & Haute Cuisine",
-    brands: "Uniworld Boutique River Cruise Collection • Edelweiss • Avalon Waterways • Barak • Al Barandah",
-    desc: "Navigating international waterways to deliver world-class gastronomy for discerning global travellers, harmonizing European haute cuisine techniques with vibrant cross-cultural flavour profiles.",
-    icon: Anchor,
-  },
-  {
-    era: "The Modern Frontier",
-    title: "Boutique Resorts & Exclusive Supper Clubs",
-    brands: "Araiya Hotels & Resorts • Polo Towers • Private Residence Supper Clubs",
-    desc: "Pioneering chef-curated seasonal tasting menus, intimate sit-down suppers, and contemporary grazing concepts where seasonal ingredients and culinary storytelling take centre stage.",
-    icon: Compass,
-  },
-];
 
 const PRESTIGE_BRANDS = [
   "Taj Group of Hotels",
@@ -132,48 +107,6 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
               <p>
                 Throughout leadership posts with premier resort groups including <strong className="text-white font-medium">Araiya Hotels & Resorts</strong> and <strong className="text-white font-medium">Polo Towers</strong>, Chef Zaved continuously refined his signature culinary voice: harmonizing authentic Indian flavour profiles with avant-garde modern gastronomy.
               </p>
-            </div>
-
-            {/* 3 Chronological Milestone Chapters */}
-            <div className="space-y-4 pt-2">
-              <div className="text-xs uppercase tracking-[0.25em] text-[#d4af37] font-semibold mb-3">
-                Career Milestones & Pedigree
-              </div>
-
-              {CAREER_MILESTONES.map((milestone, idx) => {
-                const IconComponent = milestone.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="p-5 sm:p-6 rounded-2xl bg-[#0b2b22]/60 border border-[#144234] hover:border-[#d4af37]/50 transition-all duration-300 group"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#d4af37]/15 border border-[#d4af37]/40 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                        <IconComponent className="w-5 h-5 text-[#d4af37]" />
-                      </div>
-
-                      <div className="flex-1">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                          <h4 className="font-serif text-base sm:text-lg font-bold text-white group-hover:text-[#fae8b4] transition-colors">
-                            {milestone.title}
-                          </h4>
-                          <span className="text-[11px] uppercase tracking-wider text-[#d4af37] font-sans font-semibold">
-                            {milestone.era}
-                          </span>
-                        </div>
-
-                        <p className="text-xs text-[#fae8b4]/90 font-medium font-sans mt-1">
-                          {milestone.brands}
-                        </p>
-
-                        <p className="text-xs sm:text-sm text-neutral-300 font-sans mt-2 leading-relaxed">
-                          {milestone.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
             </div>
 
             {/* Prestige Brands Marquee Pills */}
