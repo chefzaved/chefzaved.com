@@ -15,21 +15,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Chef Zaved | Ultra-Premium Private Chef & Bespoke Fine Dining",
+  title: "Chef Zaved | Master of Modern Gastronomy",
   description:
     "Experience bespoke fine dining, private in-home chef services, luxury event catering, and masterclasses by Chef Zaved. Crafting culinary masterpieces, one plate at a time.",
   keywords: [
     "Chef Zaved",
+    "Master of Modern Gastronomy",
     "Private Chef",
-    "Luxury Event Catering",
+    "Event Catering",
     "Fine Dining In Home",
     "Gourmet Masterclasses",
     "Bespoke Menus",
-    "Michelin Experience",
   ],
   authors: [{ name: "Chef Zaved" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
-    title: "Chef Zaved | Ultra-Premium Private Chef Services",
+    title: "Chef Zaved | Master of Modern Gastronomy",
     description: "Crafting Culinary Masterpieces, One Plate at a Time.",
     url: "https://chefzaved.com",
     siteName: "Chef Zaved Gastronomy",
