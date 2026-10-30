@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   UtensilsCrossed,
   Mail,
   Phone,
   MapPin,
-  ArrowRight,
   ShieldCheck,
-  CheckCircle,
 } from "lucide-react";
 import { CHEF_INFO } from "@/data/chefData";
 
@@ -59,34 +57,6 @@ export default function Footer({
   onOpenConciergePortal,
   onOpenBooking,
 }: FooterProps) {
-  const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [newsletterSuccess, setNewsletterSuccess] = useState(false);
-  const [isSubscribing, setIsSubscribing] = useState(false);
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newsletterEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newsletterEmail)) {
-      return;
-    }
-
-    setIsSubscribing(true);
-    try {
-      const res = await fetch("/api/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: newsletterEmail }),
-      });
-      if (res.ok) {
-        setNewsletterSuccess(true);
-        setNewsletterEmail("");
-      }
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setIsSubscribing(false);
-    }
-  };
-
   return (
     <footer className="bg-[#061a14] border-t border-[#144234] text-neutral-300 relative overflow-hidden">
       {/* Decorative top gold hairline */}
@@ -94,8 +64,8 @@ export default function Footer({
 
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
-          {/* Col 1: Brand & Bio (4 Cols) */}
-          <div className="lg:col-span-4 space-y-5">
+          {/* Col 1: Brand & Bio (5 Cols) */}
+          <div className="lg:col-span-5 space-y-5">
             <div className="flex items-center gap-3.5 sm:gap-5">
               <a href="#hero" className="inline-block group focus:outline-none" aria-label="Chef Zaved">
                 <img
@@ -163,8 +133,8 @@ export default function Footer({
             </div>
           </div>
 
-          {/* Col 2: Navigation Links (2 Cols) */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* Col 2: Navigation Links (3 Cols) */}
+          <div className="lg:col-span-3 space-y-3">
             <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-white">
               Navigation
             </h4>
@@ -202,8 +172,8 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* Col 3: Contact & Location (3 Cols) */}
-          <div id="contact" className="lg:col-span-3 space-y-3 scroll-mt-24">
+          {/* Col 3: Contact & Location (4 Cols) */}
+          <div id="contact" className="lg:col-span-4 space-y-3 scroll-mt-24">
             <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-white">
               Contact Us
             </h4>
@@ -241,47 +211,6 @@ export default function Footer({
                 <span>Contact Us & Reservation Desk</span>
               </button>
             </div>
-          </div>
-
-          {/* Col 4: Private Circle Newsletter (3 Cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-white">
-              The Private Salon
-            </h4>
-            <p className="text-xs text-neutral-300">
-              Receive confidential invitations to seasonal menu previews, rare truffle harvests, and private masterclasses.
-            </p>
-
-            {newsletterSuccess ? (
-              <div className="p-3 rounded-xl bg-amber-500/10 border border-[#d4af37]/40 text-xs text-amber-200 flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#d4af37]" />
-                <span>Welcome to Chef Zaved&apos;s culinary circle.</span>
-              </div>
-            ) : (
-              <form onSubmit={handleNewsletterSubmit} className="space-y-2">
-                <div className="relative">
-                  <input
-                    type="email"
-                    required
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    placeholder="Enter private email..."
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-[#061a14] border border-[#144234] focus:border-[#d4af37] text-white text-xs placeholder-neutral-400 focus:outline-none"
-                  />
-                  <button
-                    type="submit"
-                    disabled={isSubscribing}
-                    className="absolute right-1 top-1 bottom-1 px-3 rounded-md bg-[#d4af37] text-[#061a14] hover:bg-amber-300 transition-colors flex items-center justify-center text-xs font-semibold"
-                    title="Subscribe"
-                  >
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-                <span className="text-[10px] text-neutral-400 block">
-                  Discreet. Strictly zero spam.
-                </span>
-              </form>
-            )}
           </div>
         </div>
 
