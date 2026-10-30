@@ -137,12 +137,12 @@ export default function MenuPortfolio({
           onTouchEnd={handleTouchEnd}
         >
           {/* ============================================================ */}
-          {/* LEFT COLUMN: 60% Width – Seamless Edge-Blended Photo Slider   */}
+          {/* LEFT COLUMN: 60% Width – Crystal-Clear Food Image Slider      */}
           {/* ============================================================ */}
           <div className="lg:col-span-7 xl:col-span-7 relative flex flex-col items-center">
             
-            {/* Seamless Borderless Image Stage (No box container, melts into #061a14) */}
-            <div className="relative w-full max-w-[620px] xl:max-w-[660px] aspect-[4/3] sm:aspect-[16/11] overflow-hidden select-none bg-transparent">
+            {/* Crystal-Clear Image Stage - Zero blur, zero fog overlay */}
+            <div className="relative w-full max-w-[580px] xl:max-w-[620px] aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden select-none shadow-[0_20px_60px_-15px_rgba(0,0,0,0.85)] border-0">
               {MODERN_EUROPEAN_MENU.map((dish, idx) => {
                 const isActive = idx === currentIndex;
                 return (
@@ -152,22 +152,13 @@ export default function MenuPortfolio({
                       isActive ? "opacity-100 z-1 pointer-events-auto" : "opacity-0 -z-10 pointer-events-none"
                     }`}
                   >
-                    {/* The Photograph - Perfectly proportioned, no box background */}
+                    {/* 100% Crisp, Pure Photograph - No Blur Overlay */}
                     <img
                       src={dish.image}
                       alt={dish.name}
-                      className="w-full h-full object-cover object-center select-none filter brightness-[0.96] contrast-[1.06]"
+                      className="w-full h-full object-cover object-center select-none"
                       loading={idx === 0 ? "eager" : "lazy"}
                     />
-
-                    {/* Smooth Edge Dissolve into #061a14 (Top, Bottom, Left, Right) */}
-                    <div className="absolute inset-x-0 top-0 h-16 sm:h-20 bg-gradient-to-b from-[#061a14] via-[#061a14]/70 to-transparent pointer-events-none z-2" />
-                    <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#061a14] via-[#061a14]/70 to-transparent pointer-events-none z-2" />
-                    <div className="absolute inset-y-0 left-0 w-16 sm:w-20 bg-gradient-to-r from-[#061a14] via-[#061a14]/70 to-transparent pointer-events-none z-2" />
-                    <div className="absolute inset-y-0 right-0 w-16 sm:w-20 bg-gradient-to-l from-[#061a14] via-[#061a14]/70 to-transparent pointer-events-none z-2" />
-
-                    {/* Radial Corner Vignette to melt corners completely into website background */}
-                    <div className="absolute inset-0 pointer-events-none z-2 [mask-image:radial-gradient(ellipse_75%_75%_at_50%_50%,transparent_40%,black_100%)] bg-[#061a14]" />
                   </div>
                 );
               })}
@@ -191,8 +182,8 @@ export default function MenuPortfolio({
               </div>
             </div>
 
-            {/* Understated Progress Bar & Counter (Positioned directly under photo without a box) */}
-            <div className="w-full max-w-[620px] xl:max-w-[660px] mt-4 px-2 flex items-center justify-between select-none">
+            {/* Understated Progress Bar & Counter */}
+            <div className="w-full max-w-[580px] xl:max-w-[620px] mt-4 px-2 flex items-center justify-between select-none">
               <div className="flex items-center gap-1 sm:gap-1.5 max-w-[70%] overflow-x-auto py-1">
                 {MODERN_EUROPEAN_MENU.map((_, idx) => (
                   <button
