@@ -25,20 +25,19 @@ export default function MenuPortfolio({
   onRequestDish,
   onOpenBooking,
 }: MenuPortfolioProps) {
-  const [selectedCategory, setSelectedCategory] = useState<
-    "All" | "Appetizers" | "Mains" | "Desserts" | "Signature Fusion Specials"
-  >("All");
-
-  const [dietaryFilter, setDietaryFilter] = useState<string>("All");
-  const [activeModalDish, setActiveModalDish] = useState<Dish | null>(null);
-
   const categories = [
     "All",
-    "Appetizers",
-    "Mains",
-    "Desserts",
-    "Signature Fusion Specials",
+    "Authentic Bengali Heritage",
+    "Modern European & Grills",
+    "Artisanal Canapés & Amuse-Bouche",
+    "Bespoke Grazing & Desserts",
   ] as const;
+
+  type MenuCategory = (typeof categories)[number];
+
+  const [selectedCategory, setSelectedCategory] = useState<MenuCategory>("All");
+  const [dietaryFilter, setDietaryFilter] = useState<string>("All");
+  const [activeModalDish, setActiveModalDish] = useState<Dish | null>(null);
 
   const dietaryOptions = ["All", "Gluten-Free", "Halal", "Pescatarian", "Vegetarian"];
 

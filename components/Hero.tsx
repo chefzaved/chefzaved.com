@@ -15,53 +15,53 @@ interface HeroProps {
 const HERO_DISHES = [
   {
     id: "dish-1",
-    name: "Miyazaki Wagyu A5 Striploin",
-    imageUrl: "/images/hero/hero-1.jpg",
+    name: "Grand Royal Bengali Bhoj",
+    imageUrl: "/images/dishes/bengali-bhoj.jpg",
   },
   {
     id: "dish-2",
-    name: "Butter-Poached Maine Lobster Tail",
-    imageUrl: "/images/hero/hero-2.jpg",
+    name: "Pistachio-Crusted Herb Rack of Lamb",
+    imageUrl: "/images/dishes/rack-of-lamb.jpg",
   },
   {
     id: "dish-3",
-    name: "Wild Brittany Turbot en Papillote",
-    imageUrl: "/images/hero/hero-3.jpg",
+    name: "Classic Shorshe Ilish in Clay Handi",
+    imageUrl: "/images/dishes/shorshe-ilish.jpg",
   },
   {
     id: "dish-4",
-    name: "Pan-Seared Hokkaido Scallops",
-    imageUrl: "/images/hero/hero-4.jpg",
+    name: "Pan-Seared Seabass on Potato Rosti",
+    imageUrl: "/images/dishes/seabass-rosti.jpg",
   },
   {
     id: "dish-5",
-    name: "Charred Tandoori Tiger Prawns",
-    imageUrl: "/images/hero/hero-5.jpg",
+    name: "Gold Daab Chingri Malai Curry",
+    imageUrl: "/images/dishes/chingri-malai-curry.jpg",
   },
   {
     id: "dish-6",
-    name: "Deconstructed Valrhona Gold Dome",
-    imageUrl: "/images/hero/hero-6.jpg",
+    name: "Pan-Seared Duck Breast with Cherry Reduction",
+    imageUrl: "/images/dishes/duck-breast.jpg",
   },
   {
     id: "dish-7",
-    name: "Binchotan Grilled Prime Ribeye",
-    imageUrl: "/images/hero/hero-7.jpg",
+    name: "Kolkata Kosha Mangsho",
+    imageUrl: "/images/dishes/kosha-mangsho.jpg",
   },
   {
     id: "dish-8",
-    name: "Truffle Saffron Risotto & Tagliolini",
-    imageUrl: "/images/hero/hero-8.jpg",
+    name: "Scottish Salmon with Asparagus & Baby Potatoes",
+    imageUrl: "/images/dishes/salmon-asparagus.jpg",
   },
   {
     id: "dish-9",
-    name: "Artisanal Hamachi & Otoro Crudo",
-    imageUrl: "/images/hero/hero-9.jpg",
+    name: "Artisanal Truffle & Sesame Fusion Sushi",
+    imageUrl: "/images/dishes/fusion-sushi.jpg",
   },
   {
     id: "dish-10",
-    name: "Royal Chef's Table Degustation",
-    imageUrl: "/images/hero/hero-10.jpg",
+    name: "Steamed Beetroot & Edamame Crystal Dim Sum",
+    imageUrl: "/images/dishes/dimsum-beetroot.jpg",
   },
 ];
 
