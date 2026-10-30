@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import CulinaryJourney from "@/components/CulinaryJourney";
 import Services from "@/components/Services";
 import MenuPortfolio from "@/components/MenuPortfolio";
 import Testimonials from "@/components/Testimonials";
@@ -66,6 +67,9 @@ export default function Home() {
 
         {/* 3. About Chef Zaved Section */}
         <About />
+
+        {/* 3.5. My Culinary Journey Editorial Section */}
+        <CulinaryJourney onOpenBooking={handleOpenBooking} />
 
         {/* 4. Services Offered */}
         <Services onSelectService={handleSelectService} />
