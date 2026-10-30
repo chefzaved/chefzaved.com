@@ -107,22 +107,6 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
                   </div>
                 </div>
               </div>
-
-              {/* Experience Highlights Quick Metric Ribbon */}
-              <div className="mt-5 grid grid-cols-3 gap-2.5 text-center">
-                <div className="p-3 rounded-xl bg-[#0b2b22]/70 border border-[#144234]">
-                  <div className="font-serif text-lg sm:text-xl font-bold text-[#d4af37]">18+</div>
-                  <div className="text-[10px] text-neutral-300 uppercase tracking-wider mt-0.5">Years Legacy</div>
-                </div>
-                <div className="p-3 rounded-xl bg-[#0b2b22]/70 border border-[#144234]">
-                  <div className="font-serif text-lg sm:text-xl font-bold text-[#d4af37]">11+</div>
-                  <div className="text-[10px] text-neutral-300 uppercase tracking-wider mt-0.5">Global Brands</div>
-                </div>
-                <div className="p-3 rounded-xl bg-[#0b2b22]/70 border border-[#144234]">
-                  <div className="font-serif text-lg sm:text-xl font-bold text-[#d4af37]">650+</div>
-                  <div className="text-[10px] text-neutral-300 uppercase tracking-wider mt-0.5">Bespoke Dinners</div>
-                </div>
-              </div>
             </div>
           </div>
 

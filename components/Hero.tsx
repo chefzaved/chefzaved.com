@@ -2,14 +2,11 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import {
-  Utensils,
   Calendar,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
-  Star,
 } from "lucide-react";
-import { CHEF_INFO } from "@/data/chefData";
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -142,25 +139,16 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
         {/* Clean Hero Bottom Bar */}
         <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pb-7 sm:pb-9 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
-          {/* Left/Center: Dual CTA buttons & indicator dots */}
+          {/* Left/Center: Booking CTA button & indicator dots */}
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full md:w-auto">
             <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
               <button
                 onClick={onOpenBooking}
-                className="flex-1 sm:flex-initial group inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider text-[#061a14] bg-gradient-to-r from-[#f5df93] via-[#d4af37] to-[#ba8d28] hover:from-amber-200 hover:to-[#d4af37] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
+                className="group inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-2.5 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider text-[#061a14] bg-gradient-to-r from-[#f5df93] via-[#d4af37] to-[#ba8d28] hover:from-amber-200 hover:to-[#d4af37] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
               >
                 <Calendar className="w-3.5 h-3.5 text-[#061a14]" />
-                <span className="hidden sm:inline">Book Private Dining</span>
-                <span className="sm:hidden">Book Dining</span>
+                <span>Book Private Dining</span>
               </button>
-
-              <a
-                href="#menu"
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 rounded-full font-medium text-xs sm:text-sm uppercase tracking-wider text-neutral-100 bg-[#061a14]/85 hover:bg-[#0b2b22] border border-[#d4af37]/60 hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300 backdrop-blur-md transform hover:-translate-y-0.5 whitespace-nowrap"
-              >
-                <Utensils className="w-3.5 h-3.5 text-[#d4af37]" />
-                <span>Explore Menu</span>
-              </a>
             </div>
 
             {/* 10 Minimalist Progress Indicator Dots */}
@@ -194,57 +182,12 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         {/* Down Chevron indicator pointing to rest of site */}
         <div className="absolute left-1/2 -translate-x-1/2 bottom-1.5 z-10 pointer-events-auto">
           <a
-            href="#credentials"
+            href="#about"
             aria-label="Scroll down to explore Chef Zaved"
             className="inline-flex flex-col items-center text-[10px] tracking-widest uppercase text-neutral-400 hover:text-[#d4af37] transition-colors"
           >
             <ChevronDown className="w-4 h-4 animate-bounce text-[#d4af37]" />
           </a>
-        </div>
-      </section>
-
-      {/* Prestige Credentials & Trust Ribbon (Placed immediately below the 100vh Hero) */}
-      <section id="credentials" className="relative z-10 bg-[#061a14] border-y border-[#d4af37]/25 py-6">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y md:divide-y-0 md:divide-x divide-[#d4af37]/15">
-            <div className="flex flex-col items-center pt-3 md:pt-0">
-              <div className="flex items-center gap-1 text-2xl sm:text-3xl font-serif font-bold text-white">
-                <span className="text-[#d4af37]">{CHEF_INFO.experienceYears}+</span>
-                <span className="text-xs font-sans font-normal text-neutral-300">Years</span>
-              </div>
-              <span className="text-[11px] sm:text-xs text-neutral-300 mt-1 uppercase tracking-wider text-center">
-                Luxury Hospitality
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center pt-3 md:pt-0 md:pl-6">
-              <div className="flex items-center gap-1 text-2xl sm:text-3xl font-serif font-bold text-white">
-                <span className="text-[#d4af37]">{CHEF_INFO.privateDinnersCount}</span>
-              </div>
-              <span className="text-[11px] sm:text-xs text-neutral-300 mt-1 uppercase tracking-wider text-center">
-                Bespoke Dinners
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center pt-3 md:pt-0 md:pl-6">
-              <div className="flex items-center gap-1.5 text-2xl sm:text-3xl font-serif font-bold text-white">
-                <span className="text-[#d4af37]">{CHEF_INFO.satisfactionRate}</span>
-                <Star className="w-4 h-4 fill-[#d4af37] text-[#d4af37]" />
-              </div>
-              <span className="text-[11px] sm:text-xs text-neutral-300 mt-1 uppercase tracking-wider text-center">
-                5-Star VIP Rating
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center pt-3 md:pt-0 md:pl-6">
-              <div className="flex items-center gap-1 text-2xl sm:text-3xl font-serif font-bold text-white">
-                <span className="text-[#d4af37]">100%</span>
-              </div>
-              <span className="text-[11px] sm:text-xs text-neutral-300 mt-1 uppercase tracking-wider text-center">
-                Farm-To-Table Sourced
-              </span>
-            </div>
-          </div>
         </div>
       </section>
     </>

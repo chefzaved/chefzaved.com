@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { Compass, ShieldCheck, HeartHandshake, CheckCircle2, Sparkles, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import { CHEF_INFO } from "@/data/chefData";
 
 export default function About() {
@@ -15,10 +14,6 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header - Shifted to Left */}
         <div className="text-left max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a231b] border border-[#d4af37]/30 text-[#d4af37] text-xs uppercase tracking-widest font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>The Culinary Vision</span>
-          </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
             About <span className="gold-gradient-text">Chef Zaved</span>
           </h2>
@@ -64,28 +59,6 @@ export default function About() {
                   />
                 </div>
               </div>
-            </div>
-
-            {/* 4 Pillars Grid */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {CHEF_INFO.credentials.map((cred, idx) => (
-                <div
-                  key={idx}
-                  className="p-4 rounded-xl bg-[#0b2b22]/70 border border-[#144234] hover:border-[#d4af37]/50 transition-colors duration-300 flex items-start gap-3"
-                >
-                  <div className="w-7 h-7 rounded-lg bg-[#d4af37]/15 flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#d4af37]" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-white font-sans">
-                      {cred.title}
-                    </h4>
-                    <p className="text-xs text-neutral-300 mt-1 leading-normal">
-                      {cred.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
