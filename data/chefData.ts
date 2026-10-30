@@ -387,18 +387,6 @@ export const DISHES_DATA: Dish[] = [
     imageUrl: "/images/dishes/tuna-tataki.jpg",
   },
   {
-    id: "can-5",
-    name: "Stuffed Zucchini Blossom with Saffron Jus",
-    category: "Artisanal Canapés & Amuse-Bouche",
-    description:
-      "Delicate organic zucchini flower filled with whipped ricotta and herbs, gently poached and served in an aromatic saffron jus with pink peppercorns.",
-    ingredients: ["Zucchini Blossom", "Artisanal Ricotta", "Kashmiri Saffron Emulsion", "Pink Peppercorns", "Fresh Basil"],
-    dietary: ["Vegetarian", "Gluten-Free"],
-    winePairing: "Pinot Bianco Alto Adige 2021",
-    badge: "Bespoke Plating",
-    imageUrl: "/images/dishes/stuffed-zucchini-flower.jpg",
-  },
-  {
     id: "can-6",
     name: "Compressed Watermelon, Feta & Mint Skewers",
     category: "Artisanal Canapés & Amuse-Bouche",
