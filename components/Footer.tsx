@@ -205,10 +205,10 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* Col 3: Contact & Global Presence (3 Cols) */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Col 3: Contact & Location (3 Cols) */}
+          <div id="contact" className="lg:col-span-3 space-y-3 scroll-mt-24">
             <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-white">
-              Private Concierge
+              Contact Us
             </h4>
             <div className="space-y-2.5 text-xs sm:text-sm text-neutral-200">
               <div className="flex items-start gap-2.5">
@@ -241,7 +241,7 @@ export default function Footer({
                 className="inline-flex items-center gap-1.5 text-xs text-[#d4af37] hover:text-amber-200 transition-colors underline underline-offset-4"
               >
                 <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Internal Concierge Reservation Portal</span>
+                <span>Contact Us & Reservation Desk</span>
               </button>
             </div>
           </div>

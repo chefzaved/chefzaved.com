@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { UtensilsCrossed, Calendar, Menu, X, Phone, ShieldCheck, ShoppingBag } from "lucide-react";
+import { CHEF_INFO } from "@/data/chefData";
 
 interface NavbarProps {
   requestedDishesCount: number;
@@ -88,15 +89,15 @@ export default function Navbar({
                 </a>
               )}
 
-              {/* Direct Concierge link */}
-              <button
-                onClick={onOpenConciergePortal}
-                className="hidden xl:flex items-center gap-1.5 text-xs text-neutral-300 hover:text-white px-2.5 py-1.5 rounded border border-[#144234] hover:border-[#d4af37]/50 bg-[#09241c]/50 transition-all"
-                title="View concierge reservations portal"
+              {/* Direct Contact Us link */}
+              <a
+                href="#contact"
+                className="hidden xl:flex items-center gap-1.5 text-xs text-neutral-300 hover:text-white px-3 py-1.5 rounded-full border border-[#144234] hover:border-[#d4af37]/60 bg-[#09241c]/50 hover:bg-[#0b2b22] transition-all"
+                title="Contact Chef Zaved"
               >
-                <ShieldCheck className="w-3.5 h-3.5 text-[#d4af37]" />
-                <span>Concierge Desk</span>
-              </button>
+                <Phone className="w-3.5 h-3.5 text-[#d4af37]" />
+                <span>Contact Us</span>
+              </a>
 
               {/* Main "Book a Chef" CTA */}
               <button
@@ -169,21 +170,19 @@ export default function Navbar({
               Book a Chef
             </button>
 
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenConciergePortal();
-              }}
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full py-2.5 rounded-lg border border-[#144234] bg-[#09241c] text-neutral-300 hover:text-white text-xs flex items-center justify-center gap-2"
             >
-              <ShieldCheck className="w-4 h-4 text-[#d4af37]" />
-              <span>Concierge Desk & Reservations</span>
-            </button>
+              <Phone className="w-4 h-4 text-[#d4af37]" />
+              <span>Contact Us</span>
+            </a>
 
             <div className="mt-4 pt-4 border-t border-[#0d2f25] text-center text-xs text-neutral-400">
               <p>Direct Inquiries:</p>
-              <a href="tel:+18007942433" className="text-[#d4af37] font-medium flex items-center justify-center gap-1.5 mt-1">
-                <Phone className="w-3.5 h-3.5" /> +1 (800) 794-CHEF
+              <a href={`tel:${CHEF_INFO.contact.phone.replace(/\D/g, "")}`} className="text-[#d4af37] font-medium flex items-center justify-center gap-1.5 mt-1">
+                <Phone className="w-3.5 h-3.5" /> {CHEF_INFO.contact.phone}
               </a>
             </div>
           </div>

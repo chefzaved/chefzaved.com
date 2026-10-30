@@ -73,10 +73,10 @@ export const CHEF_INFO = {
     },
   ],
   contact: {
-    email: "concierge@chefzaved.com",
-    phone: "+1 (800) 794-CHEF",
-    directMobile: "+1 (555) 392-8820",
-    locations: "London • New York • Dubai • Beverly Hills • Private Travel Worldwide",
+    email: "enquire@chefzaved.com",
+    phone: "+91 84200 08483",
+    directMobile: "+91 84200 08483",
+    locations: "Newtown, Salt Lake Sec V, Kolkata, West Bengal, India",
     notice: "Private dining bookings require a minimum of 72 hours advance notice.",
   },
   socials: [
