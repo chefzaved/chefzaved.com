@@ -36,7 +36,6 @@ export default function Navbar({
     { label: "My Journey", href: "#culinary-journey" },
     { label: "Signature Menu", href: "#menu" },
     { label: "Testimonials", href: "#testimonials" },
-    { label: "Contact Us", href: "#contact" },
   ];
 
   return (
