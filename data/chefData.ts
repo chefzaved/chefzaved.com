@@ -75,6 +75,11 @@ export const BACKGROUND_SLIDES: BackgroundSlide[] = [
     imageUrl: "/images/background/5.png",
     name: "Handcrafted Truffle & Sesame Fusion Sushi",
   },
+  {
+    id: 6,
+    imageUrl: "/images/background/6.jpeg",
+    name: "Artisanal Mediterranean Seafood & Scallop Platter",
+  },
 ];
 
 export const CHEF_INFO = {

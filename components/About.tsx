@@ -68,7 +68,7 @@ export default function About() {
               {/* Main Primary Image: Chef Zaved original photo fitted in frame */}
               <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/50 shadow-2xl bg-[#072018] group">
                 <img
-                  src="/images/chef-1.jpeg"
+                  src="/images/chef-about.jpg"
                   alt="Chef Zaved - Master of Modern Gastronomy & Private Dining"
                   className="w-full h-auto block filter brightness-100 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                 />
