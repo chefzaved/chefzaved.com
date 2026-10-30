@@ -127,7 +127,7 @@ export default function MenuPortfolio({
 
         {/* ============================================================ */}
         {/* 2. FULL-WIDTH EDITORIAL SPLIT LAYOUT (60% LEFT / 40% RIGHT)  */}
-        {/* No cards, no boxed containers, no borders, pure luxury editorial */}
+        {/* Zero Box, Zero Card Border - Photos seamlessly melt into bg  */}
         {/* ============================================================ */}
         <div
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center"
@@ -137,11 +137,12 @@ export default function MenuPortfolio({
           onTouchEnd={handleTouchEnd}
         >
           {/* ============================================================ */}
-          {/* LEFT COLUMN: 60% Width – Automatic Food Image Slider         */}
+          {/* LEFT COLUMN: 60% Width – Seamless Edge-Blended Photo Slider   */}
           {/* ============================================================ */}
-          <div className="lg:col-span-7 xl:col-span-7 relative">
-            {/* Image Stage – Borderless, seamless presentation */}
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] xl:aspect-[16/11] rounded-2xl overflow-hidden bg-[#04120e] shadow-[0_30px_90px_-20px_rgba(0,0,0,0.9)] select-none">
+          <div className="lg:col-span-7 xl:col-span-7 relative flex flex-col items-center">
+            
+            {/* Seamless Borderless Image Stage (No box container, melts into #061a14) */}
+            <div className="relative w-full max-w-[620px] xl:max-w-[660px] aspect-[4/3] sm:aspect-[16/11] overflow-hidden select-none bg-transparent">
               {MODERN_EUROPEAN_MENU.map((dish, idx) => {
                 const isActive = idx === currentIndex;
                 return (
@@ -151,68 +152,67 @@ export default function MenuPortfolio({
                       isActive ? "opacity-100 z-1 pointer-events-auto" : "opacity-0 -z-10 pointer-events-none"
                     }`}
                   >
-                    {/* Atmospheric ambient backdrop fill for visual fullness */}
-                    <img
-                      src={dish.image}
-                      alt=""
-                      aria-hidden="true"
-                      className="absolute inset-0 w-full h-full object-cover filter blur-2xl scale-110 opacity-30 brightness-50 pointer-events-none"
-                    />
-
-                    {/* Main High-Resolution Photograph – Perfectly fitted without cropping */}
+                    {/* The Photograph - Perfectly proportioned, no box background */}
                     <img
                       src={dish.image}
                       alt={dish.name}
-                      className="relative z-1 w-full h-full object-contain p-2 sm:p-4 select-none filter brightness-[0.98] contrast-[1.04]"
+                      className="w-full h-full object-cover object-center select-none filter brightness-[0.96] contrast-[1.06]"
                       loading={idx === 0 ? "eager" : "lazy"}
                     />
 
-                    {/* Subtle vignette for editorial depth */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#061a14]/60 via-transparent to-[#061a14]/30 pointer-events-none z-2" />
+                    {/* Smooth Edge Dissolve into #061a14 (Top, Bottom, Left, Right) */}
+                    <div className="absolute inset-x-0 top-0 h-16 sm:h-20 bg-gradient-to-b from-[#061a14] via-[#061a14]/70 to-transparent pointer-events-none z-2" />
+                    <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#061a14] via-[#061a14]/70 to-transparent pointer-events-none z-2" />
+                    <div className="absolute inset-y-0 left-0 w-16 sm:w-20 bg-gradient-to-r from-[#061a14] via-[#061a14]/70 to-transparent pointer-events-none z-2" />
+                    <div className="absolute inset-y-0 right-0 w-16 sm:w-20 bg-gradient-to-l from-[#061a14] via-[#061a14]/70 to-transparent pointer-events-none z-2" />
+
+                    {/* Radial Corner Vignette to melt corners completely into website background */}
+                    <div className="absolute inset-0 pointer-events-none z-2 [mask-image:radial-gradient(ellipse_75%_75%_at_50%_50%,transparent_40%,black_100%)] bg-[#061a14]" />
                   </div>
                 );
               })}
 
-              {/* Floating Slide Navigation Arrows on Image */}
-              <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex items-center justify-between z-10 pointer-events-none">
+              {/* Minimal floating navigation arrows */}
+              <div className="absolute inset-x-2 sm:inset-x-4 top-1/2 -translate-y-1/2 flex items-center justify-between z-10 pointer-events-none">
                 <button
                   onClick={prevSlide}
                   aria-label="Previous culinary creation"
-                  className="pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/40 hover:border-[#d4af37] flex items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
+                  className="pointer-events-auto w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-[#d4af37] hover:text-[#061a14] border border-[#d4af37]/40 hover:border-[#d4af37] flex items-center justify-center backdrop-blur-md shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
                 >
-                  <ChevronLeft className="w-5 h-5" />
+                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
                 <button
                   onClick={nextSlide}
                   aria-label="Next culinary creation"
-                  className="pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/40 hover:border-[#d4af37] flex items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
+                  className="pointer-events-auto w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-[#d4af37] hover:text-[#061a14] border border-[#d4af37]/40 hover:border-[#d4af37] flex items-center justify-center backdrop-blur-md shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
-
-              {/* Minimal Pagination Progress Bar at Bottom of Image */}
-              <div className="absolute bottom-3 left-4 right-4 z-10 flex items-center justify-between">
-                <div className="flex items-center gap-1 sm:gap-1.5 max-w-[70%] overflow-x-auto py-1">
-                  {MODERN_EUROPEAN_MENU.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => goToSlide(idx)}
-                      aria-label={`Go to dish ${idx + 1}`}
-                      className={`h-1 rounded-full transition-all duration-300 cursor-pointer ${
-                        idx === currentIndex
-                          ? "w-6 sm:w-8 bg-gradient-to-r from-[#d4af37] to-[#fae8b4] shadow-[0_0_8px_rgba(212,175,55,0.8)]"
-                          : "w-1.5 sm:w-2 bg-white/30 hover:bg-[#d4af37]/80"
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <span className="text-[11px] font-mono tracking-widest text-[#d4af37] bg-[#061a14]/85 px-2.5 py-0.5 rounded-full border border-[#d4af37]/30 backdrop-blur-sm">
-                  {String(currentIndex + 1).padStart(2, "0")} / {String(totalDishes).padStart(2, "0")}
-                </span>
-              </div>
             </div>
+
+            {/* Understated Progress Bar & Counter (Positioned directly under photo without a box) */}
+            <div className="w-full max-w-[620px] xl:max-w-[660px] mt-4 px-2 flex items-center justify-between select-none">
+              <div className="flex items-center gap-1 sm:gap-1.5 max-w-[70%] overflow-x-auto py-1">
+                {MODERN_EUROPEAN_MENU.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => goToSlide(idx)}
+                    aria-label={`Go to dish ${idx + 1}`}
+                    className={`h-1 rounded-full transition-all duration-300 cursor-pointer ${
+                      idx === currentIndex
+                        ? "w-5 sm:w-7 bg-gradient-to-r from-[#d4af37] to-[#fae8b4] shadow-[0_0_8px_rgba(212,175,55,0.8)]"
+                        : "w-1.5 sm:w-2 bg-white/20 hover:bg-[#d4af37]/80"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <span className="text-[11px] font-mono tracking-widest text-[#d4af37] bg-[#061a14] px-2.5 py-0.5 rounded-full border border-[#d4af37]/30">
+                {String(currentIndex + 1).padStart(2, "0")} / {String(totalDishes).padStart(2, "0")}
+              </span>
+            </div>
+
           </div>
 
           {/* ============================================================ */}
