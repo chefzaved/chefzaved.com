@@ -13,8 +13,8 @@ export default function About() {
       <div className="absolute bottom-10 right-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        {/* Section Header - Shifted to Left */}
+        <div className="text-left max-w-3xl mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a231b] border border-[#d4af37]/30 text-[#d4af37] text-xs uppercase tracking-widest font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>The Culinary Vision</span>
@@ -22,30 +22,16 @@ export default function About() {
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
             About <span className="gold-gradient-text">Chef Zaved</span>
           </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4" />
+          <div className="w-20 h-0.5 bg-gradient-to-r from-[#d4af37] via-[#d4af37]/50 to-transparent mt-4" />
           <p className="mt-4 text-base sm:text-lg text-neutral-300 font-sans">
             Bridging 18+ years across luxury hospitality, global cruise operations, and modern gastronomy.
           </p>
         </div>
 
-        {/* Main Content Grid: Imagery on Left, Narrative on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Visual Showcase (5 Cols) */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Main Primary Image: Chef Zaved original photo fitted in frame */}
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/50 shadow-2xl bg-[#072018] group">
-                <img
-                  src="/images/chef-1.jpeg"
-                  alt="Chef Zaved - Master of Modern Gastronomy & Private Dining"
-                  className="w-full h-auto block filter brightness-100 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Narrative & Credentials (7 Cols) */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+        {/* Main Content Grid: Narrative on Left (7 cols), Photo on Right (5 cols) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Narrative & Credentials (7 Cols) - Left Side */}
+          <div className="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1">
             <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-white leading-snug">
               Every menu tells a story, and every dining experience feels personal, innovative, and memorable.
             </h3>
@@ -100,6 +86,20 @@ export default function About() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Visual Showcase (5 Cols) - Right Side */}
+          <div className="lg:col-span-5 relative order-1 lg:order-2 lg:sticky lg:top-32">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+              {/* Main Primary Image: Chef Zaved original photo fitted in frame */}
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/50 shadow-2xl bg-[#072018] group">
+                <img
+                  src="/images/chef-1.jpeg"
+                  alt="Chef Zaved - Master of Modern Gastronomy & Private Dining"
+                  className="w-full h-auto block filter brightness-100 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
+                />
+              </div>
             </div>
           </div>
         </div>
