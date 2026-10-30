@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Award, Compass, ShieldCheck, HeartHandshake, CheckCircle2, Sparkles, Quote } from "lucide-react";
+import { Compass, ShieldCheck, HeartHandshake, CheckCircle2, Sparkles, Quote } from "lucide-react";
 import { CHEF_INFO } from "@/data/chefData";
 
 export default function About() {
@@ -40,21 +40,6 @@ export default function About() {
                   alt="Chef Zaved - Master of Modern Gastronomy & Private Dining"
                   className="w-full h-auto block filter brightness-100 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                 />
-              </div>
-
-              {/* Professional Credential Badge below image */}
-              <div className="mt-4 p-4 rounded-xl bg-[#0b2b22]/90 border border-[#d4af37]/40 flex items-center gap-3.5 shadow-xl">
-                <div className="w-10 h-10 rounded-full bg-[#d4af37]/15 border border-[#d4af37]/50 flex items-center justify-center shrink-0">
-                  <Award className="w-5 h-5 text-[#d4af37]" />
-                </div>
-                <div>
-                  <div className="text-xs uppercase tracking-wider text-[#d4af37] font-semibold">
-                    18+ Years Luxury Hospitality
-                  </div>
-                  <div className="text-xs text-neutral-300 font-sans mt-0.5">
-                    Taj Group • Uniworld Luxury Cruise • Global Fine Dining
-                  </div>
-                </div>
               </div>
             </div>
           </div>
