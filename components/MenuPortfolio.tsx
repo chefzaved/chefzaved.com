@@ -256,7 +256,7 @@ export default function MenuPortfolio({
                     <div
                       key={dish.id}
                       className={`absolute inset-0 flex items-center justify-center p-2 sm:p-4 transition-opacity duration-700 ease-in-out ${
-                        isActive ? "opacity-100 z-1 pointer-events-auto" : "opacity-0 -z-10 pointer-events-none"
+                        isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
                       }`}
                     >
                       {/* 100% Crisp, Pure Photograph - Perfectly fitted in frame without any top/bottom cutoffs */}
@@ -264,7 +264,7 @@ export default function MenuPortfolio({
                         src={dish.image}
                         alt={dish.name}
                         className="w-full h-full object-contain object-center select-none filter drop-shadow-[0_12px_28px_rgba(0,0,0,0.7)]"
-                        loading={idx === 0 ? "eager" : "lazy"}
+                        loading="eager"
                       />
                     </div>
                   );
