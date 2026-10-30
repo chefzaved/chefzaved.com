@@ -39,7 +39,7 @@ export default function Testimonials() {
   const activeTestimonial = testimonials[currentIndex];
 
   return (
-    <section id="testimonials" className="py-24 sm:py-32 bg-[#04120e] relative overflow-hidden">
+    <section id="testimonials" className="py-24 sm:py-32 bg-[#061a14] relative overflow-hidden">
       {/* Decorative background radial amber flare */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-amber-500/5 rounded-full blur-[160px] pointer-events-none" />
 
@@ -73,7 +73,7 @@ export default function Testimonials() {
         </div>
 
         {/* Featured Testimonial Card / Slider */}
-        <div className="relative rounded-3xl bg-gradient-to-b from-[#0b2b22] to-[#072018] border border-[#d4af37]/35 p-8 sm:p-12 lg:p-16 shadow-2xl shadow-black/80">
+        <div className="relative rounded-3xl bg-gradient-to-b from-[#0b2b22] to-[#072018] border border-[#d4af37]/35 p-8 sm:p-12 lg:p-16 shadow-2xl shadow-[#061a14]/90">
           <Quote className="w-16 h-16 sm:w-20 sm:h-20 text-[#d4af37]/15 absolute top-6 right-8 sm:top-10 sm:right-12 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col justify-between min-h-[320px]">
@@ -158,14 +158,14 @@ export default function Testimonials() {
               <button
                 onClick={handlePrev}
                 aria-label="Previous testimonial"
-                className="w-10 h-10 rounded-full border border-[#1d5c4b] bg-[#0b2b22] hover:bg-[#d4af37] text-neutral-200 hover:text-black flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full border border-[#1d5c4b] bg-[#0b2b22] hover:bg-[#d4af37] text-neutral-200 hover:text-[#061a14] flex items-center justify-center transition-colors"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={handleNext}
                 aria-label="Next testimonial"
-                className="w-10 h-10 rounded-full border border-[#1d5c4b] bg-[#0b2b22] hover:bg-[#d4af37] text-neutral-200 hover:text-black flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full border border-[#1d5c4b] bg-[#0b2b22] hover:bg-[#d4af37] text-neutral-200 hover:text-[#061a14] flex items-center justify-center transition-colors"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>

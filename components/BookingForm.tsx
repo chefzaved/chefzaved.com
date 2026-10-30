@@ -318,7 +318,7 @@ export default function BookingForm({
 
               <button
                 onClick={handleReset}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#d4af37] hover:bg-amber-300 text-black text-xs font-semibold uppercase tracking-wider transition-colors shadow-lg shadow-amber-500/20"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#d4af37] hover:bg-amber-300 text-[#061a14] text-xs font-semibold uppercase tracking-wider transition-colors shadow-lg shadow-amber-500/20"
               >
                 <RotateCcw className="w-4 h-4" />
                 <span>Book Another Date</span>
@@ -584,7 +584,7 @@ export default function BookingForm({
                       onClick={() => handleDietaryToggle(opt)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                         isSelected
-                          ? "bg-[#d4af37] text-black font-semibold shadow-sm"
+                          ? "bg-[#d4af37] text-[#061a14] font-semibold shadow-sm"
                           : "bg-[#051a13] border border-[#144234] text-neutral-200 hover:text-white hover:border-[#1d5c4b]"
                       }`}
                     >
@@ -618,11 +618,11 @@ export default function BookingForm({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full sm:w-auto px-10 py-4 rounded-full font-semibold text-xs uppercase tracking-widest text-black bg-gradient-to-r from-[#f5df93] via-[#d4af37] to-[#ba8d28] hover:from-amber-200 hover:to-[#d4af37] shadow-[0_0_25px_rgba(212,175,55,0.35)] hover:shadow-[0_0_35px_rgba(212,175,55,0.5)] transition-all duration-300 disabled:opacity-50 cursor-pointer"
+                className="w-full sm:w-auto px-10 py-4 rounded-full font-semibold text-xs uppercase tracking-widest text-[#061a14] bg-gradient-to-r from-[#f5df93] via-[#d4af37] to-[#ba8d28] hover:from-amber-200 hover:to-[#d4af37] shadow-[0_0_25px_rgba(212,175,55,0.35)] hover:shadow-[0_0_35px_rgba(212,175,55,0.5)] transition-all duration-300 disabled:opacity-50 cursor-pointer"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
-                    <span className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" />
+                    <span className="w-4 h-4 border-2 border-[#061a14] border-t-transparent rounded-full animate-spin" />
                     Transmitting Inscription...
                   </span>
                 ) : (

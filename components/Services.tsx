@@ -33,7 +33,7 @@ export default function Services({ onSelectService }: ServicesProps) {
   };
 
   return (
-    <section id="services" className="py-24 sm:py-32 bg-[#04120e] relative">
+    <section id="services" className="py-24 sm:py-32 bg-[#061a14] relative">
       {/* Decorative gradient lines */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/5 via-transparent to-transparent pointer-events-none" />
 
@@ -117,10 +117,10 @@ export default function Services({ onSelectService }: ServicesProps) {
               <div className="mt-8 pt-6 border-t border-[#144234]">
                 <button
                   onClick={() => onSelectService(service.title)}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-[#09241c] hover:bg-gradient-to-r hover:from-[#d4af37] hover:to-amber-500 text-neutral-100 hover:text-black font-semibold text-xs uppercase tracking-wider border border-[#1d5c4b] hover:border-transparent transition-all duration-300 group/btn"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-[#09241c] hover:bg-gradient-to-r hover:from-[#d4af37] hover:to-amber-500 text-neutral-100 hover:text-[#061a14] font-semibold text-xs uppercase tracking-wider border border-[#1d5c4b] hover:border-transparent transition-all duration-300 group/btn"
                 >
                   <span>Reserve This Experience</span>
-                  <ArrowRight className="w-4 h-4 text-[#d4af37] group-hover/btn:text-black group-hover/btn:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-[#d4af37] group-hover/btn:text-[#061a14] group-hover/btn:translate-x-1 transition-all" />
                 </button>
               </div>
             </div>

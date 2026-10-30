@@ -37,16 +37,16 @@ export default function FloatingCTA({
       {/* Floating Book Chef CTA */}
       <button
         onClick={onOpenBooking}
-        className="flex items-center gap-2.5 px-5 py-3 rounded-full bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#aa7c11] text-black text-xs font-semibold uppercase tracking-wider shadow-2xl shadow-amber-500/30 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+        className="flex items-center gap-2.5 px-5 py-3 rounded-full bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#aa7c11] text-[#061a14] text-xs font-semibold uppercase tracking-wider shadow-2xl shadow-amber-500/30 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
       >
         {requestedDishesCount > 0 ? (
           <>
-            <ShoppingBag className="w-4 h-4 text-black" />
+            <ShoppingBag className="w-4 h-4 text-[#061a14]" />
             <span>Complete Inquiry ({requestedDishesCount})</span>
           </>
         ) : (
           <>
-            <Calendar className="w-4 h-4 text-black" />
+            <Calendar className="w-4 h-4 text-[#061a14]" />
             <span>Book a Chef</span>
           </>
         )}

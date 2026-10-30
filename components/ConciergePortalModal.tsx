@@ -94,7 +94,7 @@ export default function ConciergePortalModal({
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#061a14]/92 backdrop-blur-md">
       <div className="relative w-full max-w-4xl max-h-[90vh] bg-[#072018] rounded-2xl border border-[#d4af37]/50 shadow-2xl flex flex-col overflow-hidden animate-fadeIn">
         {/* Header */}
         <div className="p-6 border-b border-[#144234] flex items-center justify-between bg-[#0b2b22]">
@@ -175,7 +175,7 @@ export default function ConciergePortalModal({
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs font-bold text-[#d4af37] bg-black/40 px-2.5 py-1 rounded border border-[#d4af37]/30">
+                    <span className="font-mono text-xs font-bold text-[#d4af37] bg-[#061a14]/60 px-2.5 py-1 rounded border border-[#d4af37]/30">
                       {b.referenceCode}
                     </span>
                     <h4 className="font-serif text-base font-bold text-white">

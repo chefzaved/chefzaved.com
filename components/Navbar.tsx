@@ -115,7 +115,7 @@ export default function Navbar({
             <div className="flex sm:hidden items-center gap-2">
               <button
                 onClick={onOpenBooking}
-                className="px-3 py-1.5 rounded-full bg-[#d4af37] text-black font-semibold text-xs tracking-wider uppercase"
+                className="px-3 py-1.5 rounded-full bg-[#d4af37] text-[#061a14] font-semibold text-xs tracking-wider uppercase"
               >
                 Book
               </button>
@@ -164,7 +164,7 @@ export default function Navbar({
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#aa7c11] text-black font-semibold tracking-wider uppercase text-sm shadow-lg shadow-amber-500/20"
+              className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#aa7c11] text-[#061a14] font-semibold tracking-wider uppercase text-sm shadow-lg shadow-amber-500/20"
             >
               Book a Chef
             </button>

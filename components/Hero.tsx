@@ -93,7 +93,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       {/* 100vh Full-Bleed Edge-to-Edge Hero */}
       <section
         id="hero"
-        className="relative h-screen min-h-[600px] max-h-[1080px] w-full flex flex-col justify-end overflow-hidden bg-[#04120e]"
+        className="relative h-screen min-h-[600px] max-h-[1080px] w-full flex flex-col justify-end overflow-hidden bg-[#061a14]"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -120,22 +120,22 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           })}
 
           {/* Minimal soft gradient vignettes at top and bottom */}
-          <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#04120e]/85 via-[#04120e]/30 to-transparent pointer-events-none z-2" />
-          <div className="absolute inset-x-0 bottom-0 h-44 sm:h-52 bg-gradient-to-t from-[#04120e]/90 via-[#04120e]/40 to-transparent pointer-events-none z-2" />
+          <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#061a14]/90 via-[#061a14]/35 to-transparent pointer-events-none z-2" />
+          <div className="absolute inset-x-0 bottom-0 h-44 sm:h-52 bg-gradient-to-t from-[#061a14]/95 via-[#061a14]/50 to-transparent pointer-events-none z-2" />
         </div>
 
         {/* Floating Side Navigation Arrows */}
         <button
           onClick={prevSlide}
           aria-label="Previous dish"
-          className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#04120e]/60 hover:bg-[#d4af37] text-white hover:text-[#04120e] border border-[#d4af37]/40 hover:border-[#d4af37] items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer"
+          className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#061a14]/70 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/40 hover:border-[#d4af37] items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={nextSlide}
           aria-label="Next dish"
-          className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#04120e]/60 hover:bg-[#d4af37] text-white hover:text-[#04120e] border border-[#d4af37]/40 hover:border-[#d4af37] items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer"
+          className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#061a14]/70 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/40 hover:border-[#d4af37] items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -147,16 +147,16 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
               <button
                 onClick={onOpenBooking}
-                className="flex-1 sm:flex-initial group inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider text-[#04120e] bg-gradient-to-r from-[#f5df93] via-[#d4af37] to-[#ba8d28] hover:from-amber-200 hover:to-[#d4af37] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
+                className="flex-1 sm:flex-initial group inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider text-[#061a14] bg-gradient-to-r from-[#f5df93] via-[#d4af37] to-[#ba8d28] hover:from-amber-200 hover:to-[#d4af37] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
               >
-                <Calendar className="w-3.5 h-3.5 text-[#04120e]" />
+                <Calendar className="w-3.5 h-3.5 text-[#061a14]" />
                 <span className="hidden sm:inline">Book Private Dining</span>
                 <span className="sm:hidden">Book Dining</span>
               </button>
 
               <a
                 href="#menu"
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 rounded-full font-medium text-xs sm:text-sm uppercase tracking-wider text-neutral-100 bg-[#04120e]/80 hover:bg-[#0b2b22] border border-[#d4af37]/60 hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300 backdrop-blur-md transform hover:-translate-y-0.5 whitespace-nowrap"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 rounded-full font-medium text-xs sm:text-sm uppercase tracking-wider text-neutral-100 bg-[#061a14]/85 hover:bg-[#0b2b22] border border-[#d4af37]/60 hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300 backdrop-blur-md transform hover:-translate-y-0.5 whitespace-nowrap"
               >
                 <Utensils className="w-3.5 h-3.5 text-[#d4af37]" />
                 <span>Explore Menu</span>
@@ -182,7 +182,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
           {/* Right Side: JUST Dish Name (Small, sleek ~3cm luxury pill) */}
           <div className="w-full md:w-auto flex justify-center md:justify-end">
-            <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#04120e]/85 backdrop-blur-md border border-[#d4af37]/50 shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
+            <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#061a14]/90 backdrop-blur-md border border-[#d4af37]/50 shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
               <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse shrink-0" />
               <span className="font-serif text-xs sm:text-sm lg:text-base font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#FFFDF5] via-[#fae8b4] to-[#d4af37]">
                 {currentDish.name}
@@ -204,7 +204,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       </section>
 
       {/* Prestige Credentials & Trust Ribbon (Placed immediately below the 100vh Hero) */}
-      <section id="credentials" className="relative z-10 bg-[#04120e] border-y border-[#d4af37]/25 py-6">
+      <section id="credentials" className="relative z-10 bg-[#061a14] border-y border-[#d4af37]/25 py-6">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y md:divide-y-0 md:divide-x divide-[#d4af37]/15">
             <div className="flex flex-col items-center pt-3 md:pt-0">

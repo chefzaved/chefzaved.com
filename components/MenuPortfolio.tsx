@@ -92,7 +92,7 @@ export default function MenuPortfolio({
             </div>
             <button
               onClick={onOpenBooking}
-              className="shrink-0 px-4 py-2 rounded-full bg-[#d4af37] text-black text-xs font-semibold uppercase tracking-wider hover:bg-amber-300 transition-colors shadow-md"
+              className="shrink-0 px-4 py-2 rounded-full bg-[#d4af37] text-[#061a14] text-xs font-semibold uppercase tracking-wider hover:bg-amber-300 transition-colors shadow-md"
             >
               Finalize in Booking Form
             </button>
@@ -109,7 +109,7 @@ export default function MenuPortfolio({
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all duration-300 cursor-pointer ${
                   isActive
-                    ? "bg-gradient-to-r from-[#d4af37] to-[#ba8d28] text-black font-semibold shadow-[0_0_20px_rgba(212,175,55,0.35)]"
+                    ? "bg-gradient-to-r from-[#d4af37] to-[#ba8d28] text-[#061a14] font-semibold shadow-[0_0_20px_rgba(212,175,55,0.35)]"
                     : "bg-[#09241c] text-neutral-200 hover:text-white hover:bg-[#0f382c] border border-[#144234]"
                 }`}
               >
@@ -160,7 +160,7 @@ export default function MenuPortfolio({
                     className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08241c] via-transparent to-black/30" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08241c] via-transparent to-[#061a14]/30" />
 
                   {/* Top Badges */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
@@ -180,7 +180,7 @@ export default function MenuPortfolio({
                   {/* Quick Preview Button */}
                   <button
                     onClick={() => setActiveModalDish(dish)}
-                    className="absolute bottom-3 right-3 p-2 rounded-full bg-[#061a14]/70 hover:bg-[#d4af37] text-white hover:text-black transition-colors backdrop-blur-md"
+                    className="absolute bottom-3 right-3 p-2 rounded-full bg-[#061a14]/70 hover:bg-[#d4af37] text-white hover:text-[#061a14] transition-colors backdrop-blur-md"
                     title="View Dish Details & Wine Pairing"
                   >
                     <Eye className="w-4 h-4" />
@@ -235,7 +235,7 @@ export default function MenuPortfolio({
                       className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
                         isRequested
                           ? "bg-amber-500/20 text-[#d4af37] border border-[#d4af37]"
-                          : "bg-[#0b2b22] hover:bg-[#d4af37] text-neutral-100 hover:text-black border border-[#1d5c4b] hover:border-transparent"
+                          : "bg-[#0b2b22] hover:bg-[#d4af37] text-neutral-100 hover:text-[#061a14] border border-[#1d5c4b] hover:border-transparent"
                       }`}
                     >
                       {isRequested ? (
@@ -275,11 +275,11 @@ export default function MenuPortfolio({
 
       {/* Dish Detail Lightbox Modal */}
       {activeModalDish && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#061a14]/92 backdrop-blur-md">
           <div className="relative w-full max-w-2xl bg-[#072018] rounded-2xl border border-[#d4af37]/50 shadow-2xl overflow-hidden animate-fadeIn">
             <button
               onClick={() => setActiveModalDish(null)}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/60 text-neutral-300 hover:text-white hover:bg-black transition-colors"
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-[#061a14]/80 text-neutral-300 hover:text-white hover:bg-[#0b2b22] transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -290,7 +290,7 @@ export default function MenuPortfolio({
                 alt={activeModalDish.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#072018] via-transparent to-black/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#072018] via-transparent to-[#061a14]/40" />
               <div className="absolute bottom-4 left-6">
                 <span className="text-xs uppercase tracking-wider text-[#d4af37] font-semibold">
                   {activeModalDish.category}
@@ -351,7 +351,7 @@ export default function MenuPortfolio({
                     onRequestDish(activeModalDish.name);
                     setActiveModalDish(null);
                   }}
-                  className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#d4af37] to-amber-500 text-black font-semibold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity"
+                  className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#d4af37] to-amber-500 text-[#061a14] font-semibold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity"
                 >
                   {requestedDishes.includes(activeModalDish.name)
                     ? "Remove from Request"

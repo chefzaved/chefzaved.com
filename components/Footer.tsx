@@ -88,7 +88,7 @@ export default function Footer({
   };
 
   return (
-    <footer className="bg-[#04120e] border-t border-[#144234] text-neutral-300 relative overflow-hidden">
+    <footer className="bg-[#061a14] border-t border-[#144234] text-neutral-300 relative overflow-hidden">
       {/* Decorative top gold hairline */}
       <div className="h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent" />
 
@@ -274,7 +274,7 @@ export default function Footer({
                   <button
                     type="submit"
                     disabled={isSubscribing}
-                    className="absolute right-1 top-1 bottom-1 px-3 rounded-md bg-[#d4af37] text-black hover:bg-amber-300 transition-colors flex items-center justify-center text-xs"
+                    className="absolute right-1 top-1 bottom-1 px-3 rounded-md bg-[#d4af37] text-[#061a14] hover:bg-amber-300 transition-colors flex items-center justify-center text-xs font-semibold"
                     title="Subscribe"
                   >
                     <ArrowRight className="w-3.5 h-3.5" />

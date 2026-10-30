@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#061a14] text-[#ededed] font-sans selection:bg-[#d4af37] selection:text-black">
+    <div className="min-h-screen bg-[#061a14] text-[#ededed] font-sans selection:bg-[#d4af37] selection:text-[#061a14]">
       {/* 1. Navigation Bar */}
       <Navbar
         requestedDishesCount={requestedDishes.length}
