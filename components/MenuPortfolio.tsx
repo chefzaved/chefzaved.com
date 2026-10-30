@@ -236,7 +236,7 @@ export default function MenuPortfolio({
             {/* 2. DISH NAME (Elegant refined typography) */}
             <div className="space-y-3">
               <h3
-                className={`font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-normal text-[#FFFDF5] leading-[1.18] tracking-tight transition-all duration-500 ${
+                className={`font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-normal text-[#FFFDF5] leading-[1.18] tracking-tight transition-all duration-500 break-words ${
                   isAnimating ? "opacity-40 translate-y-1" : "opacity-100 translate-y-0"
                 }`}
               >
