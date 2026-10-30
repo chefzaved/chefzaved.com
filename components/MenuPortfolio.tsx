@@ -248,22 +248,22 @@ export default function MenuPortfolio({
             {/* ============================================================ */}
             <div className="lg:col-span-7 xl:col-span-7 relative flex flex-col items-center">
               
-              {/* Perfectly framed container: object-contain fits 100% of dish */}
-              <div className="relative w-full max-w-[580px] xl:max-w-[620px] aspect-[4/3] rounded-2xl overflow-hidden select-none shadow-[0_20px_50px_-10px_rgba(0,0,0,0.85)] bg-[#051812] border border-[#144234]/40 flex items-center justify-center">
+              {/* Borderless, Box-less Image Stage: Pure photograph with zero box background or border */}
+              <div className="relative w-full max-w-[580px] xl:max-w-[620px] aspect-[4/3] select-none flex items-center justify-center bg-transparent border-0 shadow-none">
                 {dishes.map((dish, idx) => {
                   const isActive = idx === currentIndex;
                   return (
                     <div
                       key={dish.id}
-                      className={`absolute inset-0 flex items-center justify-center p-2 sm:p-4 transition-opacity duration-700 ease-in-out ${
+                      className={`absolute inset-0 flex items-center justify-center transition-opacity duration-700 ease-in-out ${
                         isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
                       }`}
                     >
-                      {/* 100% Crisp, Pure Photograph - Perfectly fitted in frame without any top/bottom cutoffs */}
+                      {/* Pure photograph - 100% in frame, zero background box, zero border */}
                       <img
                         src={dish.image}
                         alt={dish.name}
-                        className="w-full h-full object-contain object-center select-none filter drop-shadow-[0_12px_28px_rgba(0,0,0,0.7)]"
+                        className="w-full h-full object-contain object-center select-none rounded-2xl drop-shadow-[0_15px_35px_rgba(0,0,0,0.8)]"
                         loading="eager"
                       />
                     </div>
