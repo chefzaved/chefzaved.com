@@ -396,9 +396,6 @@ export default function MenuPortfolio({
                     <p className="font-serif text-sm font-semibold text-white tracking-wide">
                       Chef Zaved
                     </p>
-                    <p className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#d4af37]">
-                      Master of Modern Gastronomy
-                    </p>
                   </div>
                 </div>
 
