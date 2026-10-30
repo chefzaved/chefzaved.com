@@ -122,7 +122,7 @@ export default function Footer({
                 <YoutubeIcon className="w-4 h-4" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/chef-zaved-islam-sekh-a20b33146/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chef Zaved on LinkedIn"
