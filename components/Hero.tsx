@@ -93,8 +93,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        {/* Fullscreen Background Dish Photography - VIBRANT & HIGH-DEFINITION */}
-        <div className="absolute inset-0 z-0">
+        {/* Fullscreen Background Dish Photography with Ambient Fill & Fitted Center Showcase */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           {HERO_DISHES.map((dish, idx) => {
             const isActive = idx === currentIndex;
             return (
@@ -104,20 +104,32 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   isActive ? "opacity-100 z-1" : "opacity-0 -z-10 pointer-events-none"
                 }`}
               >
+                {/* 1. Ambient Blurred Fill (eliminates empty borders and bathes screen in dish mood) */}
                 <img
                   src={dish.imageUrl}
-                  alt={dish.name}
-                  className={`w-full h-full object-cover object-center filter brightness-[0.94] contrast-[1.04] ${
-                    isActive ? "scale-105 transition-transform duration-[7000ms] ease-out" : "scale-100"
-                  }`}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover filter blur-3xl scale-125 opacity-30 brightness-[0.55] contrast-[1.15] pointer-events-none"
                 />
+                <div className="absolute inset-0 bg-[#061a14]/40 pointer-events-none" />
+
+                {/* 2. Main High-Definition Dish - 100% visible, fully fitted, never cropped */}
+                <div className="relative w-full h-full flex items-center justify-center px-4 sm:px-12 lg:px-20 pt-24 sm:pt-28 pb-20 sm:pb-24">
+                  <img
+                    src={dish.imageUrl}
+                    alt={dish.name}
+                    className={`max-h-[68vh] sm:max-h-[74vh] max-w-[92vw] lg:max-w-[78vw] w-auto h-auto object-contain rounded-2xl shadow-[0_20px_70px_rgba(0,0,0,0.85)] border border-[#d4af37]/25 filter brightness-[0.98] contrast-[1.04] transition-all duration-700 ease-out ${
+                      isActive ? "scale-100 opacity-100" : "scale-95 opacity-0"
+                    }`}
+                  />
+                </div>
               </div>
             );
           })}
 
           {/* Minimal soft gradient vignettes at top and bottom */}
-          <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#061a14]/90 via-[#061a14]/35 to-transparent pointer-events-none z-2" />
-          <div className="absolute inset-x-0 bottom-0 h-44 sm:h-52 bg-gradient-to-t from-[#061a14]/95 via-[#061a14]/50 to-transparent pointer-events-none z-2" />
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#061a14]/90 via-[#061a14]/35 to-transparent pointer-events-none z-2" />
+          <div className="absolute inset-x-0 bottom-0 h-36 sm:h-44 bg-gradient-to-t from-[#061a14]/95 via-[#061a14]/50 to-transparent pointer-events-none z-2" />
         </div>
 
         {/* Floating Side Navigation Arrows */}
