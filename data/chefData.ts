@@ -1,3 +1,5 @@
+export * from "./modernEuropeanMenu";
+
 export type DishCategory =
   | "Authentic Bengali Heritage"
   | "Modern European & Grills"

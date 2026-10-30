@@ -1,18 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import {
   Sparkles,
-  Wine,
+  ChevronLeft,
+  ChevronRight,
   Plus,
   Check,
-  Eye,
-  X,
-  Flame,
   ChefHat,
-  Info,
+  ArrowRight,
 } from "lucide-react";
-import { DISHES_DATA, Dish } from "@/data/chefData";
+import { MODERN_EUROPEAN_MENU, ModernEuropeanDish } from "@/data/modernEuropeanMenu";
 
 interface MenuPortfolioProps {
   requestedDishes: string[];
@@ -25,55 +23,86 @@ export default function MenuPortfolio({
   onRequestDish,
   onOpenBooking,
 }: MenuPortfolioProps) {
-  const categories = [
-    "Modern European & Grills",
-    "Artisanal Canapés & Amuse-Bouche",
-    "Bespoke Grazing & Desserts",
-    "Authentic Bengali Heritage",
-  ] as const;
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const touchStartXRef = useRef<number | null>(null);
 
-  type MenuCategory = (typeof categories)[number];
+  const totalDishes = MODERN_EUROPEAN_MENU.length;
+  const currentDish: ModernEuropeanDish = MODERN_EUROPEAN_MENU[currentIndex];
+  const isRequested = requestedDishes.includes(currentDish.name);
 
-  const [selectedCategory, setSelectedCategory] = useState<MenuCategory>("Modern European & Grills");
-  const [dietaryFilter, setDietaryFilter] = useState<string>("All");
-  const [activeModalDish, setActiveModalDish] = useState<Dish | null>(null);
+  // Transition handler
+  const goToSlide = useCallback((index: number) => {
+    setIsAnimating(true);
+    setCurrentIndex(index);
+    const timer = setTimeout(() => setIsAnimating(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
-  const dietaryOptions = ["All", "Gluten-Free", "Halal", "Pescatarian", "Vegetarian"];
+  const nextSlide = useCallback(() => {
+    goToSlide((currentIndex + 1) % totalDishes);
+  }, [currentIndex, totalDishes, goToSlide]);
 
-  // Filter dishes
-  const filteredDishes = DISHES_DATA.filter((dish) => {
-    const matchesCategory = dish.category === selectedCategory;
-    const matchesDietary =
-      dietaryFilter === "All" ||
-      dish.dietary.some((d) => d.toLowerCase().includes(dietaryFilter.toLowerCase()));
-    return matchesCategory && matchesDietary;
-  });
+  const prevSlide = useCallback(() => {
+    goToSlide((currentIndex - 1 + totalDishes) % totalDishes);
+  }, [currentIndex, totalDishes, goToSlide]);
+
+  // Autoplay timer (4.5s)
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(nextSlide, 4500);
+    return () => clearInterval(interval);
+  }, [isPaused, nextSlide]);
+
+  // Touch swipe support for mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+    setIsPaused(true);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current !== null) {
+      const touchEndX = e.changedTouches[0].clientX;
+      const diffX = touchStartXRef.current - touchEndX;
+      if (diffX > 50) {
+        nextSlide();
+      } else if (diffX < -50) {
+        prevSlide();
+      }
+      touchStartXRef.current = null;
+    }
+    setIsPaused(false);
+  };
 
   return (
-    <section id="menu" className="py-24 sm:py-32 bg-[#061a14] relative">
-      {/* Decorative ambient background accents */}
-      <div className="absolute top-1/4 right-0 w-80 h-80 bg-[#d4af37]/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
+    <section id="menu" className="py-24 sm:py-32 bg-[#061a14] relative overflow-hidden">
+      {/* Subtle ambient lighting */}
+      <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a231b] border border-[#d4af37]/30 text-[#d4af37] text-xs uppercase tracking-widest font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Haute Cuisine Repertoire</span>
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+        
+        {/* ============================================================ */}
+        {/* 1. PRESERVED EXISTING HEADING (EXACTLY AS SPECIFIED)          */}
+        {/* ============================================================ */}
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0a231b] border border-[#d4af37]/30 text-[#d4af37] text-xs uppercase tracking-widest font-semibold mb-3.5 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-[#d4af37]" />
+            <span>THE ART OF MODERN GASTRONOMY</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Signature Menu & <span className="gold-gradient-text">Portfolio</span>
+            SIGNATURE MENU & <span className="gold-gradient-text">PORTFOLIO</span>
           </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4" />
-          <p className="mt-4 text-base sm:text-lg text-neutral-300 font-sans">
-            A celebration of sensory harmony. Click &quot;Request Dish&quot; on any creation to include it in your bespoke dining inquiry.
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4" />
+          <p className="mt-4 text-base sm:text-lg text-neutral-300 font-sans leading-relaxed">
+            An expression of culinary artistry, global flavours and contemporary presentation.
           </p>
         </div>
 
         {/* Selected Dishes Tray Notification if user has requested any */}
         {requestedDishes.length > 0 && (
-          <div className="mb-10 p-4 rounded-xl bg-amber-500/10 border border-[#d4af37]/40 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-3xl mx-auto shadow-lg animate-fadeIn">
+          <div className="mb-10 p-4 rounded-xl bg-amber-500/10 border border-[#d4af37]/40 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto shadow-lg animate-fadeIn">
             <div className="flex items-center gap-3 text-left">
               <div className="w-9 h-9 rounded-full bg-[#d4af37]/20 flex items-center justify-center shrink-0">
                 <ChefHat className="w-5 h-5 text-[#d4af37]" />
@@ -96,278 +125,192 @@ export default function MenuPortfolio({
           </div>
         )}
 
-        {/* Categorized Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8">
-          {categories.map((cat) => {
-            const isActive = selectedCategory === cat;
-            return (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all duration-300 cursor-pointer ${
-                  isActive
-                    ? "bg-gradient-to-r from-[#d4af37] to-[#ba8d28] text-[#061a14] font-semibold shadow-[0_0_20px_rgba(212,175,55,0.35)]"
-                    : "bg-[#09241c] text-neutral-200 hover:text-white hover:bg-[#0f382c] border border-[#144234]"
-                }`}
-              >
-                {cat}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Secondary Dietary Filter Tags */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12 text-xs">
-          <span className="text-neutral-400 uppercase tracking-widest text-[11px] mr-1">
-            Dietary Filter:
-          </span>
-          {dietaryOptions.map((diet) => {
-            const isActive = dietaryFilter === diet;
-            return (
-              <button
-                key={diet}
-                onClick={() => setDietaryFilter(diet)}
-                className={`px-3 py-1 rounded-md transition-colors ${
-                  isActive
-                    ? "bg-[#d4af37]/20 border border-[#d4af37] text-[#d4af37] font-medium"
-                    : "bg-[#072018]/80 border border-[#144234] text-neutral-300 hover:text-white"
-                }`}
-              >
-                {diet}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredDishes.map((dish) => {
-            const isRequested = requestedDishes.includes(dish.name);
-
-            return (
-              <div
-                key={dish.id}
-                className="group rounded-2xl bg-[#08241c] border border-[#144234] hover:border-[#d4af37]/60 overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-[0_12px_45px_-10px_rgba(212,175,55,0.22)]"
-              >
-                {/* Image Container with Badges - Fitted & Framed without harsh cropping */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#051711]">
-                  {/* Ambient Mood Fill */}
-                  <img
-                    src={dish.imageUrl}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 w-full h-full object-cover filter blur-xl scale-125 opacity-35 brightness-60 pointer-events-none"
-                  />
-
-                  {/* Fully Visible Dish Photograph */}
-                  <img
-                    src={dish.imageUrl}
-                    alt={dish.name}
-                    className="relative z-1 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500 ease-out"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08241c]/90 via-transparent to-[#061a14]/40 pointer-events-none z-2" />
-
-                  {/* Top Badges */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
-                    {dish.badge ? (
-                      <span className="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#061a14]/90 backdrop-blur-md text-[#d4af37] border border-[#d4af37]/40 shadow-md">
-                        {dish.badge}
-                      </span>
-                    ) : (
-                      <span />
-                    )}
-
-                    <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#061a14]/85 backdrop-blur-md text-neutral-200 border border-[#144234]">
-                      {dish.category}
-                    </span>
-                  </div>
-
-                  {/* Quick Preview Button */}
-                  <button
-                    onClick={() => setActiveModalDish(dish)}
-                    className="absolute bottom-3 right-3 z-10 p-2 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] transition-colors backdrop-blur-md shadow-lg cursor-pointer"
-                    title="View Dish Details & Wine Pairing"
+        {/* ============================================================ */}
+        {/* 2. FULL-WIDTH EDITORIAL SPLIT LAYOUT (60% LEFT / 40% RIGHT)  */}
+        {/* No cards, no boxed containers, no borders, pure luxury editorial */}
+        {/* ============================================================ */}
+        <div
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* ============================================================ */}
+          {/* LEFT COLUMN: 60% Width – Automatic Food Image Slider         */}
+          {/* ============================================================ */}
+          <div className="lg:col-span-7 xl:col-span-7 relative">
+            {/* Image Stage – Borderless, seamless presentation */}
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] xl:aspect-[16/11] rounded-2xl overflow-hidden bg-[#04120e] shadow-[0_30px_90px_-20px_rgba(0,0,0,0.9)] select-none">
+              {MODERN_EUROPEAN_MENU.map((dish, idx) => {
+                const isActive = idx === currentIndex;
+                return (
+                  <div
+                    key={dish.id}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                      isActive ? "opacity-100 z-1 pointer-events-auto" : "opacity-0 -z-10 pointer-events-none"
+                    }`}
                   >
-                    <Eye className="w-4 h-4" />
-                  </button>
-                </div>
+                    {/* Atmospheric ambient backdrop fill for visual fullness */}
+                    <img
+                      src={dish.image}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 w-full h-full object-cover filter blur-2xl scale-110 opacity-30 brightness-50 pointer-events-none"
+                    />
 
-                {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3
-                      onClick={() => setActiveModalDish(dish)}
-                      className="font-serif text-xl font-bold text-white group-hover:text-[#f3e5ab] transition-colors cursor-pointer"
-                    >
-                      {dish.name}
-                    </h3>
+                    {/* Main High-Resolution Photograph – Perfectly fitted without cropping */}
+                    <img
+                      src={dish.image}
+                      alt={dish.name}
+                      className="relative z-1 w-full h-full object-contain p-2 sm:p-4 select-none filter brightness-[0.98] contrast-[1.04]"
+                      loading={idx === 0 ? "eager" : "lazy"}
+                    />
 
-                    <p className="mt-2 text-xs sm:text-sm text-neutral-200 line-clamp-3 leading-relaxed">
-                      {dish.description}
-                    </p>
-
-                    {/* Wine Pairing Hint */}
-                    <div className="mt-4 flex items-center gap-2 text-xs text-amber-200/90 bg-[#061a14] px-3 py-2 rounded-lg border border-[#144234]">
-                      <Wine className="w-3.5 h-3.5 text-[#d4af37] shrink-0" />
-                      <span className="truncate">Pairing: {dish.winePairing}</span>
-                    </div>
-
-                    {/* Dietary Tags */}
-                    <div className="mt-4 flex flex-wrap gap-1.5">
-                      {dish.dietary.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-[#0f382c] text-neutral-200 border border-[#184c3d]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                    {/* Subtle vignette for editorial depth */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#061a14]/60 via-transparent to-[#061a14]/30 pointer-events-none z-2" />
                   </div>
+                );
+              })}
 
-                  {/* "Request Dish" Action */}
-                  <div className="mt-6 pt-4 border-t border-[#144234] flex items-center justify-between">
-                    <button
-                      onClick={() => setActiveModalDish(dish)}
-                      className="text-xs text-neutral-300 hover:text-white transition-colors inline-flex items-center gap-1"
-                    >
-                      <Info className="w-3.5 h-3.5" />
-                      <span>Details</span>
-                    </button>
-
-                    <button
-                      onClick={() => onRequestDish(dish.name)}
-                      className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                        isRequested
-                          ? "bg-amber-500/20 text-[#d4af37] border border-[#d4af37]"
-                          : "bg-[#0b2b22] hover:bg-[#d4af37] text-neutral-100 hover:text-[#061a14] border border-[#1d5c4b] hover:border-transparent"
-                      }`}
-                    >
-                      {isRequested ? (
-                        <>
-                          <Check className="w-3.5 h-3.5" />
-                          <span>Dish Added</span>
-                        </>
-                      ) : (
-                        <>
-                          <Plus className="w-3.5 h-3.5" />
-                          <span>Request Dish</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {filteredDishes.length === 0 && (
-          <div className="text-center py-16 text-neutral-300">
-            <p className="text-lg">No dishes found matching your selected criteria.</p>
-            <button
-              onClick={() => {
-                setSelectedCategory("Modern European & Grills");
-                setDietaryFilter("All");
-              }}
-              className="mt-4 px-4 py-2 rounded-lg bg-[#0b2b22] text-[#d4af37] border border-[#d4af37]/40 text-xs uppercase"
-            >
-              Reset Filters
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* Dish Detail Lightbox Modal */}
-      {activeModalDish && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#061a14]/92 backdrop-blur-md">
-          <div className="relative w-full max-w-2xl bg-[#072018] rounded-2xl border border-[#d4af37]/50 shadow-2xl overflow-hidden animate-fadeIn">
-            <button
-              onClick={() => setActiveModalDish(null)}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-[#061a14]/80 text-neutral-300 hover:text-white hover:bg-[#0b2b22] transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="relative aspect-video w-full overflow-hidden">
-              <img
-                src={activeModalDish.imageUrl}
-                alt={activeModalDish.name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#072018] via-transparent to-[#061a14]/40" />
-              <div className="absolute bottom-4 left-6">
-                <span className="text-xs uppercase tracking-wider text-[#d4af37] font-semibold">
-                  {activeModalDish.category}
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">
-                  {activeModalDish.name}
-                </h3>
-              </div>
-            </div>
-
-            <div className="p-6 sm:p-8 space-y-6">
-              <p className="text-sm sm:text-base text-neutral-200 leading-relaxed">
-                {activeModalDish.description}
-              </p>
-
-              <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-[#d4af37] mb-2">
-                  Artisanal Ingredients & Elements:
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {activeModalDish.ingredients.map((ing, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-3 py-1 rounded-lg bg-[#0b2b22] border border-[#184c3d] text-neutral-100"
-                    >
-                      {ing}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-amber-500/10 border border-[#d4af37]/35 flex items-start gap-3">
-                <Wine className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-[#d4af37]">
-                    Sommelier Wine Cellar Recommendation:
-                  </div>
-                  <div className="text-xs sm:text-sm text-neutral-200 mt-1">
-                    {activeModalDish.winePairing}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between pt-4 border-t border-[#144234]">
-                <div className="flex gap-2">
-                  {activeModalDish.dietary.map((d) => (
-                    <span
-                      key={d}
-                      className="text-[11px] px-2.5 py-1 rounded bg-[#0f382c] text-neutral-200 border border-[#184c3d]"
-                    >
-                      {d}
-                    </span>
-                  ))}
-                </div>
-
+              {/* Floating Slide Navigation Arrows on Image */}
+              <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex items-center justify-between z-10 pointer-events-none">
                 <button
-                  onClick={() => {
-                    onRequestDish(activeModalDish.name);
-                    setActiveModalDish(null);
-                  }}
-                  className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#d4af37] to-amber-500 text-[#061a14] font-semibold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity"
+                  onClick={prevSlide}
+                  aria-label="Previous culinary creation"
+                  className="pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/40 hover:border-[#d4af37] flex items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
                 >
-                  {requestedDishes.includes(activeModalDish.name)
-                    ? "Remove from Request"
-                    : "Add to Dining Request"}
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  aria-label="Next culinary creation"
+                  className="pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/40 hover:border-[#d4af37] flex items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
+                >
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
+
+              {/* Minimal Pagination Progress Bar at Bottom of Image */}
+              <div className="absolute bottom-3 left-4 right-4 z-10 flex items-center justify-between">
+                <div className="flex items-center gap-1 sm:gap-1.5 max-w-[70%] overflow-x-auto py-1">
+                  {MODERN_EUROPEAN_MENU.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => goToSlide(idx)}
+                      aria-label={`Go to dish ${idx + 1}`}
+                      className={`h-1 rounded-full transition-all duration-300 cursor-pointer ${
+                        idx === currentIndex
+                          ? "w-6 sm:w-8 bg-gradient-to-r from-[#d4af37] to-[#fae8b4] shadow-[0_0_8px_rgba(212,175,55,0.8)]"
+                          : "w-1.5 sm:w-2 bg-white/30 hover:bg-[#d4af37]/80"
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                <span className="text-[11px] font-mono tracking-widest text-[#d4af37] bg-[#061a14]/85 px-2.5 py-0.5 rounded-full border border-[#d4af37]/30 backdrop-blur-sm">
+                  {String(currentIndex + 1).padStart(2, "0")} / {String(totalDishes).padStart(2, "0")}
+                </span>
+              </div>
             </div>
           </div>
+
+          {/* ============================================================ */}
+          {/* RIGHT COLUMN: 40% Width – Synchronized Dish Information      */}
+          {/* ============================================================ */}
+          <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center space-y-6 lg:pl-2">
+            
+            {/* 1. CULINARY CATEGORY & STYLE */}
+            <div className="space-y-1.5">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37] shrink-0 animate-pulse" />
+                <span className="text-xs sm:text-[13px] font-semibold tracking-[0.22em] uppercase text-[#d4af37]">
+                  {currentDish.category}
+                </span>
+              </div>
+              <p className="text-xs tracking-wider uppercase text-neutral-400 font-sans pl-3.5">
+                {currentDish.styleLabel}
+              </p>
+            </div>
+
+            {/* 2. DISH NAME (Elegant refined typography) */}
+            <div className="space-y-3">
+              <h3
+                className={`font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-normal text-[#FFFDF5] leading-[1.18] tracking-tight transition-all duration-500 ${
+                  isAnimating ? "opacity-40 translate-y-1" : "opacity-100 translate-y-0"
+                }`}
+              >
+                {currentDish.name}
+              </h3>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-[#d4af37] to-transparent" />
+            </div>
+
+            {/* 3. SHORT DESCRIPTION (AI-Generated 15-25 words) */}
+            <p
+              className={`text-neutral-300 font-sans text-base sm:text-lg leading-relaxed transition-all duration-500 ${
+                isAnimating ? "opacity-40 translate-y-1" : "opacity-100 translate-y-0"
+              }`}
+            >
+              {currentDish.description}
+            </p>
+
+            {/* 4. INTERACTIVE REQUEST DISH BUTTON */}
+            <div className="pt-2">
+              <button
+                onClick={() => onRequestDish(currentDish.name)}
+                className={`group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer ${
+                  isRequested
+                    ? "bg-[#d4af37] text-[#061a14] shadow-[0_0_20px_rgba(212,175,55,0.45)]"
+                    : "bg-[#08241c] text-[#d4af37] border border-[#d4af37]/60 hover:bg-[#d4af37] hover:text-[#061a14] hover:shadow-[0_0_20px_rgba(212,175,55,0.35)]"
+                }`}
+              >
+                {isRequested ? (
+                  <>
+                    <Check className="w-4 h-4 text-[#061a14]" />
+                    <span>Included in Inquiry</span>
+                  </>
+                ) : (
+                  <>
+                    <Plus className="w-4 h-4 text-[#d4af37] group-hover:text-[#061a14] transition-colors" />
+                    <span>Request This Creation</span>
+                  </>
+                )}
+              </button>
+            </div>
+
+            {/* 5. CHEF SIGNATURE (Understated, elegant editorial) */}
+            <div className="pt-6 border-t border-[#144234]/60 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/images/signature.png"
+                  alt="Chef Zaved Signature"
+                  className="h-10 sm:h-12 w-auto object-contain filter invert brightness-200 sepia hue-rotate-[10deg] saturate-[2.5] opacity-85"
+                />
+                <div>
+                  <p className="font-serif text-sm font-semibold text-white tracking-wide">
+                    Chef Zaved
+                  </p>
+                  <p className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#d4af37]">
+                    Master of Modern Gastronomy
+                  </p>
+                </div>
+              </div>
+
+              {/* Minimal Next Dish Quick Navigation */}
+              <button
+                onClick={nextSlide}
+                className="inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-[#d4af37] transition-colors cursor-pointer group"
+                title="Next Creation"
+              >
+                <span>Next</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+
+          </div>
         </div>
-      )}
+
+      </div>
     </section>
   );
 }
