@@ -57,8 +57,8 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
               {/* Portrait Container - Original portrait unmodified */}
               <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/60 shadow-[0_10px_40px_rgba(0,0,0,0.8)] bg-[#072018]">
                 <img
-                  src="/images/chef-2.png"
-                  alt="Chef Zaved - Professional Executive Chef Portrait in Black Coat"
+                  src="/images/chef-journey.jpg"
+                  alt="Chef Zaved - An 18-Year Gastronomic Odyssey"
                   className="w-full h-auto block object-cover filter brightness-[0.98] contrast-[1.02] transition-transform duration-700 ease-out hover:scale-[1.02]"
                 />
 
