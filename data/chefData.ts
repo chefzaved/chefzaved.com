@@ -50,33 +50,28 @@ export interface BackgroundSlide {
 export const BACKGROUND_SLIDES: BackgroundSlide[] = [
   {
     id: 1,
-    imageUrl: "/images/background/1.jpeg",
+    imageUrl: "/images/background/1.png",
     name: "Traditional Gondhoraj Bhetki Paturi",
   },
   {
     id: 2,
-    imageUrl: "/images/background/2.jpeg",
+    imageUrl: "/images/background/2.png",
     name: "Artisanal Tomato & Herb Canapés",
   },
   {
     id: 3,
-    imageUrl: "/images/background/3.jpeg",
-    name: "Handcrafted Truffle & Sesame Fusion Sushi",
-  },
-  {
-    id: 4,
-    imageUrl: "/images/background/4.jpeg",
+    imageUrl: "/images/background/3.png",
     name: "Grand Bespoke Banqueting & Sushi Spread",
   },
   {
-    id: 5,
-    imageUrl: "/images/background/5.jpeg",
-    name: "Golden Caviar & Sesame Fusion Maki",
+    id: 4,
+    imageUrl: "/images/background/4.png",
+    name: "Artisanal Beetroot & Avocado Fusion Rolls",
   },
   {
-    id: 6,
-    imageUrl: "/images/background/6.jpeg",
-    name: "Artisanal Beetroot & Avocado Fusion Rolls",
+    id: 5,
+    imageUrl: "/images/background/5.png",
+    name: "Handcrafted Truffle & Sesame Fusion Sushi",
   },
 ];
 

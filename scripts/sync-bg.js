@@ -9,6 +9,12 @@ if (!fs.existsSync(destDir)) {
 }
 
 if (fs.existsSync(srcDir)) {
+  // Clear destDir to remove stale files
+  const existingFiles = fs.readdirSync(destDir);
+  for (const f of existingFiles) {
+    fs.unlinkSync(path.join(destDir, f));
+  }
+
   const files = fs.readdirSync(srcDir);
   let copiedCount = 0;
   for (const file of files) {
@@ -17,6 +23,7 @@ if (fs.existsSync(srcDir)) {
     if (fs.statSync(srcFile).isFile()) {
       fs.copyFileSync(srcFile, destFile);
       copiedCount++;
+      console.log(`Copied: ${file}`);
     }
   }
   console.log(`[Sync-BG] Successfully synced ${copiedCount} background images to public/images/background/`);
