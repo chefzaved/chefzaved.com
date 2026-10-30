@@ -43,9 +43,9 @@ export default function Testimonials() {
       {/* Decorative background radial amber flare */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-amber-500/5 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a231b] border border-[#d4af37]/30 text-[#d4af37] text-xs uppercase tracking-widest font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>VIP Acclaim & Critic Reviews</span>
@@ -72,11 +72,11 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Featured Testimonial Card / Slider */}
-        <div className="relative rounded-3xl bg-gradient-to-b from-[#0b2b22] to-[#072018] border border-[#d4af37]/35 p-8 sm:p-12 lg:p-16 shadow-2xl shadow-[#061a14]/90">
-          <Quote className="w-16 h-16 sm:w-20 sm:h-20 text-[#d4af37]/15 absolute top-6 right-8 sm:top-10 sm:right-12 pointer-events-none" />
+        {/* Featured Testimonial Spread – Full-width, Borderless Editorial Layout */}
+        <div className="relative w-full rounded-3xl bg-[#08221a]/30 p-6 sm:p-10 lg:p-14 border-0 shadow-none">
+          <Quote className="w-16 h-16 sm:w-20 sm:h-20 text-[#d4af37]/10 absolute top-6 right-8 sm:top-10 sm:right-12 pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col justify-between min-h-[320px]">
+          <div className="relative z-10 flex flex-col justify-between min-h-[260px]">
             {/* Rating Stars & Event Tag */}
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
               <div className="flex items-center gap-1 text-[#d4af37]">
@@ -84,7 +84,7 @@ export default function Testimonials() {
                   <Star key={i} className="w-5 h-5 fill-[#d4af37]" />
                 ))}
               </div>
-              <div className="flex items-center gap-2 text-xs text-neutral-200 bg-[#061a14] px-3 py-1.5 rounded-full border border-[#144234]">
+              <div className="flex items-center gap-2 text-xs text-neutral-200 bg-[#061a14]/80 px-3.5 py-1.5 rounded-full border border-[#144234]/60">
                 <CheckCircle className="w-3.5 h-3.5 text-[#d4af37]" />
                 <span>{activeTestimonial.eventType}</span>
                 <span className="text-neutral-400">•</span>
@@ -92,15 +92,15 @@ export default function Testimonials() {
               </div>
             </div>
 
-            {/* Quote Body */}
-            <blockquote className="font-serif text-lg sm:text-2xl md:text-3xl text-neutral-100 font-normal italic leading-relaxed sm:leading-relaxed">
+            {/* Quote Body – Refined, Slightly Smaller Editorial Font */}
+            <blockquote className="font-serif text-base sm:text-lg md:text-xl lg:text-[22px] text-neutral-100 font-normal italic leading-relaxed sm:leading-loose max-w-5xl">
               &quot;{activeTestimonial.quote}&quot;
             </blockquote>
 
             {/* Client Info & Featured Dish */}
-            <div className="mt-8 pt-6 border-t border-[#144234] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="mt-8 pt-6 border-t border-[#144234]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#d4af37]/50 shadow-md">
+                <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full overflow-hidden border border-[#d4af37]/50 shadow-md shrink-0">
                   <img
                     src={activeTestimonial.avatarUrl}
                     alt={activeTestimonial.clientName}
@@ -108,7 +108,7 @@ export default function Testimonials() {
                   />
                 </div>
                 <div>
-                  <h4 className="font-serif text-lg font-bold text-white tracking-wide">
+                  <h4 className="font-serif text-base sm:text-lg font-bold text-white tracking-wide">
                     {activeTestimonial.clientName}
                   </h4>
                   <p className="text-xs text-[#d4af37] font-medium uppercase tracking-wider">
@@ -133,7 +133,7 @@ export default function Testimonials() {
           </div>
 
           {/* Slider Controls */}
-          <div className="mt-8 flex items-center justify-between pt-4 border-t border-[#144234]">
+          <div className="mt-8 flex items-center justify-between pt-4 border-t border-[#144234]/40">
             {/* Pagination Dots */}
             <div className="flex items-center gap-2">
               {testimonials.map((_, idx) => (
