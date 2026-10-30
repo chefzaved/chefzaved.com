@@ -6,75 +6,25 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { BACKGROUND_SLIDES } from "@/data/chefData";
 
 interface HeroProps {
   onOpenBooking: () => void;
 }
 
-const HERO_DISHES = [
-  {
-    id: "dish-1",
-    name: "Pistachio-Crusted Herb Rack of Lamb",
-    imageUrl: "/images/dishes/rack-of-lamb.jpg",
-  },
-  {
-    id: "dish-2",
-    name: "Pan-Seared Seabass on Potato Rosti",
-    imageUrl: "/images/dishes/seabass-rosti.jpg",
-  },
-  {
-    id: "dish-3",
-    name: "Sous-Vide Chicken Roulade on Slate",
-    imageUrl: "/images/dishes/chicken-roulade.jpg",
-  },
-  {
-    id: "dish-4",
-    name: "Pan-Seared Duck Breast with Cherry Reduction",
-    imageUrl: "/images/dishes/duck-breast.jpg",
-  },
-  {
-    id: "dish-5",
-    name: "Scottish Salmon with Asparagus & Baby Potatoes",
-    imageUrl: "/images/dishes/salmon-asparagus.jpg",
-  },
-  {
-    id: "dish-6",
-    name: "Handcrafted Truffle Tagliolini",
-    imageUrl: "/images/dishes/truffle-tagliolini.jpg",
-  },
-  {
-    id: "dish-7",
-    name: "Artisanal Truffle & Sesame Fusion Sushi",
-    imageUrl: "/images/dishes/fusion-sushi.jpg",
-  },
-  {
-    id: "dish-8",
-    name: "Steamed Beetroot & Edamame Crystal Dim Sum",
-    imageUrl: "/images/dishes/dimsum-beetroot.jpg",
-  },
-  {
-    id: "dish-9",
-    name: "Sesame-Crusted Ahi Tuna Tataki",
-    imageUrl: "/images/dishes/tuna-tataki.jpg",
-  },
-  {
-    id: "dish-10",
-    name: "Charred Herb-Crusted Tenderloin",
-    imageUrl: "/images/dishes/charred-tenderloin.jpg",
-  },
-];
-
 export default function Hero({ onOpenBooking }: HeroProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
+  const totalSlides = BACKGROUND_SLIDES.length;
+
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % HERO_DISHES.length);
-  }, []);
+    setCurrentIndex((prev) => (prev + 1) % totalSlides);
+  }, [totalSlides]);
 
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + HERO_DISHES.length) % HERO_DISHES.length);
-  }, []);
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+  }, [totalSlides]);
 
   useEffect(() => {
     if (isPaused) return;
@@ -82,67 +32,58 @@ export default function Hero({ onOpenBooking }: HeroProps) {
     return () => clearInterval(interval);
   }, [isPaused, nextSlide]);
 
-  const currentDish = HERO_DISHES[currentIndex];
+  const currentSlide = BACKGROUND_SLIDES[currentIndex] || BACKGROUND_SLIDES[0];
 
   return (
     <>
-      {/* 100vh Full-Bleed Edge-to-Edge Hero */}
+      {/* 100vh Full-Bleed Edge-to-Edge Hero Background Slideshow */}
       <section
         id="hero"
         className="relative h-screen min-h-[600px] max-h-[1080px] w-full flex flex-col justify-end overflow-hidden bg-[#061a14]"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        {/* Fullscreen Background Dish Photography with Ambient Fill & Fitted Center Showcase */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          {HERO_DISHES.map((dish, idx) => {
+        {/* Fullscreen Animated Background Slideshow - Edge to Edge, No Borders */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-[#061a14]">
+          {BACKGROUND_SLIDES.map((slide, idx) => {
             const isActive = idx === currentIndex;
             return (
               <div
-                key={dish.id}
+                key={slide.id}
                 className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  isActive ? "opacity-100 z-1" : "opacity-0 -z-10 pointer-events-none"
+                  isActive ? "opacity-100 z-1 pointer-events-auto" : "opacity-0 -z-10 pointer-events-none"
                 }`}
               >
-                {/* 1. Ambient Blurred Fill (eliminates empty borders and bathes screen in dish mood) */}
+                {/* Background Photo - Fully Edge-to-Edge with Living Subtle Motion & Zero Border */}
                 <img
-                  src={dish.imageUrl}
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover filter blur-3xl scale-125 opacity-30 brightness-[0.55] contrast-[1.15] pointer-events-none"
+                  src={slide.imageUrl}
+                  alt={slide.name}
+                  className={`w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.08] transition-transform duration-[6000ms] ease-out select-none border-0 ${
+                    isActive ? "scale-105" : "scale-100"
+                  }`}
+                  loading={idx === 0 ? "eager" : "lazy"}
                 />
-                <div className="absolute inset-0 bg-[#061a14]/40 pointer-events-none" />
 
-                {/* 2. Main High-Definition Dish - 100% visible, fully fitted, never cropped */}
-                <div className="relative w-full h-full flex items-center justify-center px-4 sm:px-12 lg:px-20 pt-24 sm:pt-28 pb-20 sm:pb-24">
-                  <img
-                    src={dish.imageUrl}
-                    alt={dish.name}
-                    className={`max-h-[68vh] sm:max-h-[74vh] max-w-[92vw] lg:max-w-[78vw] w-auto h-auto object-contain rounded-2xl shadow-[0_20px_70px_rgba(0,0,0,0.85)] border border-[#d4af37]/25 filter brightness-[0.98] contrast-[1.04] transition-all duration-700 ease-out ${
-                      isActive ? "scale-100 opacity-100" : "scale-95 opacity-0"
-                    }`}
-                  />
-                </div>
+                {/* Luxury Forest-Green Atmosphere & Edge Blending (Seamlessly melts into the website's dark forest-green palette) */}
+                <div className="absolute inset-0 bg-[#061a14]/30 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#061a14] via-transparent to-[#061a14]/80 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#061a14]/50 via-transparent to-[#061a14]/50 pointer-events-none" />
               </div>
             );
           })}
-
-          {/* Minimal soft gradient vignettes at top and bottom */}
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#061a14]/90 via-[#061a14]/35 to-transparent pointer-events-none z-2" />
-          <div className="absolute inset-x-0 bottom-0 h-36 sm:h-44 bg-gradient-to-t from-[#061a14]/95 via-[#061a14]/50 to-transparent pointer-events-none z-2" />
         </div>
 
         {/* Floating Side Navigation Arrows */}
         <button
           onClick={prevSlide}
-          aria-label="Previous dish"
+          aria-label="Previous slide"
           className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#061a14]/70 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/40 hover:border-[#d4af37] items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={nextSlide}
-          aria-label="Next dish"
+          aria-label="Next slide"
           className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#061a14]/70 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/40 hover:border-[#d4af37] items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer"
         >
           <ChevronRight className="w-5 h-5" />
@@ -150,13 +91,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
         {/* Clean Hero Bottom Bar */}
         <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pb-7 sm:pb-9 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
-          {/* Left/Center: 10 Minimalist Progress Indicator Dots */}
+          {/* Left/Center: Minimalist Progress Indicator Dots */}
           <div className="flex items-center gap-1.5 sm:gap-2">
-            {HERO_DISHES.map((dish, idx) => (
+            {BACKGROUND_SLIDES.map((slide, idx) => (
               <button
-                key={dish.id}
+                key={slide.id}
                 onClick={() => setCurrentIndex(idx)}
-                aria-label={`View dish ${idx + 1}: ${dish.name}`}
+                aria-label={`View background slide ${idx + 1}: ${slide.name}`}
                 className={`transition-all duration-300 rounded-full focus:outline-none cursor-pointer ${
                   idx === currentIndex
                     ? "w-6 sm:w-8 h-1.5 bg-gradient-to-r from-[#d4af37] to-[#fae8b4] shadow-[0_0_10px_rgba(212,175,55,0.9)]"
@@ -166,12 +107,12 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             ))}
           </div>
 
-          {/* Right Side: JUST Dish Name (Small, sleek ~3cm luxury pill) */}
+          {/* Right Side: Sleek Luxury Dish Name Pill */}
           <div className="w-full md:w-auto flex justify-center md:justify-end">
             <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#061a14]/90 backdrop-blur-md border border-[#d4af37]/50 shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
               <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse shrink-0" />
               <span className="font-serif text-xs sm:text-sm lg:text-base font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#FFFDF5] via-[#fae8b4] to-[#d4af37]">
-                {currentDish.name}
+                {currentSlide.name}
               </span>
             </div>
           </div>

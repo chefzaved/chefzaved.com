@@ -6,6 +6,7 @@
     "dev": "next dev -p 9146",
     "build": "next build",
     "start": "next start -p 9146",
+    "sync-bg": "node scripts/sync-bg.js",
     "lint": "eslint"
   },
   "dependencies": {

@@ -41,6 +41,45 @@ export interface Testimonial {
   highlightDish: string;
 }
 
+export interface BackgroundSlide {
+  id: number;
+  imageUrl: string;
+  name: string;
+}
+
+export const BACKGROUND_SLIDES: BackgroundSlide[] = [
+  {
+    id: 1,
+    imageUrl: "/images/background/1.jpeg",
+    name: "Traditional Gondhoraj Bhetki Paturi",
+  },
+  {
+    id: 2,
+    imageUrl: "/images/background/2.jpeg",
+    name: "Artisanal Tomato & Herb Canapés",
+  },
+  {
+    id: 3,
+    imageUrl: "/images/background/3.jpeg",
+    name: "Handcrafted Truffle & Sesame Fusion Sushi",
+  },
+  {
+    id: 4,
+    imageUrl: "/images/background/4.jpeg",
+    name: "Grand Bespoke Banqueting & Sushi Spread",
+  },
+  {
+    id: 5,
+    imageUrl: "/images/background/5.jpeg",
+    name: "Golden Caviar & Sesame Fusion Maki",
+  },
+  {
+    id: 6,
+    imageUrl: "/images/background/6.jpeg",
+    name: "Artisanal Beetroot & Avocado Fusion Rolls",
+  },
+];
+
 export const CHEF_INFO = {
   name: "Chef Zaved",
   title: "Master of Modern Gastronomy & Private Dining",
