@@ -90,12 +90,12 @@ export default function MenuPortfolio({
                 </p>
               </div>
             </div>
-            <button
-              onClick={onOpenBooking}
-              className="shrink-0 px-4 py-2 rounded-full bg-[#d4af37] text-[#061a14] text-xs font-semibold uppercase tracking-wider hover:bg-amber-300 transition-colors shadow-md"
+            <a
+              href="#contact"
+              className="shrink-0 px-4 py-2 rounded-full bg-[#d4af37] text-[#061a14] text-xs font-semibold uppercase tracking-wider hover:bg-amber-300 transition-colors shadow-md cursor-pointer"
             >
-              Finalize in Booking Form
-            </button>
+              Inquire via Contact Us
+            </a>
           </div>
         )}
 

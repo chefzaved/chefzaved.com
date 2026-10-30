@@ -180,8 +180,8 @@ export default function Footer({
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#d4af37] transition-colors">
-                  Services Offered
+                <a href="#culinary-journey" className="hover:text-[#d4af37] transition-colors">
+                  My Culinary Journey
                 </a>
               </li>
               <li>
@@ -195,12 +195,9 @@ export default function Footer({
                 </a>
               </li>
               <li>
-                <button
-                  onClick={onOpenBooking}
-                  className="hover:text-[#d4af37] text-left transition-colors"
-                >
-                  Book a Chef
-                </button>
+                <a href="#contact" className="hover:text-[#d4af37] text-left transition-colors">
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>

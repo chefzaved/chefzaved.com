@@ -33,9 +33,10 @@ export default function Navbar({
   const navLinks = [
     { label: "Home", href: "#hero" },
     { label: "About Chef", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Menu & Portfolio", href: "#menu" },
+    { label: "My Journey", href: "#culinary-journey" },
+    { label: "Signature Menu", href: "#menu" },
     { label: "Testimonials", href: "#testimonials" },
+    { label: "Contact Us", href: "#contact" },
   ];
 
   return (
@@ -80,46 +81,35 @@ export default function Navbar({
               {/* Requested Dishes Badge if any selected */}
               {requestedDishesCount > 0 && (
                 <a
-                  href="#booking"
+                  href="#contact"
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 border border-[#d4af37]/40 text-xs text-[#d4af37] hover:bg-amber-500/20 transition-all"
-                  title="View your requested dishes in the booking form"
+                  title="View your requested dishes and contact chef"
                 >
                   <ShoppingBag className="w-3.5 h-3.5" />
                   <span className="font-medium">{requestedDishesCount} Dish{requestedDishesCount > 1 ? "es" : ""} Selected</span>
                 </a>
               )}
 
-              {/* Direct Contact Us link */}
+              {/* Direct Contact Us button */}
               <a
                 href="#contact"
-                className="hidden xl:flex items-center gap-1.5 text-xs text-neutral-300 hover:text-white px-3 py-1.5 rounded-full border border-[#144234] hover:border-[#d4af37]/60 bg-[#09241c]/50 hover:bg-[#0b2b22] transition-all"
+                className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#061a14] hover:text-[#061a14] px-5 py-2.5 rounded-full bg-gradient-to-r from-[#f5df93] via-[#d4af37] to-[#ba8d28] hover:from-amber-200 hover:to-[#d4af37] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
                 title="Contact Chef Zaved"
               >
-                <Phone className="w-3.5 h-3.5 text-[#d4af37]" />
+                <Phone className="w-3.5 h-3.5 text-[#061a14]" />
                 <span>Contact Us</span>
               </a>
-
-              {/* Main "Book a Chef" CTA */}
-              <button
-                onClick={onOpenBooking}
-                className="relative group overflow-hidden rounded-full p-[1px] focus:outline-none"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#aa7c11] rounded-full group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)]" />
-                <span className="relative flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#061a14] group-hover:bg-[#0e3025] transition-colors text-xs font-semibold uppercase tracking-wider text-[#d4af37] group-hover:text-amber-200">
-                  <Calendar className="w-3.5 h-3.5" />
-                  <span>Book a Chef</span>
-                </span>
-              </button>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="flex sm:hidden items-center gap-2">
-              <button
-                onClick={onOpenBooking}
-                className="px-3 py-1.5 rounded-full bg-[#d4af37] text-[#061a14] font-semibold text-xs tracking-wider uppercase"
+              <a
+                href="#contact"
+                className="px-3.5 py-1.5 rounded-full bg-[#d4af37] text-[#061a14] font-semibold text-xs tracking-wider uppercase inline-flex items-center gap-1"
               >
-                Book
-              </button>
+                <Phone className="w-3 h-3 text-[#061a14]" />
+                <span>Contact</span>
+              </a>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
@@ -160,22 +150,12 @@ export default function Navbar({
               </a>
             )}
 
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenBooking();
-              }}
-              className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#aa7c11] text-[#061a14] font-semibold tracking-wider uppercase text-sm shadow-lg shadow-amber-500/20"
-            >
-              Book a Chef
-            </button>
-
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-2.5 rounded-lg border border-[#144234] bg-[#09241c] text-neutral-300 hover:text-white text-xs flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-full bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#aa7c11] text-[#061a14] font-semibold tracking-wider uppercase text-sm shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2"
             >
-              <Phone className="w-4 h-4 text-[#d4af37]" />
+              <Phone className="w-4 h-4 text-[#061a14]" />
               <span>Contact Us</span>
             </a>
 

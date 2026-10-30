@@ -153,23 +153,21 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
             </div>
 
             {/* Action CTA */}
-            {onOpenBooking && (
-              <div className="pt-2 flex items-center gap-4">
-                <button
-                  onClick={onOpenBooking}
-                  className="px-8 py-3.5 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider text-[#061a14] bg-gradient-to-r from-[#f5df93] via-[#d4af37] to-[#ba8d28] hover:from-amber-200 hover:to-[#d4af37] transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.35)] hover:shadow-[0_0_35px_rgba(212,175,55,0.5)] transform hover:-translate-y-0.5 cursor-pointer"
-                >
-                  Commission Chef Zaved
-                </button>
+            <div className="pt-2 flex items-center gap-4">
+              <a
+                href="#contact"
+                className="px-8 py-3.5 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider text-[#061a14] bg-gradient-to-r from-[#f5df93] via-[#d4af37] to-[#ba8d28] hover:from-amber-200 hover:to-[#d4af37] transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.35)] hover:shadow-[0_0_35px_rgba(212,175,55,0.5)] transform hover:-translate-y-0.5 cursor-pointer inline-flex items-center gap-2"
+              >
+                <span>Contact Chef Zaved</span>
+              </a>
 
-                <a
-                  href="#services"
-                  className="px-6 py-3.5 rounded-full font-medium text-xs sm:text-sm uppercase tracking-wider text-neutral-200 bg-[#061a14] hover:bg-[#0b2b22] border border-[#144234] hover:border-[#d4af37] hover:text-[#d4af37] transition-all"
-                >
-                  Explore Services
-                </a>
-              </div>
-            )}
+              <a
+                href="#menu"
+                className="px-6 py-3.5 rounded-full font-medium text-xs sm:text-sm uppercase tracking-wider text-neutral-200 bg-[#061a14] hover:bg-[#0b2b22] border border-[#144234] hover:border-[#d4af37] hover:text-[#d4af37] transition-all"
+              >
+                Signature Repertoire
+              </a>
+            </div>
           </div>
         </div>
       </div>

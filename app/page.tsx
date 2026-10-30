@@ -5,19 +5,14 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CulinaryJourney from "@/components/CulinaryJourney";
-import Services from "@/components/Services";
 import MenuPortfolio from "@/components/MenuPortfolio";
 import Testimonials from "@/components/Testimonials";
-import BookingForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
 import ConciergePortalModal from "@/components/ConciergePortalModal";
 import FloatingCTA from "@/components/FloatingCTA";
 
 export default function Home() {
   const [requestedDishes, setRequestedDishes] = useState<string[]>([]);
-  const [selectedServicePreset, setSelectedServicePreset] = useState<string>(
-    "Private In-Home Dining"
-  );
   const [isConciergeOpen, setIsConciergeOpen] = useState<boolean>(false);
 
   // Toggle requesting a dish from the menu
@@ -31,24 +26,10 @@ export default function Home() {
     });
   };
 
-  const handleRemoveRequestedDish = (dishName: string) => {
-    setRequestedDishes((prev) => prev.filter((d) => d !== dishName));
-  };
-
-  // When user clicks "Reserve This Experience" in Services
-  const handleSelectService = (serviceTitle: string) => {
-    setSelectedServicePreset(serviceTitle);
-    const bookingSection = document.getElementById("booking");
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  // When user clicks "Book a Chef" or "Book Private Dining"
-  const handleOpenBooking = () => {
-    const bookingSection = document.getElementById("booking");
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: "smooth" });
+  const handleOpenContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -57,52 +38,41 @@ export default function Home() {
       {/* 1. Navigation Bar */}
       <Navbar
         requestedDishesCount={requestedDishes.length}
-        onOpenBooking={handleOpenBooking}
+        onOpenBooking={handleOpenContact}
         onOpenConciergePortal={() => setIsConciergeOpen(true)}
       />
 
       <main>
         {/* 2. Hero Section */}
-        <Hero onOpenBooking={handleOpenBooking} />
+        <Hero onOpenBooking={handleOpenContact} />
 
         {/* 3. About Chef Zaved Section */}
         <About />
 
         {/* 3.5. My Culinary Journey Editorial Section */}
-        <CulinaryJourney onOpenBooking={handleOpenBooking} />
+        <CulinaryJourney onOpenBooking={handleOpenContact} />
 
-        {/* 4. Services Offered */}
-        <Services onSelectService={handleSelectService} />
-
-        {/* 5. Signature Menu & Portfolio */}
+        {/* 4. Signature Menu & Portfolio */}
         <MenuPortfolio
           requestedDishes={requestedDishes}
           onRequestDish={handleRequestDish}
-          onOpenBooking={handleOpenBooking}
+          onOpenBooking={handleOpenContact}
         />
 
-        {/* 6. Client Testimonials */}
+        {/* 5. Client Testimonials */}
         <Testimonials />
-
-        {/* 7. Interactive Booking & Inquiry Form */}
-        <BookingForm
-          selectedServicePreset={selectedServicePreset}
-          requestedDishes={requestedDishes}
-          onRemoveRequestedDish={handleRemoveRequestedDish}
-          onOpenConciergePortal={() => setIsConciergeOpen(true)}
-        />
       </main>
 
-      {/* 8. Footer */}
+      {/* 6. Footer */}
       <Footer
         onOpenConciergePortal={() => setIsConciergeOpen(true)}
-        onOpenBooking={handleOpenBooking}
+        onOpenBooking={handleOpenContact}
       />
 
-      {/* Floating CTA & Scroll-to-top */}
+      {/* Floating Scroll-to-top */}
       <FloatingCTA
         requestedDishesCount={requestedDishes.length}
-        onOpenBooking={handleOpenBooking}
+        onOpenBooking={handleOpenContact}
       />
 
       {/* Concierge Portal Modal */}
