@@ -49,9 +49,9 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#d4af37]/5 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-10 left-0 w-[450px] h-[450px] bg-emerald-600/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         {/* Section Header */}
-        <div className="text-left max-w-3xl mb-14 sm:mb-18">
+        <div className="text-left max-w-4xl mb-14 sm:mb-18">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a231b] border border-[#d4af37]/40 text-[#d4af37] text-xs uppercase tracking-[0.25em] font-semibold mb-3.5">
             <Sparkles className="w-3.5 h-3.5 text-[#d4af37]" />
             <span>An 18-Year Gastronomic Odyssey</span>

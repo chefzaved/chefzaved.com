@@ -62,7 +62,7 @@ export default function Footer({
       {/* Decorative top gold hairline */}
       <div className="h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent" />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Col 1: Brand & Bio (5 Cols) */}
           <div className="lg:col-span-5 space-y-5">
