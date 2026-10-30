@@ -47,7 +47,7 @@ export default function Navbar({
             : "bg-gradient-to-b from-[#061a14]/95 via-[#061a14]/80 to-transparent py-2 sm:py-3"
         }`}
       >
-        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a
