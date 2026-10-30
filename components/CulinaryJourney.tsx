@@ -1,11 +1,8 @@
 "use client";
 
-import React from "react";
-import { Sparkles, Quote } from "lucide-react";
-
-interface CulinaryJourneyProps {
-  onOpenBooking?: () => void;
-}
+import React, { useState, useEffect, useCallback } from "react";
+import { Sparkles, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { JOURNEY_PHOTOS } from "@/data/chefData";
 
 const PRESTIGE_BRANDS = [
   "Taj Group of Hotels",
@@ -20,7 +17,32 @@ const PRESTIGE_BRANDS = [
   "Barak & Al Barandah",
 ];
 
+interface CulinaryJourneyProps {
+  onOpenBooking?: () => void;
+}
+
 export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const totalPhotos = JOURNEY_PHOTOS.length;
+
+  const nextPhoto = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % totalPhotos);
+  }, [totalPhotos]);
+
+  const prevPhoto = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + totalPhotos) % totalPhotos);
+  }, [totalPhotos]);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(nextPhoto, 4500);
+    return () => clearInterval(interval);
+  }, [isPaused, nextPhoto]);
+
+  const currentPhoto = JOURNEY_PHOTOS[currentIndex] || JOURNEY_PHOTOS[0];
+
   return (
     <section id="culinary-journey" className="py-24 sm:py-32 bg-[#061a14] relative overflow-hidden border-t border-[#144234]/60">
       {/* Decorative ambient glow */}
@@ -46,47 +68,110 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
           </p>
         </div>
 
-        {/* 2-Column Editorial Grid: Portrait on Left, Journey Biography on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column (5 cols): Original Black Coat Portrait */}
-          <div className="lg:col-span-5 relative lg:sticky lg:top-28">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Outer Glow Halo */}
-              <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-b from-[#d4af37]/35 via-[#144234]/30 to-[#d4af37]/15 blur-md -z-10" />
-
-              {/* Portrait Container - Original portrait unmodified */}
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/60 shadow-[0_10px_40px_rgba(0,0,0,0.8)] bg-[#072018]">
+        {/* 2-Column Editorial Grid: Multi-Photo Showcase on Left, Journey Biography on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          {/* Left Column (6 cols): Multi-Photo Showcase - Side by Side with Journey Archive */}
+          <div className="lg:col-span-6 relative space-y-4">
+            {/* Side-by-Side Dual Photos Container */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+              {/* Photo 1: Iconic Chef Zaved Portrait (Badge completely removed) */}
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/60 shadow-[0_10px_35px_rgba(0,0,0,0.8)] bg-[#072018] group aspect-[4/5] flex items-center justify-center">
                 <img
                   src="/images/chef-journey.jpg"
                   alt="Chef Zaved - An 18-Year Gastronomic Odyssey"
-                  className="w-full h-auto block object-cover filter brightness-[0.98] contrast-[1.02] transition-transform duration-700 ease-out hover:scale-[1.02]"
+                  className="w-full h-full object-cover filter brightness-[0.98] contrast-[1.02] transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </div>
+
+              {/* Photo 2: Beside it! Interactive Journey Moments Viewer from D:\chefzaved.com\Photos\My Journey */}
+              <div
+                className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/60 shadow-[0_10px_35px_rgba(0,0,0,0.8)] bg-[#072018] group aspect-[4/5] flex items-center justify-center select-none"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              >
+                {/* Active Journey Image */}
+                <img
+                  key={currentPhoto.id}
+                  src={currentPhoto.imageUrl}
+                  alt={currentPhoto.title}
+                  className="w-full h-full object-cover filter brightness-[0.96] contrast-[1.04] transition-all duration-700 ease-out"
                 />
 
-                {/* Subtle bottom gradient for image integration */}
-                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#061a14] via-[#061a14]/60 to-transparent pointer-events-none" />
+                {/* Subtle bottom gradient */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#061a14] via-[#061a14]/60 to-transparent pointer-events-none" />
 
-                {/* Caption Tag pinned at portrait bottom */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-[#061a14]/90 backdrop-blur-md border border-[#d4af37]/40 shadow-xl">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="font-serif font-bold text-white text-sm block tracking-wide">
-                        Chef Zaved
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevPhoto}
+                  aria-label="Previous journey moment"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/50 flex items-center justify-center backdrop-blur-md transition-all duration-300 cursor-pointer shadow-lg z-10"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={nextPhoto}
+                  aria-label="Next journey moment"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/50 flex items-center justify-center backdrop-blur-md transition-all duration-300 cursor-pointer shadow-lg z-10"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+
+                {/* Caption Tag pinned at photo bottom */}
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 p-2.5 rounded-xl bg-[#061a14]/90 backdrop-blur-md border border-[#d4af37]/40 shadow-xl z-10">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="min-w-0">
+                      <span className="font-serif font-bold text-white text-xs truncate block tracking-wide">
+                        {currentPhoto.title}
                       </span>
-                      <span className="text-[11px] text-[#d4af37] uppercase tracking-wider font-sans font-medium">
-                        Master of Modern Gastronomy
+                      <span className="text-[10px] text-[#d4af37] uppercase tracking-wider font-sans font-medium truncate block">
+                        {currentPhoto.tag}
                       </span>
                     </div>
-                    <span className="text-[11px] font-semibold text-[#fae8b4] px-2.5 py-1 rounded-full bg-[#0b2b22] border border-[#d4af37]/30">
-                      18+ Yrs
+                    <span className="shrink-0 text-[10px] font-semibold text-[#fae8b4] px-2 py-0.5 rounded-full bg-[#0b2b22] border border-[#d4af37]/30">
+                      {String(currentIndex + 1).padStart(2, "0")} / {String(JOURNEY_PHOTOS.length).padStart(2, "0")}
                     </span>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Horizontal Thumbnail Selector for all 11 Journey Photos */}
+            <div className="pt-1">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[11px] uppercase tracking-widest text-neutral-400 font-medium">
+                  Career Archives ({JOURNEY_PHOTOS.length} Photographs)
+                </span>
+                <span className="text-[11px] text-[#d4af37] font-sans">Click to inspect</span>
+              </div>
+
+              <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-[#d4af37]/40">
+                {JOURNEY_PHOTOS.map((photo, idx) => {
+                  const isSelected = idx === currentIndex;
+                  return (
+                    <button
+                      key={photo.id}
+                      onClick={() => setCurrentIndex(idx)}
+                      className={`relative shrink-0 w-16 h-16 sm:w-18 sm:h-18 rounded-xl overflow-hidden transition-all duration-300 border-2 cursor-pointer ${
+                        isSelected
+                          ? "border-[#d4af37] scale-105 shadow-[0_0_12px_rgba(212,175,55,0.7)]"
+                          : "border-[#144234] opacity-60 hover:opacity-100 hover:border-[#d4af37]/60"
+                      }`}
+                      title={photo.title}
+                    >
+                      <img
+                        src={photo.imageUrl}
+                        alt={photo.title}
+                        className="w-full h-full object-cover filter brightness-[0.95]"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
-          {/* Right Column (7 cols): Editorial Personal Journey Narrative */}
-          <div className="lg:col-span-7 space-y-8">
+          {/* Right Column (6 cols): Editorial Personal Journey Narrative */}
+          <div className="lg:col-span-6 space-y-8">
             {/* Lead Narrative Paragraphs */}
             <div className="space-y-4 text-neutral-200 text-sm sm:text-base leading-relaxed font-sans">
               <p className="text-base sm:text-lg text-white font-serif leading-relaxed">
@@ -140,7 +225,7 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
                     Chef Zaved
                   </span>
                   <span className="text-xs text-[#d4af37] uppercase tracking-widest font-sans">
-                    Master of Modern Gastronomy
+                    Executive Chef &amp; Founder
                   </span>
                 </div>
 

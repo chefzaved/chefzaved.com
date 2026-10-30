@@ -918,3 +918,92 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     highlightDish: "Grand Royal Bengali Bhoj",
   },
 ];
+
+
+export interface JourneyPhoto {
+  id: string;
+  imageUrl: string;
+  title: string;
+  tag: string;
+  description: string;
+}
+
+export const JOURNEY_PHOTOS: JourneyPhoto[] = [
+  {
+    id: 'journey-4',
+    imageUrl: '/images/journey/journey-4.jpg',
+    title: 'With Chef Manjit Gill',
+    tag: 'Culinary Dialogue',
+    description: 'Honored dialogue and culinary mentorship with Chef Manjit Gill, President of Indian Federation of Culinary Associations.',
+  },
+  {
+    id: 'journey-11',
+    imageUrl: '/images/journey/journey-11.jpg',
+    title: 'Zee Bangla Rannaghar',
+    tag: 'Television Feature',
+    description: 'Featured guest chef on Zee Bangla Rannaghar, showcasing royal culinary traditions and modern gastronomy.',
+  },
+  {
+    id: 'journey-2',
+    imageUrl: '/images/journey/journey-2.jpg',
+    title: 'Luxury River Cruise Operations',
+    tag: 'International Fleets',
+    description: 'Directing executive culinary programs aboard Uniworld and international boutique river cruise collections.',
+  },
+  {
+    id: 'journey-6',
+    imageUrl: '/images/journey/journey-6.jpg',
+    title: 'Culinary Masterclasses',
+    tag: 'Brigade Mentorship',
+    description: 'Mentoring upcoming culinary talents and brigade teams in precision plating and kitchen discipline.',
+  },
+  {
+    id: 'journey-3',
+    imageUrl: '/images/journey/journey-3.jpg',
+    title: 'Royal Banquets & Grand Caterings',
+    tag: 'Five-Star Events',
+    description: 'Orchestrating grand banquet spreads and bespoke gastronomic spectacles for prestigious hosts.',
+  },
+  {
+    id: 'journey-8',
+    imageUrl: '/images/journey/journey-8.jpg',
+    title: 'Precision Haute Cuisine Plating',
+    tag: 'Fine Dining Artistry',
+    description: 'Tweezers-crafted botanical finishing and delicate balance of micro-herbs and culinary sauces.',
+  },
+  {
+    id: 'journey-1',
+    imageUrl: '/images/journey/journey-1.jpg',
+    title: 'Five-Star Kitchen Leadership',
+    tag: 'Brigade Direction',
+    description: 'Executive leadership across celebrated hospitality empires including Taj Group, Peerless Inn, and Vedic Village.',
+  },
+  {
+    id: 'journey-7',
+    imageUrl: '/images/journey/journey-7.jpg',
+    title: 'The Alchemy of the Hearth',
+    tag: 'Authentic Craft',
+    description: 'Mastering high-heat culinary arts, royal Awadhi dum pukht methods, and heritage cooking.',
+  },
+  {
+    id: 'journey-9',
+    imageUrl: '/images/journey/journey-9.jpg',
+    title: 'Culinary Excellence Honors',
+    tag: 'Industry Recognition',
+    description: 'Celebrated across hospitality platforms for 18+ years of dedicated culinary mastery.',
+  },
+  {
+    id: 'journey-10',
+    imageUrl: '/images/journey/journey-10.jpg',
+    title: 'Live Gastronomic Demos',
+    tag: 'Culinary Presentations',
+    description: 'Engaging high-profile audiences with live masterclasses and sensory gastronomy demonstrations.',
+  },
+  {
+    id: 'journey-5',
+    imageUrl: '/images/journey/journey-5.jpg',
+    title: 'Executive Chef Journey',
+    tag: 'Enduring Legacy',
+    description: 'Eighteen years of uncompromising discipline, heritage preservation, and modern culinary vision.',
+  },
+];
