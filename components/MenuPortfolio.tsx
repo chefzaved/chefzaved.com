@@ -26,16 +26,15 @@ export default function MenuPortfolio({
   onOpenBooking,
 }: MenuPortfolioProps) {
   const categories = [
-    "All",
-    "Authentic Bengali Heritage",
     "Modern European & Grills",
     "Artisanal Canapés & Amuse-Bouche",
     "Bespoke Grazing & Desserts",
+    "Authentic Bengali Heritage",
   ] as const;
 
   type MenuCategory = (typeof categories)[number];
 
-  const [selectedCategory, setSelectedCategory] = useState<MenuCategory>("All");
+  const [selectedCategory, setSelectedCategory] = useState<MenuCategory>("Modern European & Grills");
   const [dietaryFilter, setDietaryFilter] = useState<string>("All");
   const [activeModalDish, setActiveModalDish] = useState<Dish | null>(null);
 
@@ -43,8 +42,7 @@ export default function MenuPortfolio({
 
   // Filter dishes
   const filteredDishes = DISHES_DATA.filter((dish) => {
-    const matchesCategory =
-      selectedCategory === "All" || dish.category === selectedCategory;
+    const matchesCategory = dish.category === selectedCategory;
     const matchesDietary =
       dietaryFilter === "All" ||
       dish.dietary.some((d) => d.toLowerCase().includes(dietaryFilter.toLowerCase()));
@@ -151,27 +149,36 @@ export default function MenuPortfolio({
                 key={dish.id}
                 className="group rounded-2xl bg-[#08241c] border border-[#144234] hover:border-[#d4af37]/60 overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-[0_12px_45px_-10px_rgba(212,175,55,0.22)]"
               >
-                {/* Image Container with Badges */}
-                <div className="relative aspect-[16/11] overflow-hidden bg-[#051711]">
+                {/* Image Container with Badges - Fitted & Framed without harsh cropping */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#051711]">
+                  {/* Ambient Mood Fill */}
+                  <img
+                    src={dish.imageUrl}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover filter blur-xl scale-125 opacity-35 brightness-60 pointer-events-none"
+                  />
+
+                  {/* Fully Visible Dish Photograph */}
                   <img
                     src={dish.imageUrl}
                     alt={dish.name}
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                    className="relative z-1 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500 ease-out"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08241c] via-transparent to-[#061a14]/30" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08241c]/90 via-transparent to-[#061a14]/40 pointer-events-none z-2" />
 
                   {/* Top Badges */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
                     {dish.badge ? (
-                      <span className="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#061a14]/90 backdrop-blur-md text-[#d4af37] border border-[#d4af37]/40">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#061a14]/90 backdrop-blur-md text-[#d4af37] border border-[#d4af37]/40 shadow-md">
                         {dish.badge}
                       </span>
                     ) : (
                       <span />
                     )}
 
-                    <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#061a14]/80 backdrop-blur-md text-neutral-200 border border-[#144234]">
+                    <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#061a14]/85 backdrop-blur-md text-neutral-200 border border-[#144234]">
                       {dish.category}
                     </span>
                   </div>
@@ -179,7 +186,7 @@ export default function MenuPortfolio({
                   {/* Quick Preview Button */}
                   <button
                     onClick={() => setActiveModalDish(dish)}
-                    className="absolute bottom-3 right-3 p-2 rounded-full bg-[#061a14]/70 hover:bg-[#d4af37] text-white hover:text-[#061a14] transition-colors backdrop-blur-md"
+                    className="absolute bottom-3 right-3 z-10 p-2 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] transition-colors backdrop-blur-md shadow-lg cursor-pointer"
                     title="View Dish Details & Wine Pairing"
                   >
                     <Eye className="w-4 h-4" />
@@ -261,7 +268,7 @@ export default function MenuPortfolio({
             <p className="text-lg">No dishes found matching your selected criteria.</p>
             <button
               onClick={() => {
-                setSelectedCategory("All");
+                setSelectedCategory("Modern European & Grills");
                 setDietaryFilter("All");
               }}
               className="mt-4 px-4 py-2 rounded-lg bg-[#0b2b22] text-[#d4af37] border border-[#d4af37]/40 text-xs uppercase"

@@ -14,53 +14,53 @@ interface HeroProps {
 const HERO_DISHES = [
   {
     id: "dish-1",
-    name: "Grand Royal Bengali Bhoj",
-    imageUrl: "/images/dishes/bengali-bhoj.jpg",
-  },
-  {
-    id: "dish-2",
     name: "Pistachio-Crusted Herb Rack of Lamb",
     imageUrl: "/images/dishes/rack-of-lamb.jpg",
   },
   {
-    id: "dish-3",
-    name: "Classic Shorshe Ilish in Clay Handi",
-    imageUrl: "/images/dishes/shorshe-ilish.jpg",
-  },
-  {
-    id: "dish-4",
+    id: "dish-2",
     name: "Pan-Seared Seabass on Potato Rosti",
     imageUrl: "/images/dishes/seabass-rosti.jpg",
   },
   {
-    id: "dish-5",
-    name: "Gold Daab Chingri Malai Curry",
-    imageUrl: "/images/dishes/chingri-malai-curry.jpg",
+    id: "dish-3",
+    name: "Sous-Vide Chicken Roulade on Slate",
+    imageUrl: "/images/dishes/chicken-roulade.jpg",
   },
   {
-    id: "dish-6",
+    id: "dish-4",
     name: "Pan-Seared Duck Breast with Cherry Reduction",
     imageUrl: "/images/dishes/duck-breast.jpg",
   },
   {
-    id: "dish-7",
-    name: "Kolkata Kosha Mangsho",
-    imageUrl: "/images/dishes/kosha-mangsho.jpg",
-  },
-  {
-    id: "dish-8",
+    id: "dish-5",
     name: "Scottish Salmon with Asparagus & Baby Potatoes",
     imageUrl: "/images/dishes/salmon-asparagus.jpg",
   },
   {
-    id: "dish-9",
+    id: "dish-6",
+    name: "Handcrafted Truffle Tagliolini",
+    imageUrl: "/images/dishes/truffle-tagliolini.jpg",
+  },
+  {
+    id: "dish-7",
     name: "Artisanal Truffle & Sesame Fusion Sushi",
     imageUrl: "/images/dishes/fusion-sushi.jpg",
   },
   {
-    id: "dish-10",
+    id: "dish-8",
     name: "Steamed Beetroot & Edamame Crystal Dim Sum",
     imageUrl: "/images/dishes/dimsum-beetroot.jpg",
+  },
+  {
+    id: "dish-9",
+    name: "Sesame-Crusted Ahi Tuna Tataki",
+    imageUrl: "/images/dishes/tuna-tataki.jpg",
+  },
+  {
+    id: "dish-10",
+    name: "Charred Herb-Crusted Tenderloin",
+    imageUrl: "/images/dishes/charred-tenderloin.jpg",
   },
 ];
 

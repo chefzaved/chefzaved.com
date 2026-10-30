@@ -169,177 +169,6 @@ export const SERVICES_DATA: Service[] = [
 ];
 
 export const DISHES_DATA: Dish[] = [
-  // ==========================================
-  // AUTHENTIC BENGALI HERITAGE REPERTOIRE
-  // ==========================================
-  {
-    id: "beng-1",
-    name: "Grand Royal Bengali Bhoj",
-    category: "Authentic Bengali Heritage",
-    description:
-      "An imperial Rajbari Mahabhoj celebration presented on traditional bell-metal kasha thali and banana leaves. A symphonic banquet featuring fragrant Gobindobhog rice, ghee, crispy artisanal bhajas, Shukto, Shorshe Ilish, Gold Chingri Malai Curry, Kosha Mangsho, and authentic sweet chutneys.",
-    ingredients: ["Gobindobhog Rice", "Jharna Ghee", "Padma River Ilish", "Gold Tiger Prawns", "Bengal Tender Mutton", "Kacha Lanka"],
-    dietary: ["Halal Available", "Gluten-Free Available"],
-    winePairing: "Sula Dindori Reserve Viognier / Chablis Grand Cru",
-    badge: "Imperial Rajbari Feast",
-    imageUrl: "/images/dishes/bengali-bhoj.jpg",
-  },
-  {
-    id: "beng-2",
-    name: "Classic Shorshe Ilish in Clay Handi",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Prestigious Padma River Hilsa cutlets gently poached in freshly ground yellow and black mustard paste, virgin cold-pressed kachi ghani mustard oil, slit fiery green chillies, and nigella seeds, served piping hot in an earthen handi.",
-    ingredients: ["Fresh Padma Ilish", "Stone-ground Shorshe Paste", "Cold-Pressed Mustard Oil", "Kacha Lanka", "Kalo Jeere"],
-    dietary: ["Pescatarian", "Gluten-Free", "Halal"],
-    winePairing: "Domaine Leflaive Puligny-Montrachet 2020",
-    badge: "Signature Royal Heritage",
-    imageUrl: "/images/dishes/shorshe-ilish.jpg",
-  },
-  {
-    id: "beng-3",
-    name: "Gold Daab Chingri Malai Curry",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Succulent Bay of Bengal jumbo freshwater tiger prawns simmered gently in rich tender coconut malai, fresh green coconut water, green cardamom, and aromatic Bengali whole spices.",
-    ingredients: ["Bay of Bengal Jumbo Prawns", "Tender Coconut Cream", "Green Cardamom", "Cinnamon", "Ghee", "Tender Coconut Flesh"],
-    dietary: ["Pescatarian", "Gluten-Free", "Halal"],
-    winePairing: "Meursault Premier Cru Genevrières 2019",
-    badge: "Chef's Masterpiece",
-    imageUrl: "/images/dishes/chingri-malai-curry.jpg",
-  },
-  {
-    id: "beng-4",
-    name: "Kolkata Mutton Kosha",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Prime tender goat meat slow-braised for four hours over charcoal embers in mustard oil, caramelized onions, dark roasted spices, ginger-garlic paste, and crushed green chillies until rich, velvety, and deeply aromatic.",
-    ingredients: ["Tender Free-Range Goat", "Cold-Pressed Mustard Oil", "Caramelized Onions", "Shahi Garam Masala", "Mustard Curd Marinade"],
-    dietary: ["Halal", "Gluten-Free"],
-    winePairing: "Tenuta San Guido Sassicaia 2018 / Châteauneuf-du-Pape",
-    badge: "Slow-Cooked Icon",
-    imageUrl: "/images/dishes/kosha-mangsho.jpg",
-  },
-  {
-    id: "beng-5",
-    name: "Traditional Bhetki Macher Kalia",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Thick Kolkata Bhetki fillets simmered in a regal onion, ginger, and hung curd gravy perfumed with whole garam masala, bay leaf, and raisin paste, finished with dollops of pure cow ghee.",
-    ingredients: ["Fresh Kolkata Bhetki", "Onion-Ginger Gravy", "Hung Curd", "Kishmish Paste", "Shahi Garam Masala", "Jharna Ghee"],
-    dietary: ["Pescatarian", "Gluten-Free", "Halal"],
-    winePairing: "Pouilly-Fuissé Premier Cru 2021",
-    badge: "Kolkata Classic",
-    imageUrl: "/images/dishes/bhetki-macher-kalia.jpg",
-  },
-  {
-    id: "beng-6",
-    name: "Gourmet Potoler Dolma",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Tender pointed gourds (potol) carefully deseeded and stuffed with a rich filling of spiced chenna, cashew nuts, and golden raisins, simmered in a silky tomato-cashew satin jus.",
-    ingredients: ["Farm Pointed Gourds", "Fresh Chhena Dumpling", "Cashew Nuts", "Golden Raisins", "Cardamom-Cinnamon Jus"],
-    dietary: ["Vegetarian", "Gluten-Free"],
-    winePairing: "Gewürztraminer Grand Cru Alsace 2019",
-    badge: "Aristocratic Vegetarian",
-    imageUrl: "/images/dishes/potoler-dolma.jpg",
-  },
-  {
-    id: "beng-7",
-    name: "Handcrafted Chhanar Dalna",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Pristine artisanal cottage cheese pillows delicately infused with green chillies and roasted cumin, fried golden and simmered in a traditional hing-ginger-tomato cumin broth with Yukon gold potatoes.",
-    ingredients: ["Fresh Artisanal Chhana", "Jeera-Ginger Paste", "Asafoetida (Hing)", "Yukon Gold Potatoes", "Ghee"],
-    dietary: ["Vegetarian", "Gluten-Free"],
-    winePairing: "Pinot Gris Réserve Alsace 2020",
-    badge: "Traditional Classic",
-    imageUrl: "/images/dishes/chhanar-dalna.jpg",
-  },
-  {
-    id: "beng-8",
-    name: "Rajbari Echorer Dalna",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Tender baby green jackfruit ('Gachh Patha') slow-simmered in rich spices, aromatic ghee, and caramelized onions, achieving the sublime melt-in-mouth texture of royal Awadhi braises.",
-    ingredients: ["Baby Green Jackfruit (Echor)", "Yukon Gold Potatoes", "Mustard Oil", "Coriander-Cumin Paste", "Garam Masala"],
-    dietary: ["Vegetarian", "Gluten-Free", "Vegan Available"],
-    winePairing: "Côtes du Rhône Rouge 2020",
-    badge: "Heritage Vegetarian",
-    imageUrl: "/images/dishes/echorer-dalna.jpg",
-  },
-  {
-    id: "beng-9",
-    name: "Traditional Dudh Shukto",
-    category: "Authentic Bengali Heritage",
-    description:
-      "The quintessential bittersweet ceremonial palate opener. Tender bitter gourd, raw green bananas, sweet potatoes, drumsticks, and crunchy bori simmered in ginger and milk gravy with wild celery seed (radhuni).",
-    ingredients: ["Bitter Gourd (Korola)", "Raw Plantain", "Drumsticks", "Crunchy Bori", "Radhuni", "Whole Cow Milk"],
-    dietary: ["Vegetarian", "Gluten-Free"],
-    winePairing: "Dry Riesling Mosel 2021",
-    badge: "Ceremonial Starter",
-    imageUrl: "/images/dishes/dudh-shukto.jpg",
-  },
-  {
-    id: "beng-10",
-    name: "Crisp Posto Bora & Dal Fritters",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Golden-crusted patties of freshly crushed poppy seeds (khashkhash), green chillies, and mustard oil, alongside crisp yellow moong dal fritters. The holy grail of traditional Bengali comfort.",
-    ingredients: ["White Poppy Seeds (Posto)", "Yellow Moong Dal", "Fiery Green Chillies", "Mustard Oil", "Cold-Pressed Ghee"],
-    dietary: ["Vegetarian", "Gluten-Free", "Vegan Available"],
-    winePairing: "Sauvignon Blanc Marlborough 2022",
-    badge: "Delicacy",
-    imageUrl: "/images/dishes/posto-bora.jpg",
-  },
-  {
-    id: "beng-11",
-    name: "Royal Bengali Bhaja & Chutney Thali",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Crispy Begun Bhaja (sliced eggplant), Potol Bhaja, and Jhurjhure Aloo Bhaja paired with sweet and tangy tomato-khejur-aamsotto chutney and crispy fried papad.",
-    ingredients: ["Round Purple Eggplant", "Pointed Gourd", "Crispy Shoestring Potatoes", "Aamsotto", "Dates (Khejur)", "Mustard Oil"],
-    dietary: ["Vegetarian", "Gluten-Free", "Vegan"],
-    winePairing: "Grüner Veltliner Kamptal 2021",
-    badge: "Traditional Accompaniment",
-    imageUrl: "/images/dishes/bengali-bhaja-platter.jpg",
-  },
-  {
-    id: "beng-12",
-    name: "Gobindobhog Bhat with Pure Ghee",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Fragrant short-grain Gobindobhog heirloom rice gently steamed to tender perfection, crowned with fragrant warm cow ghee, sliced Gondhoraj lime, and garden-fresh green chillies.",
-    ingredients: ["Heirloom Gobindobhog Rice", "Pure Jharna Cow Ghee", "Gondhoraj Lebu", "Fresh Green Chillies"],
-    dietary: ["Vegetarian", "Gluten-Free"],
-    winePairing: "Floral Torrontés 2021",
-    badge: "Fragrant Heirloom Rice",
-    imageUrl: "/images/dishes/gobindobhog-bhat.jpg",
-  },
-  {
-    id: "beng-13",
-    name: "Steamed Gobindobhog Rice & Kacha Lanka",
-    category: "Authentic Bengali Heritage",
-    description:
-      "The classical foundation of the Bengali feast: fluffy aromatic steamed rice presented with fresh sliced lime and spicy green chillies, designed to harmonize with aromatic dals and shukto.",
-    ingredients: ["Aromatic White Rice", "Fresh Lime", "Green Chillies", "Sea Salt"],
-    dietary: ["Vegetarian", "Gluten-Free", "Vegan"],
-    winePairing: "Pinot Grigio Alto Adige 2022",
-    badge: "Purity of Rice",
-    imageUrl: "/images/dishes/steamed-rice-ghee.jpg",
-  },
-  {
-    id: "beng-14",
-    name: "Heritage Panchmishali Labra",
-    category: "Authentic Bengali Heritage",
-    description:
-      "Five-vegetable slow-cooked medley of pumpkin, ridge gourd, eggplant, radish, and potatoes tempered with panch phoron (Bengali five-spice blend) and fresh coriander.",
-    ingredients: ["Seasonal Vegetables", "Panch Phoron", "Mustard Oil", "Ginger Paste", "Coriander"],
-    dietary: ["Vegetarian", "Gluten-Free", "Vegan"],
-    winePairing: "Beaujolais-Villages 2020",
-    badge: "Rustic Classic",
-    imageUrl: "/images/dishes/panchmishali-labra.jpg",
-  },
 
   // ==========================================
   // MODERN EUROPEAN & GRILLS
@@ -831,6 +660,178 @@ export const DISHES_DATA: Dish[] = [
     winePairing: "Château d'Yquem 2011 / Late Harvest Riesling",
     badge: "Decadent Finale",
     imageUrl: "/images/dishes/luxury-dessert-buffet.jpg",
+  },
+
+  // ==========================================
+  // AUTHENTIC BENGALI HERITAGE REPERTOIRE
+  // ==========================================
+  {
+    id: "beng-1",
+    name: "Grand Royal Bengali Bhoj",
+    category: "Authentic Bengali Heritage",
+    description:
+      "An imperial Rajbari Mahabhoj celebration presented on traditional bell-metal kasha thali and banana leaves. A symphonic banquet featuring fragrant Gobindobhog rice, ghee, crispy artisanal bhajas, Shukto, Shorshe Ilish, Gold Chingri Malai Curry, Kosha Mangsho, and authentic sweet chutneys.",
+    ingredients: ["Gobindobhog Rice", "Jharna Ghee", "Padma River Ilish", "Gold Tiger Prawns", "Bengal Tender Mutton", "Kacha Lanka"],
+    dietary: ["Halal Available", "Gluten-Free Available"],
+    winePairing: "Sula Dindori Reserve Viognier / Chablis Grand Cru",
+    badge: "Imperial Rajbari Feast",
+    imageUrl: "/images/dishes/bengali-bhoj.jpg",
+  },
+  {
+    id: "beng-2",
+    name: "Classic Shorshe Ilish in Clay Handi",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Prestigious Padma River Hilsa cutlets gently poached in freshly ground yellow and black mustard paste, virgin cold-pressed kachi ghani mustard oil, slit fiery green chillies, and nigella seeds, served piping hot in an earthen handi.",
+    ingredients: ["Fresh Padma Ilish", "Stone-ground Shorshe Paste", "Cold-Pressed Mustard Oil", "Kacha Lanka", "Kalo Jeere"],
+    dietary: ["Pescatarian", "Gluten-Free", "Halal"],
+    winePairing: "Domaine Leflaive Puligny-Montrachet 2020",
+    badge: "Signature Royal Heritage",
+    imageUrl: "/images/dishes/shorshe-ilish.jpg",
+  },
+  {
+    id: "beng-3",
+    name: "Gold Daab Chingri Malai Curry",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Succulent Bay of Bengal jumbo freshwater tiger prawns simmered gently in rich tender coconut malai, fresh green coconut water, green cardamom, and aromatic Bengali whole spices.",
+    ingredients: ["Bay of Bengal Jumbo Prawns", "Tender Coconut Cream", "Green Cardamom", "Cinnamon", "Ghee", "Tender Coconut Flesh"],
+    dietary: ["Pescatarian", "Gluten-Free", "Halal"],
+    winePairing: "Meursault Premier Cru Genevrières 2019",
+    badge: "Chef's Masterpiece",
+    imageUrl: "/images/dishes/chingri-malai-curry.jpg",
+  },
+  {
+    id: "beng-4",
+    name: "Kolkata Mutton Kosha",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Prime tender goat meat slow-braised for four hours over charcoal embers in mustard oil, caramelized onions, dark roasted spices, ginger-garlic paste, and crushed green chillies until rich, velvety, and deeply aromatic.",
+    ingredients: ["Tender Free-Range Goat", "Cold-Pressed Mustard Oil", "Caramelized Onions", "Shahi Garam Masala", "Mustard Curd Marinade"],
+    dietary: ["Halal", "Gluten-Free"],
+    winePairing: "Tenuta San Guido Sassicaia 2018 / Châteauneuf-du-Pape",
+    badge: "Slow-Cooked Icon",
+    imageUrl: "/images/dishes/kosha-mangsho.jpg",
+  },
+  {
+    id: "beng-5",
+    name: "Traditional Bhetki Macher Kalia",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Thick Kolkata Bhetki fillets simmered in a regal onion, ginger, and hung curd gravy perfumed with whole garam masala, bay leaf, and raisin paste, finished with dollops of pure cow ghee.",
+    ingredients: ["Fresh Kolkata Bhetki", "Onion-Ginger Gravy", "Hung Curd", "Kishmish Paste", "Shahi Garam Masala", "Jharna Ghee"],
+    dietary: ["Pescatarian", "Gluten-Free", "Halal"],
+    winePairing: "Pouilly-Fuissé Premier Cru 2021",
+    badge: "Kolkata Classic",
+    imageUrl: "/images/dishes/bhetki-macher-kalia.jpg",
+  },
+  {
+    id: "beng-6",
+    name: "Gourmet Potoler Dolma",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Tender pointed gourds (potol) carefully deseeded and stuffed with a rich filling of spiced chenna, cashew nuts, and golden raisins, simmered in a silky tomato-cashew satin jus.",
+    ingredients: ["Farm Pointed Gourds", "Fresh Chhena Dumpling", "Cashew Nuts", "Golden Raisins", "Cardamom-Cinnamon Jus"],
+    dietary: ["Vegetarian", "Gluten-Free"],
+    winePairing: "Gewürztraminer Grand Cru Alsace 2019",
+    badge: "Aristocratic Vegetarian",
+    imageUrl: "/images/dishes/potoler-dolma.jpg",
+  },
+  {
+    id: "beng-7",
+    name: "Handcrafted Chhanar Dalna",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Pristine artisanal cottage cheese pillows delicately infused with green chillies and roasted cumin, fried golden and simmered in a traditional hing-ginger-tomato cumin broth with Yukon gold potatoes.",
+    ingredients: ["Fresh Artisanal Chhana", "Jeera-Ginger Paste", "Asafoetida (Hing)", "Yukon Gold Potatoes", "Ghee"],
+    dietary: ["Vegetarian", "Gluten-Free"],
+    winePairing: "Pinot Gris Réserve Alsace 2020",
+    badge: "Traditional Classic",
+    imageUrl: "/images/dishes/chhanar-dalna.jpg",
+  },
+  {
+    id: "beng-8",
+    name: "Rajbari Echorer Dalna",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Tender baby green jackfruit ('Gachh Patha') slow-simmered in rich spices, aromatic ghee, and caramelized onions, achieving the sublime melt-in-mouth texture of royal Awadhi braises.",
+    ingredients: ["Baby Green Jackfruit (Echor)", "Yukon Gold Potatoes", "Mustard Oil", "Coriander-Cumin Paste", "Garam Masala"],
+    dietary: ["Vegetarian", "Gluten-Free", "Vegan Available"],
+    winePairing: "Côtes du Rhône Rouge 2020",
+    badge: "Heritage Vegetarian",
+    imageUrl: "/images/dishes/echorer-dalna.jpg",
+  },
+  {
+    id: "beng-9",
+    name: "Traditional Dudh Shukto",
+    category: "Authentic Bengali Heritage",
+    description:
+      "The quintessential bittersweet ceremonial palate opener. Tender bitter gourd, raw green bananas, sweet potatoes, drumsticks, and crunchy bori simmered in ginger and milk gravy with wild celery seed (radhuni).",
+    ingredients: ["Bitter Gourd (Korola)", "Raw Plantain", "Drumsticks", "Crunchy Bori", "Radhuni", "Whole Cow Milk"],
+    dietary: ["Vegetarian", "Gluten-Free"],
+    winePairing: "Dry Riesling Mosel 2021",
+    badge: "Ceremonial Starter",
+    imageUrl: "/images/dishes/dudh-shukto.jpg",
+  },
+  {
+    id: "beng-10",
+    name: "Crisp Posto Bora & Dal Fritters",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Golden-crusted patties of freshly crushed poppy seeds (khashkhash), green chillies, and mustard oil, alongside crisp yellow moong dal fritters. The holy grail of traditional Bengali comfort.",
+    ingredients: ["White Poppy Seeds (Posto)", "Yellow Moong Dal", "Fiery Green Chillies", "Mustard Oil", "Cold-Pressed Ghee"],
+    dietary: ["Vegetarian", "Gluten-Free", "Vegan Available"],
+    winePairing: "Sauvignon Blanc Marlborough 2022",
+    badge: "Delicacy",
+    imageUrl: "/images/dishes/posto-bora.jpg",
+  },
+  {
+    id: "beng-11",
+    name: "Royal Bengali Bhaja & Chutney Thali",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Crispy Begun Bhaja (sliced eggplant), Potol Bhaja, and Jhurjhure Aloo Bhaja paired with sweet and tangy tomato-khejur-aamsotto chutney and crispy fried papad.",
+    ingredients: ["Round Purple Eggplant", "Pointed Gourd", "Crispy Shoestring Potatoes", "Aamsotto", "Dates (Khejur)", "Mustard Oil"],
+    dietary: ["Vegetarian", "Gluten-Free", "Vegan"],
+    winePairing: "Grüner Veltliner Kamptal 2021",
+    badge: "Traditional Accompaniment",
+    imageUrl: "/images/dishes/bengali-bhaja-platter.jpg",
+  },
+  {
+    id: "beng-12",
+    name: "Gobindobhog Bhat with Pure Ghee",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Fragrant short-grain Gobindobhog heirloom rice gently steamed to tender perfection, crowned with fragrant warm cow ghee, sliced Gondhoraj lime, and garden-fresh green chillies.",
+    ingredients: ["Heirloom Gobindobhog Rice", "Pure Jharna Cow Ghee", "Gondhoraj Lebu", "Fresh Green Chillies"],
+    dietary: ["Vegetarian", "Gluten-Free"],
+    winePairing: "Floral Torrontés 2021",
+    badge: "Fragrant Heirloom Rice",
+    imageUrl: "/images/dishes/gobindobhog-bhat.jpg",
+  },
+  {
+    id: "beng-13",
+    name: "Steamed Gobindobhog Rice & Kacha Lanka",
+    category: "Authentic Bengali Heritage",
+    description:
+      "The classical foundation of the Bengali feast: fluffy aromatic steamed rice presented with fresh sliced lime and spicy green chillies, designed to harmonize with aromatic dals and shukto.",
+    ingredients: ["Aromatic White Rice", "Fresh Lime", "Green Chillies", "Sea Salt"],
+    dietary: ["Vegetarian", "Gluten-Free", "Vegan"],
+    winePairing: "Pinot Grigio Alto Adige 2022",
+    badge: "Purity of Rice",
+    imageUrl: "/images/dishes/steamed-rice-ghee.jpg",
+  },
+  {
+    id: "beng-14",
+    name: "Heritage Panchmishali Labra",
+    category: "Authentic Bengali Heritage",
+    description:
+      "Five-vegetable slow-cooked medley of pumpkin, ridge gourd, eggplant, radish, and potatoes tempered with panch phoron (Bengali five-spice blend) and fresh coriander.",
+    ingredients: ["Seasonal Vegetables", "Panch Phoron", "Mustard Oil", "Ginger Paste", "Coriander"],
+    dietary: ["Vegetarian", "Gluten-Free", "Vegan"],
+    winePairing: "Beaujolais-Villages 2020",
+    badge: "Rustic Classic",
+    imageUrl: "/images/dishes/panchmishali-labra.jpg",
   },
 ];
 
