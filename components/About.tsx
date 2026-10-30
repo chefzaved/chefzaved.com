@@ -11,7 +11,7 @@ export default function About() {
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 right-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         {/* Section Header - Shifted to Left */}
         <div className="text-left max-w-4xl mb-12 sm:mb-16">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">

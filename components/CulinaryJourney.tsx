@@ -49,9 +49,9 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#d4af37]/5 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-10 left-0 w-[450px] h-[450px] bg-emerald-600/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         {/* Section Header */}
-        <div className="text-left max-w-4xl mb-14 sm:mb-18">
+        <div className="text-left max-w-3xl mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a231b] border border-[#d4af37]/40 text-[#d4af37] text-xs uppercase tracking-[0.25em] font-semibold mb-3.5">
             <Sparkles className="w-3.5 h-3.5 text-[#d4af37]" />
             <span>An 18-Year Gastronomic Odyssey</span>
@@ -68,110 +68,84 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
           </p>
         </div>
 
-        {/* 2-Column Editorial Grid: Multi-Photo Showcase on Left, Journey Biography on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-          {/* Left Column (6 cols): Multi-Photo Showcase - Side by Side with Journey Archive */}
-          <div className="lg:col-span-6 relative space-y-4">
-            {/* Side-by-Side Dual Photos Container */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
-              {/* Photo 1: Iconic Chef Zaved Portrait (Badge completely removed) */}
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/60 shadow-[0_10px_35px_rgba(0,0,0,0.8)] bg-[#072018] group aspect-[4/5] flex items-center justify-center">
-                <img
-                  src="/images/chef-journey.jpg"
-                  alt="Chef Zaved - An 18-Year Gastronomic Odyssey"
-                  className="w-full h-full object-cover filter brightness-[0.98] contrast-[1.02] transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-              </div>
+        {/* 2-Column Editorial Grid: Single Box Image Slider on Left, Journey Narrative on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* Left Column (5 cols): Single Box Image Slider - Pure, uncrowded luxury */}
+          <div className="lg:col-span-5 relative lg:sticky lg:top-28">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+              {/* Outer Subtle Glow Halo */}
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-b from-[#d4af37]/20 via-[#144234]/15 to-transparent blur-md -z-10" />
 
-              {/* Photo 2: Beside it! Interactive Journey Moments Viewer from D:\chefzaved.com\Photos\My Journey */}
+              {/* Single Box Photo Container - Smoothly cycles through the journey photos */}
               <div
-                className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/60 shadow-[0_10px_35px_rgba(0,0,0,0.8)] bg-[#072018] group aspect-[4/5] flex items-center justify-center select-none"
+                className="relative rounded-2xl overflow-hidden border border-[#d4af37]/40 shadow-[0_12px_45px_rgba(0,0,0,0.85)] bg-[#072018] aspect-[4/5] flex items-center justify-center select-none group"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
               >
-                {/* Active Journey Image */}
+                {/* Active Journey Image with Smooth Luxury Transition */}
                 <img
                   key={currentPhoto.id}
                   src={currentPhoto.imageUrl}
                   alt={currentPhoto.title}
-                  className="w-full h-full object-cover filter brightness-[0.96] contrast-[1.04] transition-all duration-700 ease-out"
+                  className="w-full h-full object-cover filter brightness-[0.98] contrast-[1.03] transition-all duration-700 ease-out"
                 />
 
-                {/* Subtle bottom gradient */}
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#061a14] via-[#061a14]/60 to-transparent pointer-events-none" />
+                {/* Subtle Luxury Gradient Overlay at Bottom */}
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#061a14]/90 via-[#061a14]/40 to-transparent pointer-events-none" />
 
-                {/* Navigation Arrows */}
+                {/* Floating Navigation Arrows - Subtle, elegant, appearing gracefully */}
                 <button
                   onClick={prevPhoto}
-                  aria-label="Previous journey moment"
-                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/50 flex items-center justify-center backdrop-blur-md transition-all duration-300 cursor-pointer shadow-lg z-10"
+                  aria-label="Previous photo"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/40 flex items-center justify-center backdrop-blur-md transition-all duration-300 opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-xl z-20"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
                   onClick={nextPhoto}
-                  aria-label="Next journey moment"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/50 flex items-center justify-center backdrop-blur-md transition-all duration-300 cursor-pointer shadow-lg z-10"
+                  aria-label="Next photo"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-[#061a14]/80 hover:bg-[#d4af37] text-white hover:text-[#061a14] border border-[#d4af37]/40 flex items-center justify-center backdrop-blur-md transition-all duration-300 opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-xl z-20"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
 
-                {/* Caption Tag pinned at photo bottom */}
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 p-2.5 rounded-xl bg-[#061a14]/90 backdrop-blur-md border border-[#d4af37]/40 shadow-xl z-10">
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="min-w-0">
-                      <span className="font-serif font-bold text-white text-xs truncate block tracking-wide">
-                        {currentPhoto.title}
-                      </span>
-                      <span className="text-[10px] text-[#d4af37] uppercase tracking-wider font-sans font-medium truncate block">
-                        {currentPhoto.tag}
-                      </span>
-                    </div>
-                    <span className="shrink-0 text-[10px] font-semibold text-[#fae8b4] px-2 py-0.5 rounded-full bg-[#0b2b22] border border-[#d4af37]/30">
-                      {String(currentIndex + 1).padStart(2, "0")} / {String(JOURNEY_PHOTOS.length).padStart(2, "0")}
-                    </span>
+                {/* Understated Minimal Caption Pill at Bottom */}
+                <div className="absolute bottom-3 inset-x-3 px-3.5 py-2 rounded-xl bg-[#061a14]/85 backdrop-blur-md border border-[#d4af37]/30 flex items-center justify-between text-xs z-10 shadow-lg">
+                  <div className="min-w-0 pr-2">
+                    <p className="font-serif font-semibold text-white truncate text-xs sm:text-sm">
+                      {currentPhoto.title}
+                    </p>
+                    <p className="text-[10px] text-[#d4af37] uppercase tracking-wider font-sans font-medium truncate">
+                      {currentPhoto.tag}
+                    </p>
                   </div>
+                  {/* Slide Counter */}
+                  <span className="shrink-0 font-sans text-[10px] font-semibold text-[#fae8b4] px-2 py-0.5 rounded-full bg-[#0b2b22] border border-[#d4af37]/30">
+                    {String(currentIndex + 1).padStart(2, "0")} / {String(JOURNEY_PHOTOS.length).padStart(2, "0")}
+                  </span>
                 </div>
               </div>
-            </div>
 
-            {/* Horizontal Thumbnail Selector for all 11 Journey Photos */}
-            <div className="pt-1">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[11px] uppercase tracking-widest text-neutral-400 font-medium">
-                  Career Archives ({JOURNEY_PHOTOS.length} Photographs)
-                </span>
-                <span className="text-[11px] text-[#d4af37] font-sans">Click to inspect</span>
-              </div>
-
-              <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-[#d4af37]/40">
-                {JOURNEY_PHOTOS.map((photo, idx) => {
-                  const isSelected = idx === currentIndex;
-                  return (
-                    <button
-                      key={photo.id}
-                      onClick={() => setCurrentIndex(idx)}
-                      className={`relative shrink-0 w-16 h-16 sm:w-18 sm:h-18 rounded-xl overflow-hidden transition-all duration-300 border-2 cursor-pointer ${
-                        isSelected
-                          ? "border-[#d4af37] scale-105 shadow-[0_0_12px_rgba(212,175,55,0.7)]"
-                          : "border-[#144234] opacity-60 hover:opacity-100 hover:border-[#d4af37]/60"
-                      }`}
-                      title={photo.title}
-                    >
-                      <img
-                        src={photo.imageUrl}
-                        alt={photo.title}
-                        className="w-full h-full object-cover filter brightness-[0.95]"
-                      />
-                    </button>
-                  );
-                })}
+              {/* Minimal Pagination Dots Below Single Box */}
+              <div className="flex items-center justify-center gap-1.5 mt-3">
+                {JOURNEY_PHOTOS.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentIndex(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className={`transition-all duration-300 rounded-full cursor-pointer ${
+                      idx === currentIndex
+                        ? "w-6 h-1 bg-[#d4af37]"
+                        : "w-1.5 h-1 bg-white/25 hover:bg-[#d4af37]/60"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Right Column (6 cols): Editorial Personal Journey Narrative */}
-          <div className="lg:col-span-6 space-y-8">
+          {/* Right Column (7 cols): Editorial Personal Journey Narrative */}
+          <div className="lg:col-span-7 space-y-8">
             {/* Lead Narrative Paragraphs */}
             <div className="space-y-4 text-neutral-200 text-sm sm:text-base leading-relaxed font-sans">
               <p className="text-base sm:text-lg text-white font-serif leading-relaxed">

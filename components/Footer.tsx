@@ -62,7 +62,7 @@ export default function Footer({
       {/* Decorative top gold hairline */}
       <div className="h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent" />
 
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Col 1: Brand & Bio (5 Cols) */}
           <div className="lg:col-span-5 space-y-5">
@@ -71,19 +71,19 @@ export default function Footer({
                 <img
                   src="/images/logo.png"
                   alt="Chef Zaved"
-                  className="h-[2.8cm] sm:h-[3.5cm] w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
+                  className="h-10 sm:h-11 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)]"
                 />
               </a>
 
               {/* Subtle Gold Divider Line */}
-              <div className="h-14 sm:h-18 w-px bg-gradient-to-b from-transparent via-[#d4af37]/45 to-transparent shrink-0" />
+              <div className="h-10 sm:h-12 w-px bg-gradient-to-b from-transparent via-[#d4af37]/45 to-transparent shrink-0" />
 
               {/* Signature Logo Beside it - matching height with main logo */}
               <div className="flex items-center">
                 <img
                   src="/images/signature.png"
                   alt="Chef Zaved Signature Logo"
-                  className="h-[2.8cm] sm:h-[3.5cm] w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.55)] transition-all duration-300 hover:scale-105"
+                  className="h-10 sm:h-11 md:h-12 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(212,175,55,0.5)] transition-all duration-300 hover:scale-105"
                 />
               </div>
             </div>

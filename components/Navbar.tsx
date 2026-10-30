@@ -47,9 +47,9 @@ export default function Navbar({
             : "bg-gradient-to-b from-[#061a14]/95 via-[#061a14]/80 to-transparent py-2 sm:py-3"
         }`}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="flex items-center justify-between gap-4">
-            {/* Logo */}
+            {/* Logo - Elegant, refined luxury sizing (inspired by Michelin chef websites like atulkochhar.com) */}
             <a
               href="#hero"
               className="group flex items-center focus:outline-none shrink-0"
@@ -58,7 +58,7 @@ export default function Navbar({
               <img
                 src="/images/logo.png"
                 alt="Chef Zaved"
-                className="h-[2.8cm] sm:h-[3.5cm] w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_14px_rgba(212,175,55,0.45)]"
+                className="h-10 sm:h-11 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)]"
               />
             </a>
 
