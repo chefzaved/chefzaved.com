@@ -140,32 +140,32 @@ export default function Footer({
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <a href="#hero" className="hover:text-[#d4af37] transition-colors">
+                <a href="/#hero" className="hover:text-[#d4af37] transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#d4af37] transition-colors">
+                <a href="/#about" className="hover:text-[#d4af37] transition-colors">
                   About Chef Zaved
                 </a>
               </li>
               <li>
-                <a href="#culinary-journey" className="hover:text-[#d4af37] transition-colors">
+                <a href="/#culinary-journey" className="hover:text-[#d4af37] transition-colors">
                   My Culinary Journey
                 </a>
               </li>
               <li>
-                <a href="#menu" className="hover:text-[#d4af37] transition-colors">
+                <a href="/#menu" className="hover:text-[#d4af37] transition-colors">
                   Signature Repertoire
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="hover:text-[#d4af37] transition-colors">
+                <a href="/#testimonials" className="hover:text-[#d4af37] transition-colors">
                   Client Reviews
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#d4af37] text-left transition-colors">
+                <a href="/#contact" className="hover:text-[#d4af37] text-left transition-colors">
                   Contact Us
                 </a>
               </li>
@@ -173,7 +173,7 @@ export default function Footer({
           </div>
 
           {/* Col 3: Contact & Location (4 Cols) */}
-          <div id="contact" className="lg:col-span-4 space-y-3 scroll-mt-24">
+          <div className="lg:col-span-4 space-y-3">
             <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-white">
               Contact Us
             </h4>
