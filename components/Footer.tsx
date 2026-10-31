@@ -67,7 +67,7 @@ export default function Footer({
           {/* Col 1: Brand & Bio (5 Cols) */}
           <div className="lg:col-span-5 space-y-5">
             <div className="flex items-center gap-3.5 sm:gap-5">
-              <a href="#hero" className="inline-block group focus:outline-none" aria-label="Chef Zaved">
+              <a href="/#hero" className="inline-block group focus:outline-none" aria-label="Chef Zaved">
                 <img
                   src="/images/logo.png"
                   alt="Chef Zaved"
@@ -76,14 +76,18 @@ export default function Footer({
               </a>
 
               {/* Subtle Gold Divider Line */}
-              <div className="h-10 sm:h-12 w-px bg-gradient-to-b from-transparent via-[#d4af37]/45 to-transparent shrink-0" />
+              <div
+                className="w-px bg-gradient-to-b from-transparent via-[#d4af37]/45 to-transparent shrink-0"
+                style={{ height: "2.4cm" }}
+              />
 
-              {/* Signature Logo Beside it - matching height with main logo */}
+              {/* Signature Logo Beside it - exactly 3cm as requested */}
               <div className="flex items-center">
                 <img
                   src="/images/signature.png"
                   alt="Chef Zaved Signature Logo"
-                  className="h-10 sm:h-11 md:h-12 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(212,175,55,0.5)] transition-all duration-300 hover:scale-105"
+                  style={{ height: "3cm", width: "auto" }}
+                  className="h-[3cm] w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(212,175,55,0.55)] transition-all duration-300 hover:scale-105"
                 />
               </div>
             </div>
