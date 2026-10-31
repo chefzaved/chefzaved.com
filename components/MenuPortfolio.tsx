@@ -187,7 +187,7 @@ export default function MenuPortfolio({
         {/* ============================================================ */}
         {/* CATEGORY SEGMENT PANEL (RESTORED TABS)                        */}
         {/* ============================================================ */}
-        <ScrollReveal delay={0.25} distance={20}>
+        <ScrollReveal delay={0.2} distance={45}>
           <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mb-12 sm:mb-16 max-w-5xl mx-auto">
             {CATEGORIES.map((cat) => {
               const isActive = selectedCategory === cat;
@@ -238,8 +238,9 @@ export default function MenuPortfolio({
         {/* Adjusted in Frame without top/bottom cropping, zero blur      */}
         {/* ============================================================ */}
         {currentDish && (
-          <div
-            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center"
+          <ScrollReveal delay={0.28} distance={50}>
+            <div
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onTouchStart={handleTouchStart}
@@ -414,6 +415,7 @@ export default function MenuPortfolio({
 
             </div>
           </div>
+          </ScrollReveal>
         )}
 
       </div>

@@ -196,7 +196,7 @@ export default function ContactSection({
           {/* LEFT COLUMN: Direct Concierge & Contact Information (5 Cols) */}
           {/* ========================================================= */}
           <div className="lg:col-span-5 space-y-6">
-            <ScrollReveal delay={0.15} distance={24}>
+            <ScrollReveal delay={0.2} distance={45}>
               <div className="p-7 sm:p-8 rounded-3xl bg-gradient-to-b from-[#0b2b22] to-[#072018] border border-[#d4af37]/35 shadow-2xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-[#d4af37]/5 rounded-full blur-2xl pointer-events-none" />
 
@@ -329,7 +329,7 @@ export default function ContactSection({
           {/* RIGHT COLUMN: Bespoke Culinary Inquiry Form (7 Cols)      */}
           {/* ========================================================= */}
           <div className="lg:col-span-7">
-            <ScrollReveal delay={0.2} distance={28}>
+            <ScrollReveal delay={0.25} distance={50}>
               <div className="p-7 sm:p-10 rounded-3xl bg-gradient-to-b from-[#09261e] via-[#072018] to-[#061a14] border border-[#d4af37]/45 shadow-[0_15px_60px_rgba(0,0,0,0.8)] relative">
                 {/* Form Header */}
                 <div className="mb-8">

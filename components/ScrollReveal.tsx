@@ -16,11 +16,11 @@ interface ScrollRevealProps extends HTMLMotionProps<"div"> {
 export default function ScrollReveal({
   children,
   delay = 0,
-  duration = 0.8,
+  duration = 0.85,
   direction = "up",
-  distance = 28,
+  distance = 48,
   className = "",
-  once = true,
+  once = false,
   ...props
 }: ScrollRevealProps) {
   const getInitialOffset = () => {
@@ -51,11 +51,11 @@ export default function ScrollReveal({
         x: 0,
         y: 0,
       }}
-      viewport={{ once, amount: 0.1 }}
+      viewport={{ once, amount: 0.18, margin: "0px 0px -70px 0px" }}
       transition={{
         duration,
         delay,
-        ease: [0.16, 1, 0.3, 1], // Luxury deceleration curve (smooth Michelin editorial feel)
+        ease: [0.22, 1, 0.36, 1], // Luxury deceleration curve (identical to atulkochhar.com UIkit slide-bottom-medium)
       }}
       className={className}
       {...props}

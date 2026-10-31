@@ -37,17 +37,17 @@ export default function SectionHeader({
       {watermark && (
         <motion.div
           aria-hidden="true"
-          initial={{ opacity: 0, scale: 0.93, y: 10 }}
+          initial={{ opacity: 0, scale: 0.94, y: 30 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className={`absolute pointer-events-none select-none font-serif uppercase font-black tracking-[0.2em] leading-none z-0 ${
+          viewport={{ once: false, amount: 0.18, margin: "0px 0px -70px 0px" }}
+          transition={{ duration: 0.9, delay: 0.0, ease: [0.22, 1, 0.36, 1] }}
+          className={`absolute pointer-events-none select-none font-serif uppercase font-black tracking-[0.25em] leading-none z-0 ${
             isLeft
               ? "left-0 -top-10 sm:-top-14 text-6xl sm:text-7xl md:text-8xl lg:text-[130px] origin-left"
               : "left-1/2 -translate-x-1/2 -top-10 sm:-top-14 text-6xl sm:text-7xl md:text-8xl lg:text-[130px] origin-center whitespace-nowrap"
           }`}
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-transparent">
+          <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#d4af37]/15 via-white/[0.06] to-transparent">
             {watermark}
           </span>
         </motion.div>
@@ -56,10 +56,10 @@ export default function SectionHeader({
       {/* 2. Category Badge / Tag (Animated Slide-up) */}
       {badge && (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.7, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: false, amount: 0.18, margin: "0px 0px -70px 0px" }}
+          transition={{ duration: 0.8, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 mb-3.5"
         >
           <div
@@ -75,10 +75,10 @@ export default function SectionHeader({
 
       {/* 3. Main Heading (Animated Slide-up with Deceleration Ease) */}
       <motion.h2
-        initial={{ opacity: 0, y: 35 }}
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: false, amount: 0.18, margin: "0px 0px -70px 0px" }}
+        transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15]"
       >
         {title}
@@ -89,8 +89,8 @@ export default function SectionHeader({
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           whileInView={{ scaleX: 1, opacity: 1 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.85, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: false, amount: 0.18, margin: "0px 0px -70px 0px" }}
+          transition={{ duration: 0.85, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className={`h-0.5 ${dividerWidth} ${
             isLeft
               ? "origin-left bg-gradient-to-r from-[#d4af37] via-[#d4af37]/60 to-transparent"
@@ -102,10 +102,10 @@ export default function SectionHeader({
       {/* 5. Subtitle / Narrative Lead (Animated Soft Fade-up) */}
       {subtitle && (
         <motion.p
-          initial={{ opacity: 0, y: 22 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: false, amount: 0.18, margin: "0px 0px -70px 0px" }}
+          transition={{ duration: 0.85, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 mt-4.5 text-base sm:text-lg lg:text-xl text-neutral-300 font-sans leading-relaxed"
         >
           {subtitle}

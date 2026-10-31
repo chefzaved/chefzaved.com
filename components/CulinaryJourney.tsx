@@ -75,7 +75,7 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left Column (5 cols): Single Box Image Slider - Pure, uncrowded luxury */}
           <div className="lg:col-span-5 relative lg:sticky lg:top-28">
-            <ScrollReveal direction="right" delay={0.2} distance={28}>
+            <ScrollReveal direction="up" delay={0.2} distance={48}>
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 {/* Outer Subtle Glow Halo */}
                 <div className="absolute -inset-1 rounded-3xl bg-gradient-to-b from-[#d4af37]/20 via-[#144234]/15 to-transparent blur-md -z-10" />
@@ -152,7 +152,7 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
           {/* Right Column (7 cols): Editorial Personal Journey Narrative */}
           <div className="lg:col-span-7 space-y-8">
             {/* Lead Narrative Paragraphs */}
-            <ScrollReveal delay={0.25} distance={26}>
+            <ScrollReveal delay={0.22} distance={48}>
               <div className="space-y-4 text-neutral-200 text-sm sm:text-base leading-relaxed font-sans">
                 <p className="text-base sm:text-lg text-white font-serif leading-relaxed">
                   <span className="text-3xl sm:text-4xl font-serif text-[#d4af37] float-left mr-2.5 leading-none">
@@ -176,7 +176,7 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
             </ScrollReveal>
 
             {/* Prestige Brands Marquee Pills */}
-            <ScrollReveal delay={0.35} distance={24} className="pt-2">
+            <ScrollReveal delay={0.34} distance={45} className="pt-2">
               <div className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-medium mb-3">
                 Trusted by Renowned Hospitality Brands & International Fleets
               </div>
@@ -194,7 +194,7 @@ export default function CulinaryJourney({ onOpenBooking }: CulinaryJourneyProps)
             </ScrollReveal>
 
             {/* Pull Quote Card with Signature */}
-            <ScrollReveal delay={0.42} distance={28}>
+            <ScrollReveal delay={0.46} distance={48}>
               <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-[#0b2b22] to-[#072018] border-l-4 border-[#d4af37] relative shadow-xl hover:shadow-[0_10px_30px_rgba(212,175,55,0.12)] transition-shadow duration-500">
                 <Quote className="w-8 h-8 text-[#d4af37]/25 absolute top-4 right-4" />
                 <p className="font-serif italic text-base sm:text-lg text-amber-100/95 leading-relaxed">

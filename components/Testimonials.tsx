@@ -59,7 +59,7 @@ export default function Testimonials() {
         />
 
         {/* Aggregate Rating Badge */}
-        <ScrollReveal delay={0.25} distance={18} className="text-center -mt-6 sm:-mt-8 mb-12 sm:mb-14">
+        <ScrollReveal delay={0.2} distance={40} className="text-center -mt-6 sm:-mt-8 mb-12 sm:mb-14">
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-[#08221a] border border-[#d4af37]/30 shadow-lg">
             <div className="flex items-center text-[#d4af37]">
               {[...Array(5)].map((_, i) => (
@@ -77,7 +77,7 @@ export default function Testimonials() {
         </ScrollReveal>
 
         {/* Featured Testimonial Spread – Full-width, Borderless Editorial Layout */}
-        <ScrollReveal delay={0.35} distance={28}>
+        <ScrollReveal delay={0.3} distance={50}>
           <div className="relative w-full rounded-3xl bg-[#08221a]/30 p-6 sm:p-10 lg:p-14 border-0 shadow-none">
           <Quote className="w-16 h-16 sm:w-20 sm:h-20 text-[#d4af37]/10 absolute top-6 right-8 sm:top-10 sm:right-12 pointer-events-none" />
 
@@ -180,25 +180,27 @@ export default function Testimonials() {
         </ScrollReveal>
 
         {/* Press and VIP Mentions Footer Bar */}
-        <div className="mt-14 pt-8 border-t border-[#144234]/70 text-center">
-          <p className="text-xs uppercase tracking-[0.25em] text-neutral-400 mb-6 font-medium">
-            Entrusted by International Diplomats, Luxury Brands &amp; Private Families
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-neutral-300 font-serif text-sm sm:text-base opacity-80">
-            <span className="hover:text-[#d4af37] transition-colors tracking-widest">
-              MAYFAIR PRIVATE CLIENTS
-            </span>
-            <span className="hover:text-[#d4af37] transition-colors tracking-widest">
-              THE MANHATTAN SALON
-            </span>
-            <span className="hover:text-[#d4af37] transition-colors tracking-widest">
-              EMIRATES YACHT RECEPTIONS
-            </span>
-            <span className="hover:text-[#d4af37] transition-colors tracking-widest">
-              BEVERLY HILLS ATELIER
-            </span>
+        <ScrollReveal delay={0.42} distance={40}>
+          <div className="mt-14 pt-8 border-t border-[#144234]/70 text-center">
+            <p className="text-xs uppercase tracking-[0.25em] text-neutral-400 mb-6 font-medium">
+              Entrusted by International Diplomats, Luxury Brands &amp; Private Families
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-neutral-300 font-serif text-sm sm:text-base opacity-80">
+              <span className="hover:text-[#d4af37] transition-colors tracking-widest">
+                MAYFAIR PRIVATE CLIENTS
+              </span>
+              <span className="hover:text-[#d4af37] transition-colors tracking-widest">
+                THE MANHATTAN SALON
+              </span>
+              <span className="hover:text-[#d4af37] transition-colors tracking-widest">
+                EMIRATES YACHT RECEPTIONS
+              </span>
+              <span className="hover:text-[#d4af37] transition-colors tracking-widest">
+                BEVERLY HILLS ATELIER
+              </span>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

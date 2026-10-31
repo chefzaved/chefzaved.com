@@ -31,19 +31,19 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Narrative & Credentials (7 Cols) - Left Side */}
           <div className="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1">
-            <ScrollReveal delay={0.15} distance={24}>
+            <ScrollReveal delay={0.2} distance={48}>
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold text-white leading-snug">
                 Every menu tells a story, and every dining experience feels personal, innovative, and memorable.
               </h3>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.25} distance={24} className="mt-6 space-y-4 text-neutral-200 text-sm sm:text-base lg:text-lg leading-relaxed">
+            <ScrollReveal delay={0.32} distance={48} className="mt-6 space-y-4 text-neutral-200 text-sm sm:text-base lg:text-lg leading-relaxed">
               <p>{CHEF_INFO.bioParagraph1}</p>
               <p>{CHEF_INFO.bioParagraph2}</p>
             </ScrollReveal>
 
             {/* Philosophy Callout Quote */}
-            <ScrollReveal delay={0.35} distance={28} className="mt-8">
+            <ScrollReveal delay={0.44} distance={48} className="mt-8">
               <div className="p-6 rounded-xl bg-gradient-to-r from-[#0b2b22] to-[#072018] border-l-4 border-[#d4af37] relative shadow-xl hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)] transition-shadow duration-500">
                 <Quote className="w-8 h-8 text-[#d4af37]/20 absolute top-4 right-4" />
                 <p className="font-serif italic text-base sm:text-lg text-amber-100/95 leading-relaxed">
@@ -72,7 +72,7 @@ export default function About() {
 
           {/* Visual Showcase (5 Cols) - Right Side */}
           <div className="lg:col-span-5 relative order-1 lg:order-2 lg:sticky lg:top-32">
-            <ScrollReveal delay={0.2} direction="left" distance={30}>
+            <ScrollReveal delay={0.25} direction="up" distance={48}>
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 {/* Main Primary Image: Chef Zaved original photo fitted in frame */}
                 <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/50 shadow-2xl bg-[#072018] group">
