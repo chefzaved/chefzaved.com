@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { MODERN_EUROPEAN_MENU } from "@/data/modernEuropeanMenu";
 import { DISHES_DATA } from "@/data/chefData";
+import SectionHeader from "./SectionHeader";
+import ScrollReveal from "./ScrollReveal";
 
 interface MenuPortfolioProps {
   requestedDishes: string[];
@@ -168,43 +170,43 @@ export default function MenuPortfolio({
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         
         {/* ============================================================ */}
-        {/* 1. PRESERVED EXISTING HEADING (EXACTLY AS SPECIFIED)          */}
+        {/* 1. ANIMATED SECTION HEADER (Inspired by atulkochhar.com)      */}
         {/* ============================================================ */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0a231b] border border-[#d4af37]/30 text-[#d4af37] text-xs uppercase tracking-widest font-semibold mb-3.5 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#d4af37]" />
-            <span>THE ART OF MODERN GASTRONOMY</span>
-          </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
-            SIGNATURE MENU & <span className="gold-gradient-text">PORTFOLIO</span>
-          </h2>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4" />
-          <p className="mt-4 text-base sm:text-lg text-neutral-300 font-sans leading-relaxed">
-            An expression of culinary artistry, global flavours and contemporary presentation.
-          </p>
-        </div>
+        <SectionHeader
+          watermark="PORTFOLIO"
+          badge="THE ART OF MODERN GASTRONOMY"
+          title={
+            <>
+              SIGNATURE MENU &amp; <span className="gold-gradient-text">PORTFOLIO</span>
+            </>
+          }
+          subtitle="An expression of culinary artistry, global flavours and contemporary presentation."
+          align="center"
+        />
 
         {/* ============================================================ */}
         {/* CATEGORY SEGMENT PANEL (RESTORED TABS)                        */}
         {/* ============================================================ */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mb-12 sm:mb-16 max-w-5xl mx-auto">
-          {CATEGORIES.map((cat) => {
-            const isActive = selectedCategory === cat;
-            return (
-              <button
-                key={cat}
-                onClick={() => handleSelectCategory(cat)}
-                className={`px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all duration-300 cursor-pointer ${
-                  isActive
-                    ? "bg-gradient-to-r from-[#d4af37] to-[#ba8d28] text-[#061a14] font-semibold shadow-[0_0_20px_rgba(212,175,55,0.4)] scale-105"
-                    : "bg-[#09241c] text-neutral-300 hover:text-white hover:bg-[#0f382c] border border-[#144234]"
-                }`}
-              >
-                {cat}
-              </button>
-            );
-          })}
-        </div>
+        <ScrollReveal delay={0.25} distance={20}>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mb-12 sm:mb-16 max-w-5xl mx-auto">
+            {CATEGORIES.map((cat) => {
+              const isActive = selectedCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => handleSelectCategory(cat)}
+                  className={`px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all duration-300 cursor-pointer ${
+                    isActive
+                      ? "bg-gradient-to-r from-[#d4af37] to-[#ba8d28] text-[#061a14] font-semibold shadow-[0_0_20px_rgba(212,175,55,0.4)] scale-105"
+                      : "bg-[#09241c] text-neutral-300 hover:text-white hover:bg-[#0f382c] border border-[#144234]"
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+        </ScrollReveal>
 
         {/* Selected Dishes Tray Notification if user has requested any */}
         {requestedDishes.length > 0 && (

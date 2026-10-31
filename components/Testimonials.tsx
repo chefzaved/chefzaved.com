@@ -11,6 +11,8 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { TESTIMONIALS_DATA } from "@/data/chefData";
+import SectionHeader from "./SectionHeader";
+import ScrollReveal from "./ScrollReveal";
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -44,19 +46,21 @@ export default function Testimonials() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-amber-500/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a231b] border border-[#d4af37]/30 text-[#d4af37] text-xs uppercase tracking-widest font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>VIP Acclaim & Critic Reviews</span>
-          </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Client <span className="gold-gradient-text">Testimonials</span>
-          </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4" />
+        {/* Section Header (Inspired by atulkochhar.com) */}
+        <SectionHeader
+          watermark="ACCLAIM"
+          badge="VIP Acclaim &amp; Critic Reviews"
+          title={
+            <>
+              Client <span className="gold-gradient-text">Testimonials</span>
+            </>
+          }
+          align="center"
+        />
 
-          {/* Aggregate Rating Badge */}
-          <div className="mt-5 inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-[#08221a] border border-[#d4af37]/30 shadow-lg">
+        {/* Aggregate Rating Badge */}
+        <ScrollReveal delay={0.25} distance={18} className="text-center -mt-6 sm:-mt-8 mb-12 sm:mb-14">
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-[#08221a] border border-[#d4af37]/30 shadow-lg">
             <div className="flex items-center text-[#d4af37]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-[#d4af37]" />
@@ -70,10 +74,11 @@ export default function Testimonials() {
               Based on 180+ Verified VIP Private Events
             </span>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Featured Testimonial Spread – Full-width, Borderless Editorial Layout */}
-        <div className="relative w-full rounded-3xl bg-[#08221a]/30 p-6 sm:p-10 lg:p-14 border-0 shadow-none">
+        <ScrollReveal delay={0.35} distance={28}>
+          <div className="relative w-full rounded-3xl bg-[#08221a]/30 p-6 sm:p-10 lg:p-14 border-0 shadow-none">
           <Quote className="w-16 h-16 sm:w-20 sm:h-20 text-[#d4af37]/10 absolute top-6 right-8 sm:top-10 sm:right-12 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col justify-between min-h-[260px]">
@@ -172,6 +177,7 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
+        </ScrollReveal>
 
         {/* Press and VIP Mentions Footer Bar */}
         <div className="mt-14 pt-8 border-t border-[#144234]/70 text-center">
