@@ -67,7 +67,20 @@ export default function Footer({
           {/* Col 1: Brand & Bio (5 Cols) */}
           <div className="lg:col-span-5 space-y-5">
             <div className="flex items-center gap-3.5 sm:gap-5">
-              <a href="/#hero" className="inline-block group focus:outline-none" aria-label="Chef Zaved">
+              <a
+                href="/"
+                onClick={(e) => {
+                  if (window.location.pathname === "/") {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    if (window.location.hash) {
+                      history.replaceState(null, "", "/");
+                    }
+                  }
+                }}
+                className="inline-block group focus:outline-none"
+                aria-label="Chef Zaved"
+              >
                 <img
                   src="/images/logo.png"
                   alt="Chef Zaved"
@@ -144,7 +157,19 @@ export default function Footer({
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <a href="/#hero" className="hover:text-[#d4af37] transition-colors">
+                <a
+                  href="/"
+                  onClick={(e) => {
+                    if (window.location.pathname === "/") {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      if (window.location.hash) {
+                        history.replaceState(null, "", "/");
+                      }
+                    }
+                  }}
+                  className="hover:text-[#d4af37] transition-colors"
+                >
                   Home
                 </a>
               </li>

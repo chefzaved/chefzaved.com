@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -14,6 +14,13 @@ import FloatingCTA from "@/components/FloatingCTA";
 export default function Home() {
   const [requestedDishes, setRequestedDishes] = useState<string[]>([]);
   const [isConciergeOpen, setIsConciergeOpen] = useState<boolean>(false);
+
+  // Silently remove '#hero' from URL if user arrived via an old link or bookmark
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#hero") {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  }, []);
 
   // Toggle requesting a dish from the menu
   const handleRequestDish = (dishName: string) => {

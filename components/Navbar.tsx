@@ -31,7 +31,7 @@ export default function Navbar({
   }, []);
 
   const navLinks = [
-    { label: "Home", href: "/#hero" },
+    { label: "Home", href: "/" },
     { label: "About Chef", href: "/#about" },
     { label: "My Journey", href: "/#culinary-journey" },
     { label: "Signature Menu", href: "/#menu" },
@@ -51,7 +51,16 @@ export default function Navbar({
           <div className="flex items-center justify-between gap-4">
             {/* Logo - Elegant, refined luxury sizing (inspired by Michelin chef websites like atulkochhar.com) */}
             <a
-              href="/#hero"
+              href="/"
+              onClick={(e) => {
+                if (window.location.pathname === "/") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  if (window.location.hash) {
+                    history.replaceState(null, "", "/");
+                  }
+                }
+              }}
               className="group flex items-center focus:outline-none shrink-0"
               aria-label="Chef Zaved"
             >
@@ -68,6 +77,15 @@ export default function Navbar({
                 <a
                   key={link.label}
                   href={link.href}
+                  onClick={(e) => {
+                    if (link.href === "/" && window.location.pathname === "/") {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      if (window.location.hash) {
+                        history.replaceState(null, "", "/");
+                      }
+                    }
+                  }}
                   className="px-3 xl:px-4 py-1.5 xl:py-2 rounded-full text-xs xl:text-sm font-medium tracking-wide text-[#FFFDF5] bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/70 shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#D4AF37] hover:text-[#061a14] hover:border-[#D4AF37] hover:shadow-[0_0_18px_rgba(212,175,55,0.55)] hover:-translate-y-0.5 transition-all duration-300 ease-out font-sans whitespace-nowrap"
                 >
                   {link.label}
@@ -129,7 +147,16 @@ export default function Navbar({
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  if (link.href === "/" && window.location.pathname === "/") {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    if (window.location.hash) {
+                      history.replaceState(null, "", "/");
+                    }
+                  }
+                }}
                 className="py-3 px-5 rounded-full text-base font-medium tracking-wide text-[#FFFDF5] bg-[#D4AF37]/12 border-[1.5px] border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#061a14] transition-all duration-300"
               >
                 {link.label}
