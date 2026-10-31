@@ -52,32 +52,32 @@ export interface BackgroundSlide {
 export const BACKGROUND_SLIDES: BackgroundSlide[] = [
   {
     id: 1,
-    imageUrl: "/images/background/1.png",
+    imageUrl: "/images/background/1.webp",
     name: "Traditional Gondhoraj Bhetki Paturi",
   },
   {
     id: 2,
-    imageUrl: "/images/background/2.png",
+    imageUrl: "/images/background/2.webp",
     name: "Artisanal Tomato & Herb Canapés",
   },
   {
     id: 3,
-    imageUrl: "/images/background/3.png",
+    imageUrl: "/images/background/3.webp",
     name: "Grand Bespoke Banqueting & Sushi Spread",
   },
   {
     id: 4,
-    imageUrl: "/images/background/4.png",
+    imageUrl: "/images/background/4.webp",
     name: "Artisanal Beetroot & Avocado Fusion Rolls",
   },
   {
     id: 5,
-    imageUrl: "/images/background/5.png",
+    imageUrl: "/images/background/5.webp",
     name: "Handcrafted Truffle & Sesame Fusion Sushi",
   },
   {
     id: 6,
-    imageUrl: "/images/background/6.jpeg",
+    imageUrl: "/images/background/6.webp",
     name: "Artisanal Mediterranean Seafood & Scallop Platter",
   },
 ];

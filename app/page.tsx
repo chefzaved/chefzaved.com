@@ -15,6 +15,19 @@ export default function Home() {
   const [requestedDishes, setRequestedDishes] = useState<string[]>([]);
   const [isConciergeOpen, setIsConciergeOpen] = useState<boolean>(false);
 
+  // Load persisted requested dishes from localStorage on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("chef_requested_dishes");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) setRequestedDishes(parsed);
+      }
+    } catch (e) {
+      // fallback
+    }
+  }, []);
+
   // Silently remove '#hero' from URL if user arrived via an old link or bookmark
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash === "#hero") {
@@ -22,14 +35,16 @@ export default function Home() {
     }
   }, []);
 
-  // Toggle requesting a dish from the menu
+  // Toggle requesting a dish from the menu & persist across pages
   const handleRequestDish = (dishName: string) => {
     setRequestedDishes((prev) => {
-      if (prev.includes(dishName)) {
-        return prev.filter((d) => d !== dishName);
-      } else {
-        return [...prev, dishName];
-      }
+      const updated = prev.includes(dishName)
+        ? prev.filter((d) => d !== dishName)
+        : [...prev, dishName];
+      try {
+        localStorage.setItem("chef_requested_dishes", JSON.stringify(updated));
+      } catch (e) {}
+      return updated;
     });
   };
 

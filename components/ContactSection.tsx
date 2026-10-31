@@ -162,10 +162,18 @@ export default function ContactSection({
 
   const whatsappMessage = successData
     ? encodeURIComponent(
-        `Hello Chef Zaved,\n\nI have submitted a private booking inquiry on chefzaved.com with Reference Code: ${successData.referenceCode}.\nName: ${successData.fullName}\nDate: ${successData.eventDate}\nGuests: ${successData.numberOfGuests}\nEvent: ${successData.eventType}.\n\nLooking forward to speaking with you.`
+        `Hello Chef Zaved,\n\nI have submitted a private booking inquiry on chefzaved.com with Reference Code: ${successData.referenceCode}.\nName: ${successData.fullName}\nDate: ${successData.eventDate}\nGuests: ${successData.numberOfGuests}\nEvent: ${successData.eventType}.${
+          requestedDishes.length > 0
+            ? `\n\nSelected Signature Creations:\n${requestedDishes.map((d) => `• ${d}`).join("\n")}`
+            : ""
+        }\n\nLooking forward to speaking with you.`
       )
     : encodeURIComponent(
-        `Hello Chef Zaved,\n\nI am contacting you regarding a bespoke private chef booking.`
+        `Hello Chef Zaved,\n\nI am contacting you regarding a bespoke private chef booking.${
+          requestedDishes.length > 0
+            ? `\n\nI am particularly interested in these signature creations from your menu:\n${requestedDishes.map((d) => `• ${d}`).join("\n")}`
+            : ""
+        }\n\nLooking forward to speaking with you.`
       );
 
   return (

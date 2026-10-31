@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -11,8 +11,27 @@ export default function ContactPage() {
   const [requestedDishes, setRequestedDishes] = useState<string[]>([]);
   const [isConciergeOpen, setIsConciergeOpen] = useState<boolean>(false);
 
+  // Load persisted requested dishes from localStorage on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("chef_requested_dishes");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) setRequestedDishes(parsed);
+      }
+    } catch (e) {
+      // fallback
+    }
+  }, []);
+
   const handleRemoveDish = (dishName: string) => {
-    setRequestedDishes((prev) => prev.filter((d) => d !== dishName));
+    setRequestedDishes((prev) => {
+      const updated = prev.filter((d) => d !== dishName);
+      try {
+        localStorage.setItem("chef_requested_dishes", JSON.stringify(updated));
+      } catch (e) {}
+      return updated;
+    });
   };
 
   const handleScrollToContact = () => {
