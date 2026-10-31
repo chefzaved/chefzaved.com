@@ -7,7 +7,6 @@ import About from "@/components/About";
 import CulinaryJourney from "@/components/CulinaryJourney";
 import MenuPortfolio from "@/components/MenuPortfolio";
 import Testimonials from "@/components/Testimonials";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ConciergePortalModal from "@/components/ConciergePortalModal";
 import FloatingCTA from "@/components/FloatingCTA";
@@ -28,10 +27,7 @@ export default function Home() {
   };
 
   const handleOpenContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
+    window.location.href = "/contact";
   };
 
   return (
@@ -62,12 +58,6 @@ export default function Home() {
 
         {/* 5. Client Testimonials */}
         <Testimonials />
-
-        {/* 6. Contact & Bespoke Private Bookings */}
-        <ContactSection
-          requestedDishes={requestedDishes}
-          onRemoveRequestedDish={handleRequestDish}
-        />
       </main>
 
       {/* 6. Footer */}

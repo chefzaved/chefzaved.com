@@ -80,7 +80,7 @@ export default function Navbar({
               {/* Requested Dishes Badge if any selected */}
               {requestedDishesCount > 0 && (
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 border border-[#d4af37]/40 text-xs text-[#d4af37] hover:bg-amber-500/20 transition-all"
                   title="View your requested dishes and contact chef"
                 >
@@ -91,7 +91,7 @@ export default function Navbar({
 
               {/* Direct Contact Us button */}
               <a
-                href="/#contact"
+                href="/contact"
                 className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#061a14] hover:text-[#061a14] px-5 py-2.5 rounded-full bg-gradient-to-r from-[#f5df93] via-[#d4af37] to-[#ba8d28] hover:from-amber-200 hover:to-[#d4af37] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
                 title="Contact Chef Zaved"
               >
@@ -103,7 +103,7 @@ export default function Navbar({
             {/* Mobile Menu Button */}
             <div className="flex sm:hidden items-center gap-2">
               <a
-                href="/#contact"
+                href="/contact"
                 className="px-3.5 py-1.5 rounded-full bg-[#d4af37] text-[#061a14] font-semibold text-xs tracking-wider uppercase inline-flex items-center gap-1"
               >
                 <Phone className="w-3 h-3 text-[#061a14]" />
@@ -140,7 +140,7 @@ export default function Navbar({
           <div className="mt-8 flex flex-col gap-4">
             {requestedDishesCount > 0 && (
               <a
-                href="#contact"
+                href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 py-2.5 rounded-lg bg-amber-500/10 border border-[#d4af37]/40 text-sm text-[#d4af37]"
               >
@@ -150,7 +150,7 @@ export default function Navbar({
             )}
 
             <a
-              href="#contact"
+              href="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 rounded-full bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#aa7c11] text-[#061a14] font-semibold tracking-wider uppercase text-sm shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2"
             >
